@@ -1,0 +1,28 @@
+/**
+* mixin
+*/
+
+@mixin left-right-center( $top: -10%)  {
+    position: absolute;
+    top: $top;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);  
+}
+@mixin btn{
+    font-size: 1.15rem;
+    border-radius:100px;
+    min-width: 300px;
+}
+@mixin shadow-primary{
+    box-shadow: var(--shadow-primary);
+    transition: all 0.3s ease 0s;
+}
+@mixin shadow-hover{
+    box-shadow:var(--shadow-hover);
+    transform: translateY(-0.1875em);
+}
+
+
+

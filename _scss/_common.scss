@@ -1,4 +1,219 @@
 /**
 * 公開画面・編集画面共有のCSS
-* Origin III のSCSSファイルを参考の独自に作成してください
 */
+
+@import "mixin";
+@import "block-common";
+
+:root {
+    --color-primary: #3C8B86;
+    --shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    // Roboto font
+    --roboto-font-family: 'Roboto', sans-serif;
+
+}
+
+
+.ltg3-s-evergreen{
+    /* =============================================
+    テーマCSS上書き
+    ============================================= */
+    .site-header{
+        //ヘッダートップメニュー微調整
+        .header-top {
+            nav {
+                top: 9px;
+            }
+            ul>li>a,
+            ul>li>span{
+                padding: 0 0.5rem;
+            }
+        }
+    }
+    @media (min-width: $lg-min){
+        .site-header-logo{
+            margin-top:0.25rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+    @media screen and (min-width: 767px){
+       //フッター微調整
+        .site-footer{
+            font-size: calc(var(--vk-size-text)* 0.9) ;
+        }
+        .footer-nav {
+            padding: 2rem 0;
+            .footer-nav-list{
+                 //フッターメニューを中央寄せ
+                display: flex;    
+                justify-content: center;
+                li{
+                    &:first-child{
+                        border-left: none;
+                    }
+                    border-left:1px solid #ffffff;
+                }
+            }
+        }
+    }
+ 
+    /* =============================================
+    追加用のCSSクラス
+    ============================================= */
+    .flex-center{
+        justify-content: center;
+        align-items: center;
+    }
+    .center{
+        text-align: center;
+    }
+    .left-right-center{
+      @include left-right-center();  
+    }
+    //ラベル
+    .label{
+        border-radius: 100px;
+        padding: 0.5rem;
+        margin: 0 auto;
+        width: 70%;
+        margin-bottom:1.25rem;
+    }
+    //ラベル（プライマリーカラー）
+    .label-primary{
+        border-radius: 100px;
+        background-color: var(--color-primary);
+        color: #ffffff;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+    }
+    //上にはみ出す見出し
+    .heading-title-over{
+        position: absolute;
+        top:-2rem;
+    }
+    .block-top-over{
+        margin:-220px 0 0 auto;
+    }
+
+    //カードブロックのボーダーを削除
+    .no-border {
+        .card {
+            border:none;
+        }
+    }
+    //hover時に半透明
+    .card-hover{
+        .card{
+            transition: .3s;
+            &:hover{
+                opacity: 0.85;
+            }
+        }
+    }
+    .card-label-over{
+        .card{
+            margin-bottom: 2.8rem;
+            overflow: unset;
+        }
+    }
+     //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
+    .heading_subtext-style-border {
+        position: relative;
+        text-align: center;
+        &.en .vk_heading_subtext{
+            font-family: var(--roboto-font-family);
+
+        }
+        .vk_heading_subtext{
+            position: relative;
+            display: inline-block;
+            letter-spacing: .05rem;
+            padding-left:70px;
+            padding-right: 70px;
+        }
+        &.wh{
+            .vk_heading_subtext:before,
+            .vk_heading_subtext:after {
+                background-color:#ffffff;
+            }
+        }
+        .vk_heading_subtext:before,
+        .vk_heading_subtext:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            bottom:0;
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            background-color:var(--vk-color-border-black);
+        }
+        
+        .vk_heading_subtext:before {
+            left: 0;
+        }
+        
+        .vk_heading_subtext:after {
+            right: 0px;
+        }
+
+    }
+   //アイコンカード
+    .icon-over{ 
+        &.wp-block-vk-blocks-icon-card{
+            padding-top: 2.5rem;
+            .vk_icon-card_item{
+                position: relative;
+                background-color: #ffffff;
+                margin-bottom:3.5rem;
+                padding: 30px 15px 15px;
+                .vk_icon_card_item_summary{
+                    margin-bottom: 1.5em;
+                }
+            }
+            .vk_icon-card_item_icon_outer{
+                @include left-right-center(-2.5rem);
+            }
+        }
+    }
+    
+    //背景をずらすデザイン 
+    .bg-section{
+        position: relative;
+        z-index:0;
+        .vk_outer.bg-left-25{
+            transform: translate(25%, 0%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .vk_outer.bg-left-5{
+            transform: translate(5%, 0%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .vk_outer.bg-right-5{
+            transform: translate(-5%, 0%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+
+
+
+
+
+

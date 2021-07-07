@@ -12,8 +12,9 @@
 }
 @mixin btn{
     font-size: 1.15rem;
-    border-radius:100px;
-    min-width: 300px;
+    border-radius:100px;   
+    min-width: 18rem;
+    
 }
 @mixin shadow-primary{
     box-shadow: var(--shadow-primary);
@@ -23,6 +24,10 @@
     box-shadow:var(--shadow-hover);
     transform: translateY(-0.1875em);
 }
-
+@mixin label{
+    border-radius: 100px;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
 
 

@@ -6,11 +6,11 @@
 @import "block-common";
 
 :root {
-    --color-primary: #3C8B86;
     --shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 0.15);
     --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
     // Roboto font
     --roboto-font-family: 'Roboto', sans-serif;
+    --vk-size-text-xl: 2rem;
 
 }
 
@@ -58,69 +58,54 @@
         }
     }
  
+    //モバイル時のナビボタンデザイン
+    // .vk-mobile-nav-menu-btn{
+    //     border:none;
+    //     background: url("/wp-content/themes/lightning/_g3/inc/vk-mobile-nav/package/images/vk-menu-btn-white.svg") center 50% no-repeat rgba(0,0,0,.5);
+    // }
+
     /* =============================================
     追加用のCSSクラス
     ============================================= */
-    .flex-center{
-        justify-content: center;
-        align-items: center;
-    }
-    .center{
-        text-align: center;
-    }
-    .left-right-center{
-      @include left-right-center();  
-    }
-    //ラベル
-    .label{
-        border-radius: 100px;
-        padding: 0.5rem;
-        margin: 0 auto;
-        width: 70%;
-        margin-bottom:1.25rem;
-    }
-    //ラベル（プライマリーカラー）
-    .label-primary{
-        border-radius: 100px;
-        background-color: var(--color-primary);
-        color: #ffffff;
-        display: inline-block;
-        padding: 0.5rem 1rem;
-    }
-    //上にはみ出す見出し
-    .heading-title-over{
-        position: absolute;
-        top:-2rem;
-    }
-    .block-top-over{
-        margin:-220px 0 0 auto;
-    }
-
-    //カードブロックのボーダーを削除
-    .no-border {
-        .card {
-            border:none;
+    //キービジュアル内見出し
+    .key-visual-heading{
+        @media (min-width: $lg-min){
+            font-size: 3.2rem;
         }
+        font-size: var(--vk-size-text-xl);
     }
-    //hover時に半透明
-    .card-hover{
-        .card{
-            transition: .3s;
-            &:hover{
-                opacity: 0.85;
+    //見出し
+    .heading-title{
+        @media (min-width: $lg-min){
+            font-size: 2.6rem;
+        }
+        font-size: 1.75rem;
+        //上にはみ出す見出し
+        &-over{
+            position: absolute;
+            top:-1.75rem;
+        }
+        em{
+            @media (min-width: $lg-min){
+                font-size:3.62rem;
             }
+            font-size:2.9rem;
+            font-style: normal;
         }
     }
-    .card-label-over{
-        .card{
-            margin-bottom: 2.8rem;
-            overflow: unset;
-        }
-    }
-     //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
+    //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
     .heading_subtext-style-border {
         position: relative;
         text-align: center;
+        .vk_heading_title{
+            //vk見出しの文字サイズ数値が空白にできないためimportantで実装
+            @media (min-width: $lg-min){
+                font-size: 2.25rem !important;
+            }
+            
+            font-size: 1.75rem !important;
+            
+        }
         &.en .vk_heading_subtext{
             font-family: var(--roboto-font-family);
 
@@ -159,7 +144,79 @@
         }
 
     }
-   //アイコンカード
+    @media (max-width:$xs-max){
+    //スマホサイズで1カラム時
+    .vk_posts .vk_post-col-xs-12 {
+        width: 100%;
+    }
+    }
+    //全幅コンテナ内のインナーコンテナ
+    .inner-container{
+            max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
+            margin-left: auto;
+            margin-right: auto;
+     }
+
+    //flexの中央寄せ
+    .flex-center{
+        justify-content: center;
+        align-items: center;
+    }
+    .vk-line-height{
+        line-height: var(--vk-line-height);
+    }
+
+    //ラベル左右中央寄せ 外側
+    .label-outer-center{
+        text-align: center;
+        margin-bottom:1rem;
+    }
+    //ラベル左右中央寄せ
+    .left-right-center{
+      @include left-right-center();  
+    }
+    //ラベル
+    .label{
+        @include label();
+    }
+    //ラベル（プライマリーカラー）
+    .label-primary{
+        @include label();
+        background-color: var(--vk-color-primary);
+    }
+
+    //上にはみ出すブロック
+    .block-top-over{
+        @media (min-width:$md-min){
+            margin:-14rem 0 0 auto;
+        }
+        margin:-12rem 0 0 auto;
+    }
+
+    //カードブロックのボーダーを削除
+    .no-border {
+        .card {
+            border:none;
+        }
+    }
+    //カード hover時に半透明
+    .card-hover{
+        .card{
+            transition: .3s;
+            &:hover{
+                opacity: 0.85;
+            }
+        }
+    }
+    .card-label-over{
+        .card{
+            margin-bottom: 2.8rem;
+            //unsetしないとはみ出したラベルが隠れる
+            overflow: unset;
+        }
+    }
+ 
+   //アイコンがはみ出すアイコンカード
     .icon-over{ 
         &.wp-block-vk-blocks-icon-card{
             padding-top: 2.5rem;
@@ -173,17 +230,49 @@
                 }
             }
             .vk_icon-card_item_icon_outer{
-                @include left-right-center(-2.5rem);
+                @include left-right-center(-40px);
+                @media (max-width: $sm-max) {
+                    @include left-right-center(-31px);
+                }
             }
+
+            //アイコンカードのアイコンの大きさ(スマホサイズ時)
+            .vk_icon-card_item_icon{
+                @media (max-width: $sm-max) {
+                    font-size: 1.8rem;
+                }
+                &_outer{
+                    @media (max-width: $sm-max) {
+                        width: 4.5rem;
+                        height: 4.5rem;
+                    }
+        
+                }
+            }
+        
         }
     }
-    
+    //お問い合わせ背景白
+    .veu_contact-bgwh{
+        background-color: #ffffff;
+        color: var(--vk-color-text-body);
+    }
+
     //背景をずらすデザイン 
     .bg-section{
         position: relative;
         z-index:0;
         .vk_outer.bg-left-25{
-            transform: translate(25%, 0%);
+            transform: translate(25%, 0%);          
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .vk_outer.bg-right-25{
+            transform: translate(-25%, 0%);
             position: absolute;
             top: 0;
             right: 0;
@@ -192,7 +281,10 @@
             z-index: -1;
         }
         .vk_outer.bg-left-5{
-            transform: translate(5%, 0%);
+            @media (min-width: $xl-min){
+                transform: translate(5%, 0%);
+            }
+            
             position: absolute;
             top: 0;
             right: 0;
@@ -201,7 +293,10 @@
             z-index: -1;
         }
         .vk_outer.bg-right-5{
-            transform: translate(-5%, 0%);
+            @media (min-width: $xl-min){
+                transform: translate(-5%, 0%);
+            }
+            
             position: absolute;
             top: 0;
             right: 0;

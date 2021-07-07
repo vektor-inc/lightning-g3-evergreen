@@ -26,7 +26,7 @@
             }
         }
         .fas {
-            color: var(--color-primary);
+            color: var(--vk-color-primary);
         }
     }
 
@@ -128,6 +128,14 @@
         &::after{
             color: #ffffff;
         }
+    }
+    .wp-block-social-links {
+        margin-top:0.5rem;
+    }
+    //グループブロック全幅時のインナーコンテナ余白
+    .wp-block-group.alignfull div[class*="__inner-container"],
+    .wp-block-group.alignwide div[class*="__inner-container"] {
+        max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
     }
 }
 

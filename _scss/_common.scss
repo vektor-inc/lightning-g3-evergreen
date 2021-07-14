@@ -37,27 +37,42 @@
             margin-bottom: 0.25rem;
         }
     }
-    @media screen and (min-width: 767px){
-       //フッター微調整
-        .site-footer{
-            font-size: calc(var(--vk-size-text)* 0.9) ;
+
+    //フッター微調整
+    .site-footer{
+        @media screen and (min-width: 767px){
+        font-size: calc(var(--vk-size-text)* 0.9) ;
         }
-        .footer-nav {
-            padding: 2rem 0;
-            .footer-nav-list{
-                 //フッターメニューを中央寄せ
-                display: flex;    
-                justify-content: center;
-                li{
-                    &:first-child{
-                        border-left: none;
-                    }
+    }
+    .footer-nav {
+        @media screen and (min-width: 767px){
+        padding: 2rem 0;
+        }
+        .footer-nav-list{
+                //フッターメニューを中央寄せ
+                @media screen and (min-width: 767px){ 
+            display: flex;    
+            justify-content: center;
+                }
+            li{
+                @media screen and (min-width: 767px){
+                &:first-child{
+                    border-left: none;
+                }             
                     border-left:1px solid #ffffff;
+                }
+                a {
+                    @media (max-width: 767.98px){
+                        border-bottom: 1px solid var(--vk-color-border-light);
+                    }
                 }
             }
         }
     }
- 
+    
+    
+
+    
     //モバイル時のナビボタンデザイン
     // .vk-mobile-nav-menu-btn{
     //     border:none;
@@ -215,7 +230,14 @@
             overflow: unset;
         }
     }
- 
+   //カラムブロック スマホサイズで順番入替
+   .wp-block-columns{
+        @media (max-width:$sm-max){
+            .sp-order-one{order: 1;}
+            .sp-order-two{order: 2;}
+        }
+    }
+    
    //アイコンがはみ出すアイコンカード
     .icon-over{ 
         &.wp-block-vk-blocks-icon-card{

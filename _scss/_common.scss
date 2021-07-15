@@ -11,7 +11,6 @@
     // Roboto font
     --roboto-font-family: 'Roboto', sans-serif;
     --vk-size-text-xl: 2rem;
-
 }
 
 
@@ -28,6 +27,18 @@
             ul>li>a,
             ul>li>span{
                 padding: 0 0.5rem;
+            }
+        }
+        //ロゴ
+        @media (max-width: $md-max){
+            //ロゴの高さ
+            &-logo img {
+                max-height: 35px;
+            }
+            //ロゴの位置を左
+            &-container{
+                display: flex;
+                justify-content: space-between;
             }
         }
     }
@@ -69,15 +80,21 @@
             }
         }
     }
-    
-    
 
-    
+    //モバイルフィックスナビ 高さ
+    .mobile-fix-nav .mobile-fix-nav-menu {
+        height: 52px;
+        padding: 7px 0 5px;
+    }        
     //モバイル時のナビボタンデザイン
-    // .vk-mobile-nav-menu-btn{
-    //     border:none;
-    //     background: url("/wp-content/themes/lightning/_g3/inc/vk-mobile-nav/package/images/vk-menu-btn-white.svg") center 50% no-repeat rgba(0,0,0,.5);
-    // }
+    .vk-mobile-nav-menu-btn{
+        border:none;
+        background-image: url("../images/vk-menu-btn-white.svg");
+        background-color:rgba(0,0,0,.3);;
+        &.menu-open {
+            background-image: url("../images/vk-menu-close-white.svg");
+        }
+    }
 
     /* =============================================
     追加用のCSSクラス
@@ -171,12 +188,18 @@
             margin-left: auto;
             margin-right: auto;
      }
-
+    //$md-minサイズ以上でvkボタンを左寄せ
+    @media (min-width:$md-min){
+        .vk_button.pc-only-left{
+            text-align: left;
+        }
+    }
     //flexの中央寄せ
     .flex-center{
         justify-content: center;
         align-items: center;
     }
+    //line-height
     .vk-line-height{
         line-height: var(--vk-line-height);
     }
@@ -202,10 +225,7 @@
 
     //上にはみ出すブロック
     .block-top-over{
-        @media (min-width:$md-min){
             margin:-14rem 0 0 auto;
-        }
-        margin:-12rem 0 0 auto;
     }
 
     //カードブロックのボーダーを削除

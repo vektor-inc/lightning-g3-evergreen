@@ -5,9 +5,9 @@
 
 .ltg3-s-evergreen{
 
-    .btn{
-        @include btn();
-    }
+    // .btn{
+    //     @include btn();
+    // }
     .vk_button{
         .btn{
             @include btn();
@@ -15,6 +15,10 @@
 
             &:hover{
                 @include shadow-hover;
+            }
+            &.vk_button_link{
+                padding-top: 0.8em;
+                padding-bottom: 0.8em;
             }
             &-light{
                 background-color: #ffffff;
@@ -29,29 +33,6 @@
             color: var(--vk-color-primary);
         }
         //テキスト
-        // &_link-type-text{
-        //     position: relative;
-        //     -webkit-transition: .3s;
-        //     transition: .3s;
-        //     // &:hover{
-        //     //     letter-spacing: .15rem;
-        //     // }
-        //     &:after{
-        //         position: absolute;
-        //         bottom: 0;
-        //         content: '';
-        //         display: block;
-        //         width: 100%;
-        //         height: 1px;
-        //         background-color: currentColor;
-        //         transform-origin: right center;
-        //         transition: transform .45s;
-        //         will-change: transform;
-        //     }
-        //     &:hover::after {
-        //         transform: scaleX(0);
-        //     }
-        // }
         &_link-type-text{
             -webkit-transition: .3s;
             transition: .3s;
@@ -138,9 +119,16 @@
             .veu_contact .contact_bt{
             min-width: 500px;
             }
-        }
+        }//min-width: $xl-min
 
     }
+    //outerブロック 背景固定にするとiphoneで背景画像が拡大される不具合があるのでunset
+    .vk_outer-bgPosition-fixed {
+        @media (max-width: $md-max){
+            background-attachment: unset !important;
+        }
+    }
+
     //スライダーブロック
     .vk_slider .swiper-button-next,
     .vk_slider .swiper-button-prev{
@@ -164,6 +152,7 @@
         }
         .contact_bt{
             font-size: 1.5rem;
+            @include btn(1.5rem);
         }
         .fa-arrow-alt-circle-right{
             display: none;

@@ -10,8 +10,8 @@
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);  
 }
-@mixin btn{
-    font-size: 1.15rem;
+@mixin btn( $font-size:1.15rem ){
+    font-size: $font-size;
     border-radius:100px;   
     min-width: 18rem;
     
@@ -27,7 +27,7 @@
 @mixin label{
     border-radius: 100px;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
 }
 
 

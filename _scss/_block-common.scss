@@ -5,9 +5,6 @@
 
 .ltg3-s-evergreen{
 
-    // .btn{
-    //     @include btn();
-    // }
     .vk_button{
         .btn{
             @include btn();
@@ -27,11 +24,12 @@
                     background-color: #ffffff;
                     border-color: #ffffff;
                 }
+                .fas {
+                    color: var(--vk-color-primary);
+                 }
             }
         }
-        .fas {
-            color: var(--vk-color-primary);
-        }
+
         //テキスト
         &_link-type-text{
             -webkit-transition: .3s;
@@ -39,6 +37,9 @@
             &:hover{
                 letter-spacing: .15rem;
             }
+            .fas {
+                color: var(--vk-color-primary);
+             }
         }
     }
 

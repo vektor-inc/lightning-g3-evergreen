@@ -56,9 +56,7 @@
         }
     }
     .footer-nav {
-        @media screen and (min-width: 767px){
-        padding: 2rem 0;
-        }
+
         .footer-nav-list{
                 //フッターメニューを中央寄せ
                 @media screen and (min-width: 767px){ 
@@ -204,11 +202,6 @@
         line-height: var(--vk-line-height);
     }
 
-    //ラベル左右中央寄せ 外側
-    .label-outer-center{
-        text-align: center;
-        margin-bottom:1rem;
-    }
     //ラベル左右中央寄せ
     .left-right-center{
       @include left-right-center();  
@@ -251,6 +244,18 @@
         }
     }
    //カラムブロック スマホサイズで順番入替
+   .sp-order{
+        @media (max-width:$sm-max){
+            .wp-block-media-text__media{
+                order: 2;
+                grid-row: 2;
+            }
+            .wp-block-media-text__content{
+                order: 1;
+                grid-row: 1;
+            }
+        }
+   }
    .wp-block-columns{
         @media (max-width:$sm-max){
             .sp-order-one{order: 1;}

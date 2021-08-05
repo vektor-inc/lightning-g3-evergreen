@@ -19,7 +19,7 @@
     テーマCSS上書き
     ============================================= */
     .site-header{
-        //ヘッダートップメニュー微調整
+        //ヘッダートップメニュー 余白調整
         .header-top {
             nav {
                 top: 9px;
@@ -49,14 +49,14 @@
         }
     }
 
-    //フッター微調整
+    //フッター フォントサイズ
     .site-footer{
         @media screen and (min-width: 767px){
-        font-size: calc(var(--vk-size-text)* 0.9) ;
+            font-size: calc(var(--vk-size-text)* 0.9) ;
         }
     }
+    //フッターナビ
     .footer-nav {
-
         .footer-nav-list{
                 //フッターメニューを中央寄せ
                 @media screen and (min-width: 767px){ 
@@ -97,7 +97,11 @@
     /* =============================================
     追加用のCSSクラス
     ============================================= */
-    //キービジュアル内見出し
+    //下部にmargin余白追加
+    .margin-sm-bottom{
+        margin-bottom: var(--vk-margin-sm);
+    }
+    //キービジュアル内見出し　
     .key-visual-heading{
         @media (min-width: $lg-min){
             font-size: 3.2rem;
@@ -130,10 +134,9 @@
         .vk_heading_title{
             //vk見出しの文字サイズ数値が空白にできないためimportantで実装
             @media (min-width: $lg-min){
-                font-size: 2.25rem !important;
-            }
-            
-            font-size: 1.75rem !important;
+                font-size: 2.25rem;
+            }          
+            font-size: 1.75rem;
             
         }
         &.en .vk_heading_subtext{
@@ -211,17 +214,19 @@
         @include label();
     }
     //ラベル（プライマリーカラー）
-    .label-primary{
-        @include label();
-        background-color: var(--vk-color-primary);
+    // .label-primary{
+    //     @include label();
+    //     background-color: var(--vk-color-primary);
+    // }
+    .shadow-primary{
+        @include shadow-primary;
     }
-
     //上にはみ出すブロック
     .block-top-over{
-            margin:-14rem 0 0 auto;
+        margin:-14rem 0 0 auto;
     }
 
-    //カードブロックのボーダーを削除
+    //カードブロック ボーダーを削除
     .no-border {
         .card {
             border:none;
@@ -243,6 +248,7 @@
             overflow: unset;
         }
     }
+
    //カラムブロック スマホサイズで順番入替
    .sp-order{
         @media (max-width:$sm-max){
@@ -262,8 +268,19 @@
             .sp-order-two{order: 2;}
         }
     }
-    
-   //アイコンがはみ出すアイコンカード
+    //カラムブロック ラベルがはみ出すカラムブロック
+    .wp-block-columns.over{
+        .wp-block-column{
+            position: relative;
+            margin-top:2.5rem;
+        }
+        //カラムブロック 連続するカラムブロックの下部余白
+        &.wp-block-columns.over {
+            margin-bottom: 0;
+        }
+    }
+
+   //アイコンカード アイコンがはみ出すアイコンカード
     .icon-over{ 
         &.wp-block-vk-blocks-icon-card{
             padding-top: 2.5rem;
@@ -271,7 +288,7 @@
                 position: relative;
                 background-color: #ffffff;
                 margin-bottom:3.5rem;
-                padding: 30px 15px 15px;
+                padding: 35px 20px 20px;
                 .vk_icon_card_item_summary{
                     margin-bottom: 1.5em;
                 }
@@ -299,57 +316,38 @@
         
         }
     }
+ 
     //お問い合わせ背景白
     .veu_contact-bgwh{
         background-color: #ffffff;
         color: var(--vk-color-text-body);
     }
 
-    //背景をずらすデザイン 
+    // Outer 背景を左右にずらすデザイン 
     .bg-section{
         position: relative;
         z-index:0;
         .vk_outer.bg-left-25{
-            transform: translate(25%, 0%);          
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
+            transform: translate(25%, 0%);
+            @include bg-translate-common;
         }
         .vk_outer.bg-right-25{
             transform: translate(-25%, 0%);
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
+            @include bg-translate-common;
         }
         .vk_outer.bg-left-5{
-            @media (min-width: $xl-min){
-                transform: translate(5%, 0%);
-            }
-            
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
+            transform: translate(5%, 0%);
+            @include bg-translate-common;
         }
         .vk_outer.bg-right-5{
-            @media (min-width: $xl-min){
-                transform: translate(-5%, 0%);
+            transform: translate(-5%, 0%);
+            @include bg-translate-common;
+        }
+        //lg-max以下で左右にずらしたくない場合に追加
+        .vk_outer.bg-transform-pc-only{           
+                @media (max-width: $lg-max){
+                    transform: translate(0%, 0%);
             }
-            
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
         }
     }
 }

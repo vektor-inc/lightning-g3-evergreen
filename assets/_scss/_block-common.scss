@@ -42,13 +42,22 @@
              }
         }
     }
-
-    .card {
+    .vk_posts{
+        .card-post{//表示タイプ カードのみ
+            &:hover{
+                @include shadow-hover;
+            }
+        }
+    }
+    .card:not(.card-noborder) {
         border-radius: unset;
         position: relative;
         @include shadow-primary;
     }
-
+    //アイコンカード　タイトル
+    .wp-block-vk-blocks-icon-card .vk_icon-card_item_title{
+        font-size: 1.25rem;
+    }
     .vk_faq{
         background-color: #ffffff;
         border-bottom:unset;

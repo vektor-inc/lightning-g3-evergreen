@@ -2,9 +2,6 @@
 * 公開画面・編集画面共有のCSS
 */
 
-@import "mixin";
-@import "block-common";
-
 :root {
     --shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 0.15);
     --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
@@ -98,27 +95,28 @@
     追加用のCSSクラス
     ============================================= */
     //下部にmargin余白追加
-    .margin-sm-bottom{
+    .vk-margin-bottom-sm{
         margin-bottom: var(--vk-margin-sm);
     }
     //キービジュアル内見出し　
-    .key-visual-heading{
+    .vk-key-visual-heading{
         @media (min-width: $lg-min){
             font-size: 3.2rem;
         }
         font-size: var(--vk-size-text-xl);
     }
     //見出し
-    .heading-title{
+    .vk-heading-md{
         @media (min-width: $lg-min){
             font-size: 2.6rem;
         }
         font-size: 1.75rem;
         //上にはみ出す見出し
-        &-over{
+        &.over{
             position: absolute;
             top:-1.75rem;
         }
+        //タイトルの途中で大きい文字
         em{
             @media (min-width: $lg-min){
                 font-size:3.62rem;
@@ -128,7 +126,7 @@
         }
     }
     //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
-    .heading_subtext-style-border {
+    .vk-heading-subtext-border {
         position: relative;
         text-align: center;
         .vk_heading_title{
@@ -195,30 +193,23 @@
             text-align: left;
         }
     }
-    //flexの中央寄せ
-    .flex-center{
-        justify-content: center;
-        align-items: center;
-    }
     //line-height
     .vk-line-height{
         line-height: var(--vk-line-height);
     }
 
-    //ラベル左右中央寄せ
-    .left-right-center{
-      @include left-right-center();  
-    }
+
     //ラベル
-    .label{
+    .vk-label{
         @include label();
+        //ラベル左右中央寄せ
+        &.left-right-center{
+            @include left-right-center();  
+        }
+
     }
-    //ラベル（プライマリーカラー）
-    // .label-primary{
-    //     @include label();
-    //     background-color: var(--vk-color-primary);
-    // }
-    .shadow-primary{
+
+    .vk-shadow-primary{
         @include shadow-primary;
     }
     //上にはみ出すブロック
@@ -227,13 +218,13 @@
     }
 
     //カードブロック ボーダーを削除
-    .no-border {
+    .vk-card-no-border{
         .card {
             border:none;
         }
     }
     //カード hover時に半透明
-    .card-hover{
+    .vk-card-hover{
         .card{
             transition: .3s;
             &:hover{

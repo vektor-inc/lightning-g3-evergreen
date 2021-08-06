@@ -1,7 +1,6 @@
 /**
 * ブロック上書きCSS
 */
-@import "mixin";
 
 .ltg3-s-evergreen{
 
@@ -118,20 +117,7 @@
             border-bottom:1px solid var(--vk-color-border-hr);
         }
     }
-    .veu_contact-layout-horizontal{
-        @media (min-width: $xl-min){
-        .contact_frame{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            .veu_contact .contact_bt{
-            min-width: 500px;
-            }
-        }//min-width: $xl-min
 
-    }
     //outerブロック 背景固定にするとiphoneで背景画像が拡大される不具合があるのでunset
     .vk_outer-bgPosition-fixed {
         @media (max-width: $md-max){
@@ -148,26 +134,7 @@
             color: #ffffff;
         }
     }
-    //お問い合わせブロック
-    .veu_contact {
-        .contact_txt_catch{
-            margin-bottom:0.5rem;
-        }
-        .contact_txt_tel{
-            margin-bottom:0.5rem;
-        }
-        .contact_txt_catch,
-        .contact_txt_time{
-            font-size: 1.12rem;
-        }
-        .contact_bt{
-            font-size: 1.5rem;
-            @include btn(1.5rem);
-        }
-        .fa-arrow-alt-circle-right{
-            display: none;
-        }
-    }
+
 
     .wp-block-social-links {
         margin-top:0.5rem;

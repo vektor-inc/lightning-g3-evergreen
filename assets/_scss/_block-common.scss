@@ -3,7 +3,7 @@
 */
 
 .ltg3-s-evergreen{
-
+    //VK ボタン
     .vk_button{
         .btn{
             @include btn();
@@ -41,6 +41,13 @@
              }
         }
     }
+    //VK Block Pattern のカラムバナーとカラムフィットバナーのボタンには影をつけたくないのでunset
+    .vk-cols--fitbnrs{
+        .vk_button{
+            .btn{ box-shadow:unset; }
+        }
+    }
+
     .vk_posts{
         .card-post{//表示タイプ カードのみ
             &:hover{

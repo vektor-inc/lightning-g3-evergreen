@@ -94,9 +94,16 @@
     /* =============================================
     追加用のCSSクラス
     ============================================= */
+
     //下部にmargin余白追加
-    .vk-margin-bottom-sm{
+    .margin-bottom-sm{
         margin-bottom: var(--vk-margin-sm);
+    }
+    .margin-bottom-md{
+        margin-bottom: var(--vk-margin-md);
+    }
+    .margin-bottom-lg{
+        margin-bottom: var(--vk-margin-lg);
     }
     //キービジュアル内見出し　
     .vk-key-visual-heading{
@@ -126,7 +133,7 @@
         }
     }
     //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
-    .vk-heading-subtext-border {
+    .heading-subtext-border {
         position: relative;
         text-align: center;
         .vk_heading_title{
@@ -200,7 +207,7 @@
 
 
     //ラベル
-    .vk-label{
+    .label{
         @include label();
         //ラベル左右中央寄せ
         &.left-right-center{
@@ -208,8 +215,8 @@
         }
 
     }
-
-    .vk-shadow-primary{
+    //シャドウ
+    .shadow-primary{
         @include shadow-primary;
     }
     //上にはみ出すブロック
@@ -232,6 +239,7 @@
             }
         }
     }
+    //
     .card-label-over{
         .card{
             margin-bottom: 2.8rem;
@@ -240,7 +248,7 @@
         }
     }
 
-   //カラムブロック スマホサイズで順番入替
+   //メディアとテキスト スマホサイズで順番入替
    .sp-order{
         @media (max-width:$sm-max){
             .wp-block-media-text__media{
@@ -271,51 +279,22 @@
         }
     }
 
-   //アイコンカード アイコンがはみ出すアイコンカード
-    .icon-over{ 
-        &.wp-block-vk-blocks-icon-card{
-            padding-top: 2.5rem;
-            .vk_icon-card_item{
-                position: relative;
-                background-color: #ffffff;
-                margin-bottom:3.5rem;
-                padding: 35px 20px 20px;
-                .vk_icon_card_item_summary{
-                    margin-bottom: 1.5em;
-                }
-            }
-            .vk_icon-card_item_icon_outer{
-                @include left-right-center(-40px);
-                @media (max-width: $sm-max) {
-                    @include left-right-center(-31px);
-                }
-            }
 
-            //アイコンカードのアイコンの大きさ(スマホサイズ時)
-            .vk_icon-card_item_icon{
-                @media (max-width: $sm-max) {
-                    font-size: 1.8rem;
-                }
-                &_outer{
-                    @media (max-width: $sm-max) {
-                        width: 4.5rem;
-                        height: 4.5rem;
-                    }
-        
-                }
-            }
-        
-        }
+    //アイコンブロック 上にはみ出す
+    .vk_icon.icon-over{
+        @include left-right-center( $top: -2.5rem);
+    }
+    //背景を親要素の高さまで伸ばす
+    .bg-height{
+        min-height: 100%;
     }
  
-    //お問い合わせ背景白
-    .veu_contact-bgwh{
-        background-color: #ffffff;
-        color: var(--vk-color-text-body);
-    }
 
-    // Outer 背景を左右にずらすデザイン 
-    .bg-section{
+    /* =============================================
+    パターンに登録するかもしれないので、その時は削除
+    ============================================= */
+    // 背景を左右にずらすデザイン 
+    .vk-bg-position{
         position: relative;
         z-index:0;
         .vk_outer.bg-left-25{
@@ -335,10 +314,13 @@
             @include bg-translate-common;
         }
         //lg-max以下で左右にずらしたくない場合に追加
-        .vk_outer.bg-transform-pc-only{           
-                @media (max-width: $lg-max){
+        &.pc-only{
+            .vk_outer{           
+                @media (max-width: 1199.98px){
                     transform: translate(0%, 0%);
+                }
             }
+    
         }
     }
 }

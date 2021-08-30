@@ -8,7 +8,7 @@ $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
 
-@mixin left-right-center( $top: -10%)  {
+@mixin left-right-center( $top: -1.5rem)  {
     position: absolute;
     top: $top;
     left: 50%;
@@ -16,11 +16,9 @@ $xl-min: 1200px;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);  
 }
-@mixin btn( $font-size:1.15rem ){
-    font-size: $font-size;
-    border-radius:100px;   
-    min-width: 18rem;
-    
+@mixin btn( $font-size:inherit ){
+
+    border-radius:100px;
 }
 @mixin shadow-primary{
     box-shadow: var(--shadow-primary);
@@ -32,7 +30,8 @@ $xl-min: 1200px;
 }
 @mixin label{
     border-radius: 100px;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
+    min-width: 110px;
 }
 
 @mixin bg-translate-common {

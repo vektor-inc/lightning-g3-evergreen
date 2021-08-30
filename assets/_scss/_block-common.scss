@@ -13,8 +13,8 @@
                 @include shadow-hover;
             }
             &.vk_button_link{
-                padding-top: 0.8em;
-                padding-bottom: 0.8em;
+                padding-top: 0.8rem;
+                padding-bottom: 0.8rem;
             }
             &-light{
                 background-color: #ffffff;
@@ -41,18 +41,44 @@
              }
         }
     }
+    //背景色をもっているブロック内では、テキストボタンのアイコン色は継承
+    //理由はキーカラーに変えてしまうと見えづらい場合もあるため
+    [class*="has-background"] {
+        .vk_button_link-type-text{
+            .fas {
+                color: inherit;
+             }
+        }
+    }
+
+    //ボタン
+    .btn{
+        @include btn();
+    }
     //VK Block Pattern のカラムバナーとカラムフィットバナーのボタンには影をつけたくないのでunset
     .vk-cols--fitbnrs{
         .vk_button{
             .btn{ box-shadow:unset; }
         }
     }
-
+    //投稿リスト
     .vk_posts{
-        .card-post{//表示タイプ カードのみ
+        //表示タイプ カードのhover
+        .card-post{
             &:hover{
                 @include shadow-hover;
             }
+        }
+        //表示タイプテキスト
+        .postListText_singleTermLabel_inner{
+            @include btn();
+        }
+        //画像内のラベル
+        .vk_post_imgOuter_singleTermLabel{
+            @include btn();
+            top:5px;
+            right: 5px;
+            padding: .3em 1em;
         }
     }
     .card:not(.card-noborder) {
@@ -93,10 +119,6 @@
     }
     .swiper-slide{
         font-size: 1rem;
-    }
-
-    .vk_post_imgOuter {
-        border-bottom: unset;
     }
 
     .veu_card{
@@ -141,16 +163,23 @@
             color: #ffffff;
         }
     }
-
-
-    .wp-block-social-links {
-        margin-top:0.5rem;
+    //ステップブロック
+    .vk_step .vk_step_item .vk_step_item_dot{
+        font-family: var(--roboto-font-family);
+        font-size: 1.2rem;
     }
-    //グループブロック全幅時のインナーコンテナ余白
-    .wp-block-group.alignfull div[class*="__inner-container"],
-    .wp-block-group.alignwide div[class*="__inner-container"] {
+    //フッター上部に設置したソーシャルブロック
+    .site-body-bottom{
+        .wp-block-social-links {
+            margin-top:0;
+        }
+    }
+    //オフセットを使用しているグループブロック全幅時 のインナーコンテナ余白
+    .wp-block-group.alignfull.vk-bg-offset > div[class*="__inner-container"],
+    .wp-block-group.alignwide.vk-bg-offset > div[class*="__inner-container"] {
         max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
     }
+
 }
 
 

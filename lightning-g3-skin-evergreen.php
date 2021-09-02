@@ -12,6 +12,14 @@
  * @package         LIGHTNING_G3_SKIN_EVERGREEN
  */
 
+
+/*
+ Load Patterns
+/*---------------------------------------*/
+require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
+ 
+/*
+/*---------------------------------------*/
 $current_theme = get_template();
 if ( 'lightning' !== $current_theme ) {
 	return;

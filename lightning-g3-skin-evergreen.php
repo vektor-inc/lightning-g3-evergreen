@@ -14,6 +14,16 @@
 
 
 /*
+	updater
+/*---------------------------------------*/
+require 'inc/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-skin-evergreen',
+	__FILE__,
+	'lightning-g3-skin-evergreen'
+);
+
+/*
  Load Patterns
 /*---------------------------------------*/
 require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
@@ -33,7 +43,6 @@ function ltg3_add_skin_evergreen( $skins ) {
 
 	$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
 
-	// sample の部分が識別名です。好きな名前に変更してください。
 	$skins['evergreen'] = array(
 		// label が Lightning デザイン設定 のスキン選択プルダウンに表示される名称
 		'label'                    => __( 'Evergreen Skin G3', 'lightning-g3-skin-evergreen' ),

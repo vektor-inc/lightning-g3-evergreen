@@ -29,26 +29,29 @@
             }
         }
 
-        //テキスト
+        //ボタンスタイルがテキスト
         &_link-type-text{
             -webkit-transition: .3s;
             transition: .3s;
             &:hover{
                 letter-spacing: .15rem;
             }
+
+        }
+        &.icon-color-primary {
             .fas {
                 color: var(--vk-color-primary);
-             }
+            }
         }
     }
     //背景色をもっているブロック内では、テキストボタンのアイコン色は継承
     //理由はキーカラーに変えてしまうと見えづらい場合もあるため
     [class*="has-background"] {
-        .vk_button_link-type-text{
-            .fas {
-                color: inherit;
-             }
-        }
+        // .vk_button_link-type-text{
+        //     .fas {
+        //         color: inherit;
+        //      }
+        // }
     }
 
     //ボタン
@@ -64,7 +67,7 @@
     //投稿リスト
     .vk_posts{
         //表示タイプ カードのhover
-        .card-post{
+        .card-post:not(.card-noborder){
             &:hover{
                 @include shadow-hover;
             }
@@ -84,6 +87,7 @@
     .card:not(.card-noborder) {
         border-radius: unset;
         position: relative;
+        border:unset;
         @include shadow-primary;
     }
     //アイコンカード　タイトル
@@ -178,6 +182,55 @@
     .wp-block-group.alignfull.vk-bg-offset > div[class*="__inner-container"],
     .wp-block-group.alignwide.vk-bg-offset > div[class*="__inner-container"] {
         max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
+    }
+
+    /*-------------------------------------------*/
+    /* 検索フォーム
+    /*-------------------------------------------*/
+    .wp-block-search__inside-wrapper{
+        position: relative;
+            //検索マーク
+            &::after{
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f002";
+                font-size: 18px;
+                line-height: 1;
+                color: #999;
+        }
+    }
+    input.wp-block-search__input{
+        padding: .8em 1em;
+        // overflow: auto;
+        border: 1px solid rgba(0,0,0,0.12);
+        max-width: 100%;
+        width: 100%;
+        border-radius: 100px;
+        //iphoneのsafariの上部の影を無しにする
+        -webkit-appearance: none; 
+
+    }
+    .wp-block-search__button {  
+        display: block;
+        height: 100%;
+        border: none;
+        font-size: 16px;
+        background: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: center;
+        width: 18%;
+        color: transparent; 
+    }
+    //inputタグに入る×マークを非表示にする
+    [type="search"]::-webkit-search-cancel-button,
+    [type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
     }
 
 }

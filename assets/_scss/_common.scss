@@ -33,17 +33,7 @@
                 max-height: 35px;
             }
         }
-        @media (max-width: $md-max){
-            //ロゴの高さ
-            // &-logo img {
-            //     max-height: 35px;
-            // }
-            //ロゴの位置を左
-            &-container{
-                display: flex;
-                justify-content: space-between;
-            }
-        }
+
     }
     //ページヘッダーサブテキスト
     .page-header-subtext {
@@ -86,26 +76,23 @@
             margin-top: 0;
         }
     }
-
     //モバイルフィックスナビ 高さ
     .mobile-fix-nav .mobile-fix-nav-menu {
         height: 52px;
         padding: 7px 0 5px;
-    }        
-    //モバイル時のナビボタンデザイン
-    .vk-mobile-nav-menu-btn{
-        border:none;
-        background-image: url("../images/vk-menu-btn-white.svg");
-        background-color:rgba(0,0,0,.3);
-        &.menu-open {
-            background-image: url("../images/vk-menu-close-white.svg");
-        }
     }
+    //ページトップ      
+    .page_top_btn{
+        border-radius: 50%;
+        box-shadow:unset;
+    }
+
+
 
     /* =============================================
     追加用のCSSクラス
     ============================================= */
-    //
+    //下部のmarginを0
     .last-child-margin-bottom{
         margin-bottom: 0;
     }
@@ -139,11 +126,14 @@
         画面幅1200pxの時 font-size: 40px
         画面幅576pxの時 font-size: 30px
         */
-        font-size: calc(30px + 10 * (100vw - 576px)/624);
+        font-size: calc(30px + 8 * (100vw - 576px)/624);
     }
+
     //見出し
+    --heading-primary-font-size:calc(28px + 8 * (100vw - 576px)/624);
+
     .heading-primary{
-        font-size: calc(28px + 8 * (100vw - 576px)/624);
+        font-size: var(--heading-primary-font-size);
         z-index: 1;
         //上にはみ出す見出し
         &.heading-top-over{
@@ -156,6 +146,15 @@
             font-style: normal;
         }
     }
+    h3.heading-primary{
+        font-size: calc( var(--heading-primary-font-size) - 4px );
+    }
+    h4.heading-primary,
+    h5.heading-primary,
+    h6.heading-primary {
+        font-size: calc( var(--heading-primary-font-size) - 8px );
+    }
+
     //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
     .heading-subtext-border {
         position: relative;
@@ -240,23 +239,7 @@
         }
     }
 
-    //カードブロックのレイアウトカードでボーダーを削除
-    .card-no-border{
-        .card,
-        .vk_post_imgOuter {
-            border:none;
-        }
-    }
-    //カード hover時に半透明
-    .card-hover{
-        .card{
-            transition: .3s;
-            &:hover{
-                opacity: 0.85;
-            }
-        }
-    }
-    //
+
     .card-label-over{
         .card{
             margin-bottom: 2.8rem;

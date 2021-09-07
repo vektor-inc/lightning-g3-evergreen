@@ -184,54 +184,29 @@
         max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
     }
 
-    /*-------------------------------------------*/
-    /* 検索フォーム
-    /*-------------------------------------------*/
-    .wp-block-search__inside-wrapper{
-        position: relative;
-            //検索マーク
-            &::after{
-                position: absolute;
-                top: 50%;
-                right: 15px;
-                transform: translateY(-50%);
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                content: "\f002";
-                font-size: 18px;
-                line-height: 1;
-                color: #999;
+    //検索ブロック    
+    .wp-block-search{
+        // ボタン内側の場合
+        &.wp-block-search__button-inside {
+            .wp-block-search__inside-wrapper{
+                border: 1px solid #ccc;
+                border-radius:var(--border-radius-rounded);
+                input[type="search"]{
+                    border-radius:var(--border-radius-rounded);
+                }
+                .wp-block-search__button{
+                    border-radius:var(--border-radius-rounded);
+                    //アイコン表示の場合
+                    &.has-icon{
+                        width: 20%;
+                        background: transparent;
+                    }
+                }
+            }
         }
-    }
-    input.wp-block-search__input{
-        padding: .8em 1em;
-        // overflow: auto;
-        border: 1px solid rgba(0,0,0,0.12);
-        max-width: 100%;
-        width: 100%;
-        border-radius: 100px;
-        //iphoneのsafariの上部の影を無しにする
-        -webkit-appearance: none; 
 
     }
-    .wp-block-search__button {  
-        display: block;
-        height: 100%;
-        border: none;
-        font-size: 16px;
-        background: none;
-        position: absolute;
-        right: 0;
-        top: 0;
-        text-align: center;
-        width: 18%;
-        color: transparent; 
-    }
-    //inputタグに入る×マークを非表示にする
-    [type="search"]::-webkit-search-cancel-button,
-    [type="search"]::-webkit-search-decoration {
-        -webkit-appearance: none;
-    }
+
 
 }
 

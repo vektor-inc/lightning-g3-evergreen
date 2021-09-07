@@ -190,12 +190,12 @@
         &.wp-block-search__button-inside {
             .wp-block-search__inside-wrapper{
                 border: 1px solid #ccc;
-                border-radius:var(--border-radius-rounded);
+                border-radius:var(--border-radius-primary);
                 input[type="search"]{
-                    border-radius:var(--border-radius-rounded);
+                    border-radius:var(--border-radius-primary);
                 }
                 .wp-block-search__button{
-                    border-radius:var(--border-radius-rounded);
+                    border-radius:var(---border-radius-primary);
                     //アイコン表示の場合
                     &.has-icon{
                         width: 20%;
@@ -204,9 +204,7 @@
                 }
             }
         }
-
     }
-
 
 }
 

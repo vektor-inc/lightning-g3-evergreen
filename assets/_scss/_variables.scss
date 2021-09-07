@@ -18,7 +18,7 @@ $xl-min: 1200px;
 }
 @mixin btn( $font-size:inherit ){
 
-    border-radius:var(--border-radius-rounded);
+    border-radius:var(--border-radius-primary);
 }
 @mixin shadow-primary{
     box-shadow: var(--shadow-primary);

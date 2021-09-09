@@ -1,4 +1,4 @@
-# Lightning G3 Skin: Evergreen
+# Lightning G3 Evergreen
 
 パッケージのインストール
 ```

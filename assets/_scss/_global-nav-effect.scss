@@ -71,10 +71,11 @@
 		}
 	}
 }
-//ヘッダー透過でテキスト白のトップページ
-body:not(.header_scrolled).home{
+//ナビ下に出る線の色
+//ヘッダー透過を有効 透過時ヘッダー文字色の色になる
+body:not(.header_scrolled) .site-header--trans--true{
     .global-nav-list>li:before{
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid var(--vk-color-text-body);
     }
     
 }
@@ -123,6 +124,3 @@ body:not(.header_scrolled){
 	}
 }
 
-.home{
-
-}

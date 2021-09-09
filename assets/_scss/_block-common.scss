@@ -44,15 +44,7 @@
             }
         }
     }
-    //背景色をもっているブロック内では、テキストボタンのアイコン色は継承
-    //理由はキーカラーに変えてしまうと見えづらい場合もあるため
-    [class*="has-background"] {
-        // .vk_button_link-type-text{
-        //     .fas {
-        //         color: inherit;
-        //      }
-        // }
-    }
+
 
     //ボタン
     .btn{
@@ -198,7 +190,7 @@
                     border-radius:var(---border-radius-primary);
                     //アイコン表示の場合
                     &.has-icon{
-                        width: 20%;
+                        width: 40px;
                         background: transparent;
                     }
                 }

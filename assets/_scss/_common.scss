@@ -53,8 +53,8 @@
         .footer-nav-list{
                 //フッターメニューを中央寄せ
                 @media screen and (min-width: 767px){ 
-            display: flex;    
-            justify-content: center;
+                display: flex;    
+                justify-content: center;
                 }
             li{
                 @media screen and (min-width: 767px){
@@ -124,13 +124,18 @@
     .key-visual-heading{
         /* 
         calc + vwの計算式
-        画面幅1200pxの時 font-size: 40px
+        画面幅1200pxの時 font-size: 38px
         画面幅576pxの時 font-size: 30px
         */
         font-size: calc(30px + 8 * (100vw - 576px)/624);
     }
 
-    //見出し
+    //見出し コア側の見出し用のクラス 
+    /* 
+    calc + vwの計算式
+    画面幅1200pxの時 font-size: 36px
+    画面幅576pxの時 font-size: 28px
+    */
     --heading-primary-font-size:calc(28px + 8 * (100vw - 576px)/624);
 
     .heading-primary{
@@ -289,12 +294,7 @@
         }
     }
  
-    //オフセット背景をスマホサイズでは0（無し）にする
-    @media (max-width: $sm-max){
-        [class*="vk-bg-offset-bg--"].sp-offset-none {       
-            --vk-width-bg-offset:0;
-        }
-    }   
+ 
     //お問い合わせ用の電話番号のフォントファミリー
     .contact_txt_tel,//ExUnitのお問い合わせブロックのクラス名
     .contact_txt_tel .vk_heading_title
@@ -306,59 +306,21 @@
         }
     }
 
-
     /* =============================================
-    パターンに登録するかもしれないので、その時は削除
+    オフセット背景のオフセットを0（無し）
     ============================================= */
-    // .vk-bg-offset {
-    //     position:relative;
-    //     & > .wp-block-group__inner-container > div{
-    //         position: relative;
-    //         z-index: 1;
-    //     }
-    // }
-    // .vk-bg-offset-bg {
-    //     position: absolute !important;
-    //     height:100%;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     width: calc( 100vw - var(--vk-width-bg-offset) );
-    //     &.vk-bg-offset-bg--left {
-    //         margin-left:var(--vk-width-bg-offset);
-    //     }
-    //     &.vk-bg-offset-bg--right {
-    //         margin-right:var(--vk-width-bg-offset);
-    //     }
-    // }
-    // .vk-bg-offset-bg--45 {
-    //     --vk-width-bg-offset:45vw;  
-    // }
-    // .vk-bg-offset-bg--40 {
-    //     --vk-width-bg-offset:40vw;  
-    // }
-    // .vk-bg-offset-bg--35 {
-    //     --vk-width-bg-offset:35vw;  
-    // }
-    // .vk-bg-offset-bg--30 {
-    //     --vk-width-bg-offset:30vw;  
-    // }
-    // .vk-bg-offset-bg--25 {
-    //     --vk-width-bg-offset:25vw;  
-    // }
-    // .vk-bg-offset-bg--20 {
-    //     --vk-width-bg-offset:20vw;  
-    // }
-    // .vk-bg-offset-bg--15 {
-    //     --vk-width-bg-offset:15vw;  
-    // }
-    // .vk-bg-offset-bg--10 {
-    //     --vk-width-bg-offset:10vw;  
-    // }
-    // .vk-bg-offset-bg--5 {
-    //     --vk-width-bg-offset:5vw;  
-    // }
+    //スマホサイズでは0（無し）にする
+    @media (max-width: $sm-max){
+        [class*="vk-bg-offset-bg--"].bg-offset-sm-none {       
+            --vk-width-bg-offset:0;
+        }
+    } 
+    //タブレット以下では0（無し）にする
+    @media (max-width: $lg-max){
+        [class*="vk-bg-offset-bg--"].bg-offset-lg-none {       
+            --vk-width-bg-offset:0;
+        }
+    }
 
 }
 

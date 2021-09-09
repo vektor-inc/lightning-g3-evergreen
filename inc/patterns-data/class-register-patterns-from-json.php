@@ -1,5 +1,5 @@
 <?php
-namespace wp_content\plugins\lightning_g3_vekuan\inc\patterns_data;
+namespace wp_content\plugins\lightning_g3_evergreen\inc\patterns_data;
 
 class VK_RegisterPatternsFromJson {
 

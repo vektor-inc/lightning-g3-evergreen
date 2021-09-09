@@ -2,202 +2,199 @@
 * ブロック上書きCSS
 */
 
-.ltg3-s-evergreen{
-    //VK ボタン
-    .vk_button{
-        .btn{
-            @include btn();
-            @include shadow-primary;
 
-            &:hover{
-                @include shadow-hover;
-            }
-            &.vk_button_link{
-                padding-top: 0.8rem;
-                padding-bottom: 0.8rem;
-            }
-            &-light{
-                background-color: #ffffff;
-                border-color: #ffffff;
-                &:hover {
-                    background-color: #ffffff;
-                    border-color: #ffffff;
-                }
-                .fas {
-                    color: var(--vk-color-primary);
-                 }
-            }
-        }
-
-        //ボタンスタイルがテキスト
-        &_link-type-text{
-            -webkit-transition: .3s;
-            transition: .3s;
-            &:hover{
-                letter-spacing: .15rem;
-            }
-
-        }
-        &.icon-color-primary {
-            .fas {
-                color: var(--vk-color-primary);
-            }
-        }
-    }
-
-
-    //ボタン
+//VK ボタン
+.vk_button{
     .btn{
         @include btn();
-    }
-    //VK Block Pattern のカラムバナーとカラムフィットバナーのボタンには影をつけたくないのでunset
-    .vk-cols--fitbnrs{
-        .vk_button{
-            .btn{ box-shadow:unset; }
-        }
-    }
-    //投稿リスト
-    .vk_posts{
-        //表示タイプ カードのhover
-        .card-post:not(.card-noborder){
-            &:hover{
-                @include shadow-hover;
-            }
-        }
-        //表示タイプテキスト
-        .postListText_singleTermLabel_inner{
-            @include btn();
-        }
-        //画像内のラベル
-        .vk_post_imgOuter_singleTermLabel{
-            @include btn();
-            top:5px;
-            right: 5px;
-            padding: .3em 1em;
-        }
-    }
-    .card:not(.card-noborder) {
-        border-radius: unset;
-        position: relative;
-        border:unset;
         @include shadow-primary;
-    }
-    //アイコンカード　タイトル
-    .wp-block-vk-blocks-icon-card .vk_icon-card_item_title{
-        font-size: 1.25rem;
-    }
-    .vk_faq{
-        background-color: #ffffff;
-        border-bottom:unset;
-        box-shadow: var(--shadow-primary);
-        &.vk_faq-accordion-close,
-        &.vk_faq-accordion-open{
-            margin-bottom: 2rem;
-        }
-        .vk_faq_title:before,
-        .vk_faq_content:before{
-            left: 1.5rem;
-            top: 1.5rem;
-        }
-        .vk_faq_title,
-        .vk_faq_content,
-        .vk_faq_content-accordion-open{
-            padding:1.5rem 1.5rem 1.5rem 4rem;
-        }
-        .vk_faq_content-accordion-close{
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-        &.vk_faq-accordion-close .vk_faq_title::after,
-        &.vk_faq-accordion-open .vk_faq_title::after{
-            right: 3.7rem;
-        }
-    }
-    .swiper-slide{
-        font-size: 1rem;
-    }
 
-    .veu_card{
-        border-width: 1px;
-        border-radius: unset;
-        .veu_card_inner{
-            padding:2rem;
+        &:hover{
+            @include shadow-hover;
         }
-    
-    }
-
-    .vk_posts-layout-postListText{
-        .postListText_date{
-            font-size: 0.9rem;
-            color: var(--vk-color-text-light);
+        &.vk_button_link{
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
         }
-        .postListText_title{
-            font-size: 1rem;
-            a{
-                text-decoration: none;
+        &-light{
+            background-color: #ffffff;
+            border-color: #ffffff;
+            &:hover {
+                background-color: #ffffff;
+                border-color: #ffffff;
             }
-        }
-        .postListText{
-            padding: 1rem 0 .9rem;
-            border-bottom:1px solid var(--vk-color-border-hr);
-        }
-    }
-
-    //outerブロック 背景固定にするとiphoneで背景画像が拡大される不具合があるのでunset
-    .vk_outer-bgPosition-fixed {
-        @media (max-width: $md-max){
-            background-attachment: unset !important;
-        }
-    }
-
-    //スライダーブロック
-    .vk_slider .swiper-button-next,
-    .vk_slider .swiper-button-prev{
-        background-color:rgba(0,0,0,0.5);
-        border-radius: 50%;
-        &::after{
-            color: #ffffff;
-        }
-    }
-    //ステップブロック
-    .vk_step .vk_step_item .vk_step_item_dot{
-        font-family: var(--roboto-font-family);
-        font-size: 1.2rem;
-    }
-    //フッター上部に設置したソーシャルブロック
-    .site-body-bottom{
-        .wp-block-social-links {
-            margin-top:0;
-        }
-    }
-    //オフセットを使用しているグループブロック全幅時 のインナーコンテナ余白
-    .wp-block-group.alignfull.vk-bg-offset > div[class*="__inner-container"],
-    .wp-block-group.alignwide.vk-bg-offset > div[class*="__inner-container"] {
-        max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
-    }
-
-    //検索ブロック    
-    .wp-block-search{
-        // ボタン内側の場合
-        &.wp-block-search__button-inside {
-            .wp-block-search__inside-wrapper{
-                border: 1px solid #ccc;
-                border-radius:var(--border-radius-primary);
-                input[type="search"]{
-                    border-radius:var(--border-radius-primary);
+            .fas {
+                color: var(--vk-color-primary);
                 }
-                .wp-block-search__button{
-                    border-radius:var(---border-radius-primary);
-                    //アイコン表示の場合
-                    &.has-icon{
-                        width: 40px;
-                        background: transparent;
-                    }
-                }
-            }
         }
+    }
+
+    //ボタンスタイルがテキスト
+    &_link-type-text{
+        -webkit-transition: .3s;
+        transition: .3s;
+        &:hover{
+            letter-spacing: .15rem;
+        }
+
+    }
+    &.icon-color-primary {
+        .fas {
+            color: var(--vk-color-primary);
+        }
+    }
+}
+
+
+//ボタン
+.btn{
+    @include btn();
+}
+//VK Block Pattern のカラムバナーとカラムフィットバナーのボタンには影をつけたくないのでunset
+.vk-cols--fitbnrs{
+    .vk_button{
+        .btn{ box-shadow:unset; }
+    }
+}
+//投稿リスト
+.vk_posts{
+    //表示タイプ カードのhover
+    .card-post:not(.card-noborder){
+        &:hover{
+            @include shadow-hover;
+        }
+    }
+    //表示タイプテキスト
+    .postListText_singleTermLabel_inner{
+        @include btn();
+    }
+    //画像内のラベル
+    .vk_post_imgOuter_singleTermLabel{
+        @include btn();
+        top:5px;
+        right: 5px;
+        padding: .3em 1em;
+    }
+}
+.card:not(.card-noborder) {
+    border-radius: unset;
+    position: relative;
+    border:unset;
+    @include shadow-primary;
+}
+//アイコンカード　タイトル
+.wp-block-vk-blocks-icon-card .vk_icon-card_item_title{
+    font-size: 1.25rem;
+}
+.vk_faq{
+    background-color: #ffffff;
+    border-bottom:unset;
+    box-shadow: var(--shadow-primary);
+    &.vk_faq-accordion-close,
+    &.vk_faq-accordion-open{
+        margin-bottom: 2rem;
+    }
+    .vk_faq_title:before,
+    .vk_faq_content:before{
+        left: 1.5rem;
+        top: 1.5rem;
+    }
+    .vk_faq_title,
+    .vk_faq_content,
+    .vk_faq_content-accordion-open{
+        padding:1.5rem 1.5rem 1.5rem 4rem;
+    }
+    .vk_faq_content-accordion-close{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &.vk_faq-accordion-close .vk_faq_title::after,
+    &.vk_faq-accordion-open .vk_faq_title::after{
+        right: 3.7rem;
+    }
+}
+.swiper-slide{
+    font-size: 1rem;
+}
+
+.veu_card{
+    border-width: 1px;
+    border-radius: unset;
+    .veu_card_inner{
+        padding:2rem;
     }
 
 }
 
+.vk_posts-layout-postListText{
+    .postListText_date{
+        font-size: 0.9rem;
+        color: var(--vk-color-text-light);
+    }
+    .postListText_title{
+        font-size: 1rem;
+        a{
+            text-decoration: none;
+        }
+    }
+    .postListText{
+        padding: 1rem 0 .9rem;
+        border-bottom:1px solid var(--vk-color-border-hr);
+    }
+}
+
+//outerブロック 背景固定にするとiphoneで背景画像が拡大される不具合があるのでunset
+.vk_outer-bgPosition-fixed {
+    @media (max-width: $md-max){
+        background-attachment: unset !important;
+    }
+}
+
+//スライダーブロック
+.vk_slider .swiper-button-next,
+.vk_slider .swiper-button-prev{
+    background-color:rgba(0,0,0,0.5);
+    border-radius: 50%;
+    &::after{
+        color: #ffffff;
+    }
+}
+//ステップブロック
+.vk_step .vk_step_item .vk_step_item_dot{
+    font-family: var(--roboto-font-family);
+    font-size: 1.2rem;
+}
+//フッター上部に設置したソーシャルブロック
+.site-body-bottom{
+    .wp-block-social-links {
+        margin-top:0;
+    }
+}
+//オフセットを使用しているグループブロック全幅時 のインナーコンテナ余白
+.wp-block-group.alignfull.vk-bg-offset > div[class*="__inner-container"],
+.wp-block-group.alignwide.vk-bg-offset > div[class*="__inner-container"] {
+    max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
+}
+
+//検索ブロック    
+.wp-block-search{
+    // ボタン内側の場合
+    &.wp-block-search__button-inside {
+        .wp-block-search__inside-wrapper{
+            border: 1px solid #ccc;
+            border-radius:var(--border-radius-primary);
+            input[type="search"]{
+                border-radius:var(--border-radius-primary);
+            }
+            .wp-block-search__button{
+                border-radius:var(---border-radius-primary);
+                //アイコン表示の場合
+                &.has-icon{
+                    width: 40px;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
 

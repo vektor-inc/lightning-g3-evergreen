@@ -8,6 +8,8 @@ $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
 
+
+
 @mixin left-right-center( $top: -1.5rem)  {
     position: absolute;
     top: $top;
@@ -41,4 +43,14 @@ $xl-min: 1200px;
     bottom: 0;
     left: 0;
     z-index: -1;
+}
+
+// 注意 : PHPなどでheadなどに直接出力しないと Tree Shaking でふっとばされる
+// 注意 : ここを修正する場合はfunctions.phpも修正すること
+:root {
+    --shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    --border-radius-primary:100px;
+    --roboto-font-family: "Roboto", sans-serif;
+    --vk-size-text-xl: 2rem;
 }

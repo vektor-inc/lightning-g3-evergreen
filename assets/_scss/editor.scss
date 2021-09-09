@@ -3,8 +3,10 @@
 /**
 * 編集画面用CSS
 */
-
 @import "variables";
-@import "common";
-@import "exunit-overwrite";
-@import "block-common";
+// for gutenberg
+.editor-styles-wrapper{
+    @import "common";
+    @import "exunit-overwrite";
+    @import "block-common";
+}

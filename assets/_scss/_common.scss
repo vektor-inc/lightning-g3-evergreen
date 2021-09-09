@@ -2,327 +2,317 @@
 * 公開画面・編集画面共有のCSS
 */
 
-:root {
-    --shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-    --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
-    --border-radius-primary:100px;
-    // Roboto font
-    --roboto-font-family: 'Roboto', sans-serif;
-    --vk-size-text-xl: 2rem;
+
+/* =============================================
+テーマCSS上書き
+============================================= */
+.site-header{
+    //ヘッダートップメニュー 余白調整
+    .header-top {
+        nav {
+            top: 9px;
+        }
+        ul>li>a,
+        ul>li>span{
+            padding: 0 0.5rem;
+        }
+    }
+    //ロゴ
+    &-logo img {
+        max-height: 50px;
+        @media (max-width: $md-max){
+            max-height: 35px;
+        }
+    }
+
+}
+//ページヘッダーサブテキスト
+.page-header-subtext {
+    line-height: 1.5;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+//フッター フォントサイズ
+.site-footer{
+    @media screen and (min-width: 767px){
+        font-size: calc(var(--vk-size-text)* 0.9) ;
+    }
+}
+//フッターナビ
+.footer-nav {
+    .footer-nav-list{
+            //フッターメニューを中央寄せ
+            @media screen and (min-width: 767px){ 
+            display: flex;    
+            justify-content: center;
+            }
+        li{
+            @media screen and (min-width: 767px){
+            &:first-child{
+                border-left: none;
+            }             
+                border-left:1px solid #ffffff;
+            }
+            a {
+                @media (max-width: 767.98px){
+                    border-bottom: 1px solid var(--vk-color-border-light);
+                }
+            }
+        }
+    }
+}
+//フッターコンテンツ　ソーシャルボタンのマージン
+.site-footer-content{
+    .wp-block-social-links{
+        margin-top: 0;
+    }
+}
+//モバイルフィックスナビ 高さ
+.mobile-fix-nav .mobile-fix-nav-menu {
+    height: 52px;
+    padding: 7px 0 5px;
+}
+//ページトップ      
+.page_top_btn{
+    border-radius: 50%;
+    box-shadow:unset;
 }
 
 
-.ltg3-s-evergreen{
-    /* =============================================
-    テーマCSS上書き
-    ============================================= */
-    .site-header{
-        //ヘッダートップメニュー 余白調整
-        .header-top {
-            nav {
-                top: 9px;
-            }
-            ul>li>a,
-            ul>li>span{
-                padding: 0 0.5rem;
-            }
-        }
-        //ロゴ
-        &-logo img {
-            max-height: 50px;
-            @media (max-width: $md-max){
-                max-height: 35px;
-            }
-        }
 
-    }
-    //ページヘッダーサブテキスト
-    .page-header-subtext {
-        line-height: 1.5;
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-    //フッター フォントサイズ
-    .site-footer{
-        @media screen and (min-width: 767px){
-            font-size: calc(var(--vk-size-text)* 0.9) ;
+/* =============================================
+追加用のCSSクラス
+============================================= */
+//下部のmarginを0
+.last-child-margin-bottom{
+    margin-bottom: 0;
+}
+//下部にmargin余白追加
+.margin-bottom-sm{
+    margin-bottom: var(--vk-margin-sm);
+}
+.margin-bottom-md{
+    margin-bottom: var(--vk-margin-md);
+}
+.margin-bottom-lg{
+    margin-bottom: var(--vk-margin-lg);
+}
+//ボタン 最小幅
+.vk_button{
+    &.btn-min-width{
+        .vk_button_link.btn{
+            min-width: 18rem;
         }
     }
-    //フッターナビ
-    .footer-nav {
-        .footer-nav-list{
-                //フッターメニューを中央寄せ
-                @media screen and (min-width: 767px){ 
-                display: flex;    
-                justify-content: center;
-                }
-            li{
-                @media screen and (min-width: 767px){
-                &:first-child{
-                    border-left: none;
-                }             
-                    border-left:1px solid #ffffff;
-                }
-                a {
-                    @media (max-width: 767.98px){
-                        border-bottom: 1px solid var(--vk-color-border-light);
-                    }
-                }
-            }
-        }
+    &.btn-padding{
+            padding-top: 0.8em;
+            padding-bottom: 0.8em;
     }
-    //フッターコンテンツ　ソーシャルボタンのマージン
-    .site-footer-content{
-        .wp-block-social-links{
-            margin-top: 0;
-        }
-    }
-    //モバイルフィックスナビ 高さ
-    .mobile-fix-nav .mobile-fix-nav-menu {
-        height: 52px;
-        padding: 7px 0 5px;
-    }
-    //ページトップ      
-    .page_top_btn{
-        border-radius: 50%;
-        box-shadow:unset;
-    }
+}
 
-
-
-    /* =============================================
-    追加用のCSSクラス
-    ============================================= */
-    //下部のmarginを0
-    .last-child-margin-bottom{
-        margin-bottom: 0;
-    }
-    //下部にmargin余白追加
-    .margin-bottom-sm{
-        margin-bottom: var(--vk-margin-sm);
-    }
-    .margin-bottom-md{
-        margin-bottom: var(--vk-margin-md);
-    }
-    .margin-bottom-lg{
-        margin-bottom: var(--vk-margin-lg);
-    }
-    //ボタン 最小幅
-    .vk_button{
-        &.btn-min-width{
-            .vk_button_link.btn{
-                min-width: 18rem;
-            }
-        }
-        &.btn-padding{
-                padding-top: 0.8em;
-                padding-bottom: 0.8em;
-        }
-    }
-
-    //キービジュアル内見出し　
-    .key-visual-heading{
-        /* 
-        calc + vwの計算式
-        画面幅1200pxの時 font-size: 38px
-        画面幅576pxの時 font-size: 30px
-        */
-        font-size: calc(30px + 8 * (100vw - 576px)/624);
-    }
-
-    //見出し コア側の見出し用のクラス 
+//キービジュアル内見出し　
+.key-visual-heading{
     /* 
     calc + vwの計算式
-    画面幅1200pxの時 font-size: 36px
-    画面幅576pxの時 font-size: 28px
+    画面幅1200pxの時 font-size: 38px
+    画面幅576pxの時 font-size: 30px
     */
-    --heading-primary-font-size:calc(28px + 8 * (100vw - 576px)/624);
+    font-size: calc(30px + 8 * (100vw - 576px)/624);
+}
 
-    .heading-primary{
-        font-size: var(--heading-primary-font-size);
-        z-index: 1;
-        //上にはみ出す見出し
-        &.heading-top-over{
-            position: absolute;
-            top:-1.75rem;
-        }
-        //タイトルの途中で大きい文字
-        em{
-            font-size:1.25em;
-            font-style: normal;
-        }
-    }
-    h3.heading-primary{
-        font-size: calc( var(--heading-primary-font-size) - 4px );
-    }
-    h4.heading-primary,
-    h5.heading-primary,
-    h6.heading-primary {
-        font-size: calc( var(--heading-primary-font-size) - 8px );
-    }
+//見出し コア側の見出し用のクラス 
+/* 
+calc + vwの計算式
+画面幅1200pxの時 font-size: 36px
+画面幅576pxの時 font-size: 28px
+*/
+// --heading-primary-font-size:calc(28px + 8 * (100vw - 576px)/624);
 
-    //VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
-    .heading-subtext-border {
+.heading-primary{
+    font-size: calc(28px + 8 * (100vw - 576px)/624);
+    z-index: 1;
+    //上にはみ出す見出し
+    &.heading-top-over{
+        position: absolute;
+        top:-1.75rem;
+    }
+    //タイトルの途中で大きい文字
+    em{
+        font-size:1.25em;
+        font-style: normal;
+    }
+}
+h3.heading-primary{
+    font-size: calc( calc(28px + 8 * (100vw - 576px)/624) - 4px );
+}
+h4.heading-primary,
+h5.heading-primary,
+h6.heading-primary {
+    font-size: calc( calc(28px + 8 * (100vw - 576px)/624) - 8px );
+}
+
+//VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
+.heading-subtext-border {
+    position: relative;
+    text-align: center;
+    .vk_heading_title{
+        font-size: calc(28px + 4 * (100vw - 576px)/624);          
+    }
+    &.en .vk_heading_subtext{
+        font-family: var(--roboto-font-family);
+
+    }
+    .vk_heading_subtext{
         position: relative;
-        text-align: center;
-        .vk_heading_title{
-            font-size: calc(28px + 4 * (100vw - 576px)/624);          
-        }
-        &.en .vk_heading_subtext{
-            font-family: var(--roboto-font-family);
-
-        }
-        .vk_heading_subtext{
-            position: relative;
-            display: inline-block;
-            letter-spacing: .05rem;
-            padding-left:70px;
-            padding-right: 70px;
-        }
-        &.wh{
-            .vk_heading_subtext:before,
-            .vk_heading_subtext:after {
-                background-color:#ffffff;
-            }
-        }
+        display: inline-block;
+        letter-spacing: .05rem;
+        padding-left:70px;
+        padding-right: 70px;
+    }
+    &.wh{
         .vk_heading_subtext:before,
         .vk_heading_subtext:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            bottom:0;
-            display: inline-block;
-            width: 50px;
-            height: 1px;
-            background-color:var(--vk-color-border-black);
-        }
-        
-        .vk_heading_subtext:before {
-            left: 0;
-        }
-        
-        .vk_heading_subtext:after {
-            right: 0px;
-        }
-
-    }
-
-
-    //line-height
-    .vk-line-height{
-        line-height: var(--vk-line-height);
-    }
-
-    //ラベル
-    .label{
-        @include label();
-        //ラベル左右中央寄せ
-        &.left-right-center{
-            @include left-right-center();  
-        }
-
-    }
-    //シャドウ
-    .shadow-primary{
-        @include shadow-primary;
-    }
-    //上にはみ出すブロック
-    .block-top-over{
-        &-lg{
-            margin:-14rem 0 0 auto;
-            z-index: 1;
-            position: relative;
-        }
-        &-md{
-            margin:-7rem 0 0 auto;
-            z-index: 1;
-            position: relative;
-        }
-        &-sm{
-            margin:-3.5rem 0 0 auto;
-            z-index: 1;
-            position: relative;
+            background-color:#ffffff;
         }
     }
-
-
-    .card-label-over{
-        .card{
-            margin-bottom: 2.8rem;
-            //unsetしないとはみ出したラベルが隠れる
-            overflow: unset;
-        }
+    .vk_heading_subtext:before,
+    .vk_heading_subtext:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        bottom:0;
+        display: inline-block;
+        width: 50px;
+        height: 1px;
+        background-color:var(--vk-color-border-black);
     }
-
-    //カードブロック ラベルがはみ出すカラムブロック
-    .label-over{
-        .vk_card_item{
-            position: relative;
-            margin-top:2.5rem;
-            overflow: visible;
-            .card-body{
-                padding-top: 2.5rem;
-            }
-        }
-        //カラムブロック 連続するカラムブロックの下部余白
-        &.wp-block-columns.over {
-            margin-bottom: 0;
-        }
+    
+    .vk_heading_subtext:before {
+        left: 0;
     }
-    //カラムブロック ラベルがはみ出すカラムブロック
-    .wp-block-columns.over{
-        .wp-block-column{
-            position: relative;
-            margin-top:2.5rem;
-        }
-        //カラムブロック 連続するカラムブロックの下部余白
-        &.wp-block-columns.over {
-            margin-bottom: 0;
-        }
-    }
-
-
-    //アイコンブロック 上にはみ出す
-    .vk_icon.icon-over{
-        @include left-right-center( $top: -2.5rem);
-    }
-    //背景を親要素の高さまで伸ばす
-    .bg-height{
-        min-height: 100%;
-        .wp-block-group__inner-container{
-            max-width: 100%;
-        }
-    }
- 
- 
-    //お問い合わせ用の電話番号のフォントファミリー
-    .contact_txt_tel,//ExUnitのお問い合わせブロックのクラス名
-    .contact_txt_tel .vk_heading_title
-    {
-        font-family: var(--roboto-font-family);
-        font-size: calc(28px + 4 * (100vw - 576px)/624);
-        .fa-phone{
-            font-size: 0.8em;
-        }
-    }
-
-    /* =============================================
-    オフセット背景のオフセットを0（無し）
-    ============================================= */
-    //スマホサイズでは0（無し）にする
-    @media (max-width: $sm-max){
-        [class*="vk-bg-offset-bg--"].bg-offset-sm-none {       
-            --vk-width-bg-offset:0;
-        }
-    } 
-    //タブレット以下では0（無し）にする
-    @media (max-width: $lg-max){
-        [class*="vk-bg-offset-bg--"].bg-offset-lg-none {       
-            --vk-width-bg-offset:0;
-        }
+    
+    .vk_heading_subtext:after {
+        right: 0px;
     }
 
 }
+
+
+//line-height
+.vk-line-height{
+    line-height: var(--vk-line-height);
+}
+
+//ラベル
+.label{
+    @include label();
+    //ラベル左右中央寄せ
+    &.left-right-center{
+        @include left-right-center();  
+    }
+
+}
+//シャドウ
+.shadow-primary{
+    @include shadow-primary;
+}
+//上にはみ出すブロック
+.block-top-over{
+    &-lg{
+        margin:-14rem 0 0 auto;
+        z-index: 1;
+        position: relative;
+    }
+    &-md{
+        margin:-7rem 0 0 auto;
+        z-index: 1;
+        position: relative;
+    }
+    &-sm{
+        margin:-3.5rem 0 0 auto;
+        z-index: 1;
+        position: relative;
+    }
+}
+
+
+.card-label-over{
+    .card{
+        margin-bottom: 2.8rem;
+        //unsetしないとはみ出したラベルが隠れる
+        overflow: unset;
+    }
+}
+
+//カードブロック ラベルがはみ出すカラムブロック
+.label-over{
+    .vk_card_item{
+        position: relative;
+        margin-top:2.5rem;
+        overflow: visible;
+        .card-body{
+            padding-top: 2.5rem;
+        }
+    }
+    //カラムブロック 連続するカラムブロックの下部余白
+    &.wp-block-columns.over {
+        margin-bottom: 0;
+    }
+}
+//カラムブロック ラベルがはみ出すカラムブロック
+.wp-block-columns.over{
+    .wp-block-column{
+        position: relative;
+        margin-top:2.5rem;
+    }
+    //カラムブロック 連続するカラムブロックの下部余白
+    &.wp-block-columns.over {
+        margin-bottom: 0;
+    }
+}
+
+
+//アイコンブロック 上にはみ出す
+.vk_icon.icon-over{
+    @include left-right-center( $top: -2.5rem);
+}
+//背景を親要素の高さまで伸ばす
+.bg-height{
+    min-height: 100%;
+    .wp-block-group__inner-container{
+        max-width: 100%;
+    }
+}
+
+
+//お問い合わせ用の電話番号のフォントファミリー
+.contact_txt_tel,//ExUnitのお問い合わせブロックのクラス名
+.contact_txt_tel .vk_heading_title
+{
+    font-family: var(--roboto-font-family);
+    font-size: calc(28px + 4 * (100vw - 576px)/624);
+    .fa-phone{
+        font-size: 0.8em;
+    }
+}
+
+/* =============================================
+オフセット背景のオフセットを0（無し）
+============================================= */
+//スマホサイズでは0（無し）にする
+@media (max-width: $sm-max){
+    [class*="vk-bg-offset-bg--"].bg-offset-sm-none {       
+        --vk-width-bg-offset:0;
+    }
+} 
+//タブレット以下では0（無し）にする
+@media (max-width: $lg-max){
+    [class*="vk-bg-offset-bg--"].bg-offset-lg-none {       
+        --vk-width-bg-offset:0;
+    }
+}
+
+
 
 
 

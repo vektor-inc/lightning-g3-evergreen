@@ -2,42 +2,41 @@
 * ExUnit ブロック上書きCSS
 */
 
-.ltg3-s-evergreen{
 
-    //お問い合わせブロック
-    .veu_contact {
-        .contact_txt_catch{
-            margin-bottom:0.5rem;
-        }
-        .contact_txt_tel{
-            margin-bottom:0.5rem;
-        }
-        .contact_txt_catch,
-        .contact_txt_time{
-            font-size: 1.12rem;
-        }
-        .contact_bt{
-            font-size: 1.5rem;
-            @include btn(1.5rem);
-        }
-        .fa-arrow-alt-circle-right{
-            display: none;
-        }
+//お問い合わせブロック
+.veu_contact {
+    .contact_txt_catch{
+        margin-bottom:0.5rem;
     }
-    .veu_contact-layout-horizontal{
-        @media (min-width: $xl-min){
-        .contact_frame{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            .veu_contact .contact_bt{
-            min-width: 500px;
-            }
-        }//min-width: $xl-min
-
+    .contact_txt_tel{
+        margin-bottom:0.5rem;
+    }
+    .contact_txt_catch,
+    .contact_txt_time{
+        font-size: 1.12rem;
+    }
+    .contact_bt{
+        font-size: 1.5rem;
+        @include btn(1.5rem);
+    }
+    .fa-arrow-alt-circle-right{
+        display: none;
     }
 }
+.veu_contact-layout-horizontal{
+    @media (min-width: $xl-min){
+    .contact_frame{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .veu_contact .contact_bt{
+        min-width: 500px;
+        }
+    }//min-width: $xl-min
+
+}
+
 
 

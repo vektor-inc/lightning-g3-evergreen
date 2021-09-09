@@ -1,9 +1,6 @@
 # Lightning G3 Skin: Evergreen
 
-
-
-一応sassの設定はしてありますので、以下のコマンドでパッケージのインストールはできます。
-
+パッケージのインストール
 ```
 $ npm install
 ```

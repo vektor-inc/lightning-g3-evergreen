@@ -24,6 +24,6 @@ gulp.task('dist', function (done) {
 		base: './'
 	  }
 	)
-	files.pipe(gulp.dest("dist/lightning-g3-skin-evergreen"));
+	files.pipe(gulp.dest("dist/lightning-g3-evergreen"));
 	done();
   });

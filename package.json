@@ -1,5 +1,5 @@
 {
-  "name": "lightning-g3-skin-evergreen",
+  "name": "lightning-g3-evergreen",
   "version": "0.1.0",
   "main": "Gruntfile.js",
   "author": "YOUR NAME HERE",
@@ -14,7 +14,7 @@
     "watch:css": "nodemon -e scss --watch assets/_scss -x \"npm run build:css\"",
     "composer:install:win": "wp-env run composer \"composer install\"",
     "composer:install:mac": "wp-env run composer 'composer install'",
-    "phpunit": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/lightning-g3-vekuan/phpunit.xml.dist --verbose\""
+    "phpunit": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/lightning-g3-evergreen/phpunit.xml.dist --verbose\""
   },
   "devDependencies": {
     "@wordpress/env": "^4.1.0",

@@ -45,7 +45,7 @@ function ltg3_add_skin_evergreen( $skins ) {
 
 	$skins['evergreen'] = array(
 		// label が Lightning デザイン設定 のスキン選択プルダウンに表示される名称
-		'label'          => __( 'Evergreen Skin G3', 'lightning-g3-evergreen' ),
+		'label'          => __( 'Evergreen', 'lightning-g3-evergreen' ),
 		'css_url'        => plugin_dir_url( __FILE__ ) . 'assets/css/style.css',
 		'css_path'       => plugin_dir_path( __FILE__ ) . 'assets/css/style.css',
 

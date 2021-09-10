@@ -12,6 +12,11 @@
  * @package         LIGHTNING_G3_EVERGREEN
  */
 
+$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
+define( 'Evergreen_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'Evergreen_URL', plugin_dir_url( __FILE__ ) );
+define( 'Evergreen_PATH', plugin_dir_path( __FILE__ ) );
+define( 'Evergreen_VERSION', $data['version'] );
 
 /*
 	updater
@@ -24,11 +29,12 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 /*
- Load Patterns
+ Load Block Patterns
 /*---------------------------------------*/
 require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
  
 /*
+ Load Only Lightning Active
 /*---------------------------------------*/
 $current_theme = get_template();
 if ( 'lightning' !== $current_theme ) {
@@ -38,7 +44,7 @@ if ( 'g3' !== get_option( 'lightning_theme_generation' ) ) {
 	return;
 }
 
-add_filter( 'lightning_g3_skins', 'ltg3_add_skin_evergreen' );
+
 function ltg3_add_skin_evergreen( $skins ) {
 
 	$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
@@ -57,3 +63,4 @@ function ltg3_add_skin_evergreen( $skins ) {
 	);
 	return $skins;
 }
+add_filter( 'lightning_g3_skins', 'ltg3_add_skin_evergreen' );

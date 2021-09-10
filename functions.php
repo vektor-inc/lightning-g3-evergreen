@@ -44,6 +44,7 @@ if ( ! class_exists( 'LTG3_EVERGREEN_Active' ) ) {
                 --border-radius-primary:100px;
                 --roboto-font-family: "Roboto", sans-serif;
                 --vk-size-text-xl: 2rem;
+                --icon-top-over:-20%;
 			}';
 
 

@@ -10,7 +10,7 @@ $xl-min: 1200px;
 
 
 
-@mixin left-right-center( $top: -1.5rem)  {
+@mixin left-right-center($top: 0){
     position: absolute;
     top: $top;
     left: 50%;
@@ -19,7 +19,6 @@ $xl-min: 1200px;
     -ms-transform: translateX(-50%);  
 }
 @mixin btn( $font-size:inherit ){
-
     border-radius:var(--border-radius-primary);
 }
 @mixin shadow-primary{
@@ -34,6 +33,9 @@ $xl-min: 1200px;
     border-radius: 100px;
     padding: 0.5rem 1rem;
     min-width: 110px;
+    //管理画面で崩れるので追加
+    width: unset;
+    margin:0;
 }
 
 @mixin bg-translate-common {
@@ -53,4 +55,5 @@ $xl-min: 1200px;
     --border-radius-primary:100px;
     --roboto-font-family: "Roboto", sans-serif;
     --vk-size-text-xl: 2rem;
+    --icon-top-over:-20%;
 }

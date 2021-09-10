@@ -204,11 +204,13 @@ h6.heading-primary {
 }
 
 //ラベル
-.label{
+.label,
+p.label{
     @include label();
     //ラベル左右中央寄せ
-    &.left-right-center{
-        @include left-right-center();  
+    &.label-over{
+        @include left-right-center();
+        margin-top:-1rem;
     }
 
 }
@@ -216,20 +218,27 @@ h6.heading-primary {
 .shadow-primary{
     @include shadow-primary;
 }
+//vkグリットカラムはインナーアイテムに影をつけたいので追加
+.shadow-primary_item_inner {
+    .vk_gridColumn_item_inner{
+        @include shadow-primary;
+    }
+}
+
 //上にはみ出すブロック
 .block-top-over{
     &-lg{
-        margin:-14rem 0 0 auto;
+        margin:-14rem auto 0;
         z-index: 1;
         position: relative;
     }
     &-md{
-        margin:-7rem 0 0 auto;
+        margin:-7rem auto 0;
         z-index: 1;
         position: relative;
     }
     &-sm{
-        margin:-3.5rem 0 0 auto;
+        margin:-3.5rem auto 0;
         z-index: 1;
         position: relative;
     }
@@ -271,18 +280,17 @@ h6.heading-primary {
     }
 }
 
-
 //アイコンブロック 上にはみ出す
 .vk_icon.icon-over{
-    @include left-right-center( $top: -2.5rem);
+    @include left-right-center( $top:var(--icon-top-over) );  
 }
 //背景を親要素の高さまで伸ばす
-.bg-height{
-    min-height: 100%;
-    .wp-block-group__inner-container{
-        max-width: 100%;
-    }
-}
+// .bg-height{
+//     min-height: 100%;
+//     .wp-block-group__inner-container{
+//         max-width: 100%;
+//     }
+// }
 
 
 //お問い合わせ用の電話番号のフォントファミリー

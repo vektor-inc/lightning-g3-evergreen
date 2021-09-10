@@ -10,3 +10,31 @@
     @import "exunit-overwrite";
     @import "block-common";
 }
+
+//cssが負けてしまうので編集画面用に追加
+.edit-post-visual-editor{
+    .vk_posts{
+        >.vk_posts-edit .block-editor-block-list__block.has-background.label{//ラベル
+            @include label();  
+        }
+
+        &.label-over>.vk_posts-edit .block-editor-block-list__block.vk_card_item{
+            position: relative;
+            margin-top: 2.5rem;
+            overflow: visible;
+        }
+    }
+    .wp-block-vk-blocks-grid-column .block-editor-inner-blocks .block-editor-block-list__layout .block-editor-inner-blocks .block-editor-block-list__layout {
+        display: block;
+    }
+}
+.edit-post-visual-editor .wp-block-vk-blocks-grid-column .block-editor-inner-blocks .block-editor-block-list__layout .block-editor-inner-blocks .block-editor-block-list__layout{
+    display: block;
+}
+
+.editor-styles-wrapper .vk_icon.icon-over {
+    top: calc( var(--icon-top-over)* 3.5);
+}
+
+
+ 

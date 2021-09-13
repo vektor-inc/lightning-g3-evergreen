@@ -77,6 +77,11 @@
     box-shadow:unset;
 }
 
+input[type=submit]{
+
+    border-radius:var(--border-radius-primary);
+}
+
 /* =============================================
 追加用のCSSクラス
 ============================================= */

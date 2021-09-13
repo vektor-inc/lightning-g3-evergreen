@@ -3,7 +3,7 @@
 add_filter(
     'body_class',
     function ( $classes ) {
-        return array_merge( $classes, array( 'ltg3-s-evergreen' ) );
+        return array_merge( $classes, array( 'ltg3-evergreen' ) );
     }
 );
 
@@ -44,7 +44,6 @@ if ( ! class_exists( 'LTG3_EVERGREEN_Active' ) ) {
                 --border-radius-primary:100px;
                 --roboto-font-family: "Roboto", sans-serif;
                 --vk-size-text-xl: 2rem;
-                --icon-top-over:-20%;
 			}';
 
 

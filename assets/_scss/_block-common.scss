@@ -82,10 +82,8 @@
     border:unset;
     @include shadow-primary;
 }
-//アイコンカード　タイトル
-.wp-block-vk-blocks-icon-card .vk_icon-card_item_title{
-    font-size: 1.25rem;
-}
+
+//FAQブロック
 .vk_faq{
     background-color: #ffffff;
     border-bottom:unset;
@@ -119,19 +117,8 @@
         right: 3.7rem;
     }
 }
-.swiper-slide{
-    font-size: 1rem;
-}
 
-.veu_card{
-    border-width: 1px;
-    border-radius: unset;
-    .veu_card_inner{
-        padding:2rem;
-    }
-
-}
-
+//投稿リストブロック　テキスト1カラム
 .vk_posts-layout-postListText{
     .postListText_date{
         font-size: 0.9rem;
@@ -157,8 +144,8 @@
 }
 
 //スライダーブロック
-.vk_slider .swiper-button-next,
-.vk_slider .swiper-button-prev{
+.swiper-container.vk_slider .swiper-button-next,
+.swiper-container.vk_slider .swiper-button-prev{
     background-color:rgba(0,0,0,0.5);
     border-radius: 50%;
     &::after{

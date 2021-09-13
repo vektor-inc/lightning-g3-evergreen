@@ -11,30 +11,13 @@
     @import "block-common";
 }
 
-//cssが負けてしまうので編集画面用に追加
-.edit-post-visual-editor{
-    .vk_posts{
-        >.vk_posts-edit .block-editor-block-list__block.has-background.label{//ラベル
-            @include label();  
-        }
 
-        &.label-over>.vk_posts-edit .block-editor-block-list__block.vk_card_item{
-            position: relative;
-            margin-top: 2.5rem;
-            overflow: visible;
-        }
-    }
-    .wp-block-vk-blocks-grid-column .block-editor-inner-blocks .block-editor-block-list__layout .block-editor-inner-blocks .block-editor-block-list__layout {
-        display: block;
-    }
+//absoluteしているアイテムの位置がフロント画面とずれてしまうため追加
+//外側にposition relativeがあるので、innerの中はrelativeしない
+.vk_gridColumn .vk_gridColumn_item .vk_gridColumn_item_inner .block-editor-block-list__layout {
+    position: static;
 }
-.edit-post-visual-editor .wp-block-vk-blocks-grid-column .block-editor-inner-blocks .block-editor-block-list__layout .block-editor-inner-blocks .block-editor-block-list__layout{
-    display: block;
+//投稿リストブロック テキスト1カラムのタイトルに余分なmarginが入るので追加
+.vk_posts .postListText_title{
+    margin-top:0;
 }
-
-.editor-styles-wrapper .vk_icon.icon-over {
-    top: calc( var(--icon-top-over)* 3.5);
-}
-
-
- 

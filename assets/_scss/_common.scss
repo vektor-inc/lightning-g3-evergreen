@@ -2,7 +2,6 @@
 * 公開画面・編集画面共有のCSS
 */
 
-
 /* =============================================
 テーマCSS上書き
 ============================================= */
@@ -78,8 +77,6 @@
     box-shadow:unset;
 }
 
-
-
 /* =============================================
 追加用のCSSクラス
 ============================================= */
@@ -97,16 +94,12 @@
 .margin-bottom-lg{
     margin-bottom: var(--vk-margin-lg);
 }
-//ボタン 最小幅
+//VKボタン　最小幅を設定したい時に使う
 .vk_button{
-    &.btn-min-width{
+    &.btn-min-width{ //最小幅
         .vk_button_link.btn{
             min-width: 18rem;
         }
-    }
-    &.btn-padding{
-            padding-top: 0.8em;
-            padding-bottom: 0.8em;
     }
 }
 
@@ -126,8 +119,6 @@ calc + vwの計算式
 画面幅1200pxの時 font-size: 36px
 画面幅576pxの時 font-size: 28px
 */
-// --heading-primary-font-size:calc(28px + 8 * (100vw - 576px)/624);
-
 .heading-primary{
     font-size: calc(28px + 8 * (100vw - 576px)/624);
     z-index: 1;
@@ -136,7 +127,7 @@ calc + vwの計算式
         position: absolute;
         top:-1.75rem;
     }
-    //タイトルの途中で大きい文字
+    //emタグを利用してタイトルの途中で大きい文字にする
     em{
         font-size:1.25em;
         font-style: normal;
@@ -151,7 +142,7 @@ h6.heading-primary {
     font-size: calc( calc(28px + 8 * (100vw - 576px)/624) - 8px );
 }
 
-//VK 見出し 中央寄せでサブテキストの左右にボーターのデザイン
+//VK見出し 中央寄せでサブテキストの左右にボーターのデザイン
 .heading-subtext-border {
     position: relative;
     text-align: center;
@@ -197,22 +188,14 @@ h6.heading-primary {
 
 }
 
-
-//line-height
-.vk-line-height{
-    line-height: var(--vk-line-height);
-}
-
 //ラベル
 .label,
 p.label{
     @include label();
-    //ラベル左右中央寄せ
-    &.label-over{
-        @include left-right-center();
-        margin-top:-1rem;
-    }
-
+}
+//上にはみ出すラベル
+.label-top-over{
+    @include left-right-center($top:-8%);
 }
 //シャドウ
 .shadow-primary{
@@ -245,53 +228,10 @@ p.label{
 }
 
 
-.card-label-over{
-    .card{
-        margin-bottom: 2.8rem;
-        //unsetしないとはみ出したラベルが隠れる
-        overflow: unset;
-    }
-}
-
-//カードブロック ラベルがはみ出すカラムブロック
-.label-over{
-    .vk_card_item{
-        position: relative;
-        margin-top:2.5rem;
-        overflow: visible;
-        .card-body{
-            padding-top: 2.5rem;
-        }
-    }
-    //カラムブロック 連続するカラムブロックの下部余白
-    &.wp-block-columns.over {
-        margin-bottom: 0;
-    }
-}
-//カラムブロック ラベルがはみ出すカラムブロック
-.wp-block-columns.over{
-    .wp-block-column{
-        position: relative;
-        margin-top:2.5rem;
-    }
-    //カラムブロック 連続するカラムブロックの下部余白
-    &.wp-block-columns.over {
-        margin-bottom: 0;
-    }
-}
-
 //アイコンブロック 上にはみ出す
-.vk_icon.icon-over{
-    @include left-right-center( $top:var(--icon-top-over) );  
+.vk_icon.icon-top-over{
+    @include left-right-center( $top:-20%);  
 }
-//背景を親要素の高さまで伸ばす
-// .bg-height{
-//     min-height: 100%;
-//     .wp-block-group__inner-container{
-//         max-width: 100%;
-//     }
-// }
-
 
 //お問い合わせ用の電話番号のフォントファミリー
 .contact_txt_tel,//ExUnitのお問い合わせブロックのクラス名

@@ -2,6 +2,14 @@
 * ExUnit ブロック上書きCSS
 */
 
+//挿入アイテムの設定 の 子ページ一覧の表示
+.veu_card{
+    border-width: 1px;
+    border-radius: unset;
+    .veu_card_inner{
+        padding:2rem;
+    }
+}
 
 //お問い合わせブロック
 .veu_contact {

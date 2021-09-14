@@ -19,7 +19,7 @@ define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'EVERGREEN_VERSION', $data['version'] );
 
 
-/******************************************
+/**
  * Plugin Updater
  */
 require 'inc/plugin-update-checker/plugin-update-checker.php';
@@ -29,10 +29,16 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
 	'lightning-g3-evergreen'
 );
 
-/******************************************
+/**
 * Load Block Patterns
 */
 require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
+
+/**
+ * Load Preset Patterns
+ */
+require dirname( __FILE__ ) . '/presets.php';
+
 
 /******************************************
  * Load Only Lightning Active

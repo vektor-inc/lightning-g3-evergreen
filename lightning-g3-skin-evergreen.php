@@ -60,7 +60,7 @@ function ltg3_add_skin_evergreen( $skins ) {
 		'css_url'        => plugin_dir_url( __FILE__ ) . 'assets/css/style.css',
 		'css_path'       => plugin_dir_path( __FILE__ ) . 'assets/css/style.css',
 		'editor_css_url' => plugin_dir_url( __FILE__ ) . 'assets/css/editor.css',
-		'php_path'       => plugin_dir_path( __FILE__ ) . 'functions.php',
+		'php_path'       => plugin_dir_path( __FILE__ ) . 'class-ltg3-evergreen-active.php',
 		'version'        => $data['version'],
 	);
 	return $skins;

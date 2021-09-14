@@ -13,29 +13,30 @@
  */
 
 $data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
-define( 'Evergreen_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'Evergreen_URL', plugin_dir_url( __FILE__ ) );
-define( 'Evergreen_PATH', plugin_dir_path( __FILE__ ) );
-define( 'Evergreen_VERSION', $data['version'] );
+define( 'EVERGREEN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
+define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'EVERGREEN_VERSION', $data['version'] );
 
-/*
-	updater
-/*---------------------------------------*/
+
+/******************************************
+ * Plugin Updater
+ */
 require 'inc/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
 	'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
 	__FILE__,
 	'lightning-g3-evergreen'
 );
 
-/*
- Load Block Patterns
-/*---------------------------------------*/
+/******************************************
+* Load Block Patterns
+*/
 require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
- 
-/*
- Load Only Lightning Active
-/*---------------------------------------*/
+
+/******************************************
+ * Load Only Lightning Active
+ */
 $current_theme = get_template();
 if ( 'lightning' !== $current_theme ) {
 	return;
@@ -44,22 +45,23 @@ if ( 'g3' !== get_option( 'lightning_theme_generation' ) ) {
 	return;
 }
 
-
+/**
+ * Set Lightning Design Skin
+ *
+ * @param array $skins : Skin information.
+ * @return array $skins : Skin information.
+ */
 function ltg3_add_skin_evergreen( $skins ) {
 
 	$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
 
 	$skins['evergreen'] = array(
-		// label が Lightning デザイン設定 のスキン選択プルダウンに表示される名称
 		'label'          => __( 'Evergreen', 'lightning-g3-evergreen' ),
 		'css_url'        => plugin_dir_url( __FILE__ ) . 'assets/css/style.css',
 		'css_path'       => plugin_dir_path( __FILE__ ) . 'assets/css/style.css',
-
 		'editor_css_url' => plugin_dir_url( __FILE__ ) . 'assets/css/editor.css',
-		// スキン固有の処理を入れる場合（非推奨）
 		'php_path'       => plugin_dir_path( __FILE__ ) . 'functions.php',
-		// 'js_url'                   => plugin_dir_url( __FILE__ ) . '/js/script.js',
-		'version'                  => $data['version'],
+		'version'        => $data['version'],
 	);
 	return $skins;
 }

@@ -195,6 +195,11 @@ p.vk-label{
     }
 }
 
+//角丸にしたい要素に追加
+.vk-size-radius{
+    border-radius: var(--vk-size-radius);
+}
+
 //シャドウ
 .vk-shadow-primary{
     @include shadow-primary;

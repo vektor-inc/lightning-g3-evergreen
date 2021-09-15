@@ -87,10 +87,7 @@
 .wp-block-vk-blocks-grid-column-item .vk_gridColumn_item_inner{
     border-radius: var(--vk-size-radius);
 }
-//コア側のブロックで背景色をもつ要素を角丸に
-.has-background{
-    border-radius: var(--vk-size-radius);
-}
+
 //FAQブロック(新、旧)
 .wp-block-vk-blocks-faq,
 .wp-block-vk-blocks-faq2{

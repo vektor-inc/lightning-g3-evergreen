@@ -86,7 +86,7 @@ input[type=submit]{
 追加用のCSSクラス
 ============================================= */
 //下部のmarginを0
-.last-child-margin-bottom{
+.vk-last-child-margin-bottom{
     margin-bottom: 0;
 }
 
@@ -100,7 +100,7 @@ input[type=submit]{
 }
 
 //キービジュアル内見出し　
-.key-visual-heading{
+.vk-headding-key-visual{
     /* 
     calc + vwの計算式
     画面幅1200pxの時 font-size: 38px
@@ -115,7 +115,6 @@ calc + vwの計算式
 画面幅1200pxの時 font-size: 36px
 画面幅576pxの時 font-size: 28px
 */
-
 $vk-headding-lp: calc(28px + 8 * (100vw - 576px)/624);
 .vk-headding-lp{
     font-size: $vk-headding-lp;

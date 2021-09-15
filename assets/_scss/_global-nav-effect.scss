@@ -56,6 +56,12 @@
 	& > li > ul.sub-menu {
 		// The reason for upping it by 1px is that active-border runs off the drop-down menu..
 		margin-top: -1px;
+		//サブメニューを角丸に
+		border-radius: var(--vk-size-radius);
+		//liの最後はボーダー無しに
+		li:not(.menu-item-has-children.acc-parent-open):last-child > a{
+			border-bottom:none;
+		}
 
 	}
 	/*-------------------------------------------*/
@@ -71,6 +77,8 @@
 		}
 	}
 }
+
+
 //ナビ下に出る線の色
 //ヘッダー透過を有効 透過時ヘッダー文字色の色になる
 body:not(.header_scrolled) .site-header--trans--true{

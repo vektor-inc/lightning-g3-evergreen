@@ -52,11 +52,7 @@ if ( ! class_exists( 'LTG3_EVERGREEN_Active' ) ) {
 			$skin_dynamic_css = '';
 			$skin_dynamic_css = '
 			:root{
-                --shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-                --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
-                --border-radius-primary:100px;
-                --roboto-font-family: "Roboto", sans-serif;
-                --vk-size-text-xl: 2rem;
+				--vk-size-radius-btn-primary:100px;
 			}';
 
 			// 両サイドのスペースを消す.

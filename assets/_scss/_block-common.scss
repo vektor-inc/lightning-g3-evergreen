@@ -7,7 +7,7 @@
 .vk_button{
     .btn{
         @include btn();
-        @include shadow-primary;
+        @include shadow-link;
 
         &:hover{
             @include shadow-hover;
@@ -45,7 +45,6 @@
     }
 }
 
-
 //ボタン
 .btn{
     @include btn();
@@ -76,27 +75,35 @@
         padding: .3em 1em;
     }
 }
+//カード
 .card:not(.card-noborder) {
-    border-radius: unset;
+    // border-radius: unset;
     position: relative;
     border:unset;
-    @include shadow-primary;
+    @include shadow-link;
 }
 
+//VK グリットカラムを角丸に
+.wp-block-vk-blocks-grid-column-item .vk_gridColumn_item_inner{
+    border-radius: var(--vk-size-radius);
+}
+//コア側のブロックで背景色をもつ要素を角丸に
+.has-background{
+    border-radius: var(--vk-size-radius);
+}
 //FAQブロック(新、旧)
 .wp-block-vk-blocks-faq,
 .wp-block-vk-blocks-faq2{
 &.vk_faq{
     background-color: #ffffff;
     border-bottom:unset;
-    box-shadow: var(--shadow-primary);
+    border-radius: var(--vk-size-radius);
+    @include shadow-primary;
+
     &.vk_faq-accordion.vk_faq-accordion-close,
     &.vk_faq-accordion.vk_faq-accordion-open{
-
         margin-bottom: 2rem;
-
     }
-
         .vk_faq_title:before,
         .vk_faq_content:before{
             left: 1.5rem;
@@ -156,7 +163,7 @@
 }
 //ステップブロック
 .vk_step .vk_step_item .vk_step_item_dot{
-    font-family: var(--roboto-font-family);
+    font-family: $roboto-font-family;
     font-size: 1.2rem;
 }
 //フッター上部に設置したソーシャルブロック
@@ -177,12 +184,12 @@
     &.wp-block-search__button-inside {
         .wp-block-search__inside-wrapper{
             border: 1px solid #ccc;
-            border-radius:var(--border-radius-primary);
+            border-radius:var(--vk-size-radius-btn-primary);
             input[type="search"]{
-                border-radius:var(--border-radius-primary);
+                border-radius:var(--vk-size-radius-btn-primary);
             }
             .wp-block-search__button{
-                border-radius:var(---border-radius-primary);
+                border-radius:var(--vk-size-radius-btn-primary);
                 //アイコン表示の場合
                 &.has-icon{
                     width: 40px;
@@ -190,6 +197,11 @@
                 }
             }
         }
+    }
+    // ボタン外側
+    .wp-block-search__button,
+    .wp-block-search__input{
+        border-radius:var(--vk-size-radius-btn-primary);
     }
 }
 

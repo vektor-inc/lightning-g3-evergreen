@@ -46,7 +46,7 @@
 }
 
 //ボタン
-.btn{
+.btn:not(.header-top-contact-btn a){
     @include btn();
 }
 //VK Block Pattern のカラムバナーとカラムフィットバナーのボタンには影をつけたくないのでunset
@@ -180,13 +180,9 @@
     // ボタン内側の場合
     &.wp-block-search__button-inside {
         .wp-block-search__inside-wrapper{
-            border: 1px solid #ccc;
-            border-radius:var(--vk-size-radius-btn-primary);
-            input[type="search"]{
-                border-radius:var(--vk-size-radius-btn-primary);
-            }
+            border: 1px solid var(--vk-color-border-form);
+            border-radius:var(--vk-size-radius);
             .wp-block-search__button{
-                border-radius:var(--vk-size-radius-btn-primary);
                 //アイコン表示の場合
                 &.has-icon{
                     width: 40px;
@@ -195,10 +191,6 @@
             }
         }
     }
-    // ボタン外側
-    .wp-block-search__button,
-    .wp-block-search__input{
-        border-radius:var(--vk-size-radius-btn-primary);
-    }
+
 }
 

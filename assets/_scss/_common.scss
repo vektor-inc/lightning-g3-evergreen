@@ -76,18 +76,6 @@
     border-radius: 50%;
     box-shadow:unset;
 }
-//従来のウィジェット 検索フォーム
-.searchform{
-    input[type=text]{
-        border-top-left-radius: var(--vk-size-radius-btn-primary);;
-        border-bottom-left-radius: var(--vk-size-radius-btn-primary);;
-    }
-    input[type=submit]{
-        border-top-right-radius: var(--vk-size-radius-btn-primary);;
-        border-bottom-right-radius: var(--vk-size-radius-btn-primary);;
-
-    }
-}
 
 /* =============================================
 追加用のCSSクラス
@@ -103,7 +91,6 @@
         min-width: 18rem;
     }
 }
-
 
 //キービジュアル内見出し　
 .vk-headding-key-visual{

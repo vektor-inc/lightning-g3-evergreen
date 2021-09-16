@@ -254,13 +254,13 @@ p.vk-label{
 オフセット背景のオフセットを0（無し）
 ============================================= */
 //モバイルサイズでは0（無し）にする
-@media (max-width: $sm-max){
+@media screen and (max-width: $xs-max){
     [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-mobile {       
         --vk-width-bg-offset:0;
     }
 } 
 //タッチデバイス以下では0（無し）にする
-@media (max-width: $lg-max){
+@media screen and (max-width: $lg-max){
     [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-tablet {       
         --vk-width-bg-offset:0;
     }

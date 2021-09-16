@@ -76,10 +76,17 @@
     border-radius: 50%;
     box-shadow:unset;
 }
+//従来のウィジェット 検索フォーム
+.searchform{
+    input[type=text]{
+        border-top-left-radius: var(--vk-size-radius-btn-primary);;
+        border-bottom-left-radius: var(--vk-size-radius-btn-primary);;
+    }
+    input[type=submit]{
+        border-top-right-radius: var(--vk-size-radius-btn-primary);;
+        border-bottom-right-radius: var(--vk-size-radius-btn-primary);;
 
-input[type=submit]{
-
-    border-radius:var(--vk-size-radius-btn-primary);
+    }
 }
 
 /* =============================================
@@ -90,14 +97,13 @@ input[type=submit]{
     margin-bottom: 0;
 }
 
-//VKボタン　最小幅を設定したい時に使う
-.vk_button{
-    &.btn-min-width{ //最小幅
-        .vk_button_link.btn{
-            min-width: 18rem;
-        }
+//VKボタンに最小幅を設定したい時に使う
+.vk-button-min-width{ //最小幅
+    .vk_button_link.btn{
+        min-width: 18rem;
     }
 }
+
 
 //キービジュアル内見出し　
 .vk-headding-key-visual{
@@ -184,6 +190,10 @@ h6.vk-headding-lp {
 
 }
 
+.vk-font-family-en{
+    font-family: $roboto-font-family;
+}
+
 //ラベル
 .vk-label,
 p.vk-label{
@@ -239,8 +249,8 @@ p.vk-label{
 }
 
 //お問い合わせ用の電話番号のフォントファミリー
-.contact_txt_tel,//ExUnitのお問い合わせブロックのクラス名
-.contact_txt_tel .vk_heading_title
+.vk-contact-txt-tel,//ExUnitのお問い合わせブロックのクラス名
+.vk-contact-txt-tel .vk_heading_title
 {
     font-family: $roboto-font-family;
     font-size: calc(28px + 4 * (100vw - 576px)/624);

@@ -67,13 +67,23 @@
     .postListText_singleTermLabel_inner{
         @include btn();
     }
-    //画像内のラベル
+    //画像内の前の記事 次の記事 のラベル
+    //次の記事
     .vk_post_imgOuter_singleTermLabel{
         @include btn();
         top:5px;
         right: 5px;
         padding: .3em 1em;
+
     }
+    //前の記事
+    .next-prev-prev {
+        .vk_post_imgOuter_singleTermLabel{
+            left:5px;
+            right: unset;
+        }
+     }
+
 }
 //カード
 .card:not(.card-noborder) {

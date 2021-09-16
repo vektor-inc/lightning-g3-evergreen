@@ -76,6 +76,10 @@
     border-radius: 50%;
     box-shadow:unset;
 }
+//カテゴリーとタグ
+.entry-meta-data-list dt{
+    border-radius: var(--vk-size-radius-btn-primary);
+}
 
 /* =============================================
 追加用のCSSクラス

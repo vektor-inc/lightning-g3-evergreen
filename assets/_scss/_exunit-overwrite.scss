@@ -2,6 +2,12 @@
 * ExUnit ブロック上書きCSS
 */
 
+//ソーシャルアイコンセット
+.veu_socialSet .sb_icon a{
+    padding: 5px 15px;
+    border-radius: var(--vk-size-radius-btn-primary);
+}
+
 //挿入アイテムの設定 の 子ページ一覧の表示
 .veu_card{
     border-width: 1px;

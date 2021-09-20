@@ -5,6 +5,13 @@
 /* =============================================
 テーマCSS上書き
 ============================================= */
+//キャンペーンテキスト ボタン角丸
+.vk-campaign-text{
+    .vk-campaign-text_btn {
+        border-radius: 100px;
+    }
+}
+//ヘッダー
 .site-header{
     //ヘッダートップメニュー 余白調整
     .header-top {
@@ -193,6 +200,7 @@ p.vk-label{
     &.vk-label-top-over{
         @include left-right-center($top:0);
     }
+
 }
 
 //角丸にしたい要素に追加
@@ -240,14 +248,32 @@ p.vk-label{
 }
 
 //お問い合わせ用の電話番号のフォントファミリー
-.vk-contact-txt-tel,//ExUnitのお問い合わせブロックのクラス名
+.vk-contact-txt-tel,//←ExUnitのお問い合わせブロックのクラス名
 .vk-contact-txt-tel .vk_heading_title
 {
     font-family: $roboto-font-family;
     font-size: calc(28px + 4 * (100vw - 576px)/624);
+    color:var(--vk-color-primary);
     .fa-phone{
         font-size: 0.8em;
     }
+}
+
+/* =============================================
+キーカラー用のクラス
+============================================= */
+//vk-blocks側でカラーパレットでキーカラー選択出来るようになったら不要になる
+.vk-color-primary {
+    color:var(--vk-color-primary);
+}
+.vk-color-primary-dark {
+    color:var(--vk-color-primary-dark);
+}
+.vk-color-bg-primary {
+    background-color:var(--vk-color-primary);
+}
+.vk-color-bg-primary-dark {
+    background-color:var(--vk-color-primary-dark);
 }
 
 /* =============================================

@@ -185,6 +185,13 @@
     max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
 }
 
+//グループブロックのアラート系のブロック内に配置したVK見出しのアイコン色は、アラートで設定されている色にしたいのでinherit
+.wp-block-group[class*="is-style-vk-group-alert-"]{
+    .vk_heading i{
+        color: inherit;
+    } 
+}
+
 //検索ブロック    
 .wp-block-search{
     // ボタン内側の場合
@@ -203,6 +210,7 @@
     }
 
 }
+
 
 /* =============================================
 キーカラー設定

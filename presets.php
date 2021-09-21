@@ -201,18 +201,18 @@ function ltg3ever_add_color_presets( $presets, $theme_slug ) {
 
 	// カラーバリエーション
 	$color_array = array(
-		'eve_aka'    => array(
-			'label'           => __( 'EVERGREEN aka / 赤 / 黒' ),
+		'eve_red'    => array(
+			'label'           => __( 'EVERGREEN 赤系 / 赤 / 黒' ),
 			'color_key'       => '#b1271b',
 			'header_bg_color' => '#d82c1c',
 		),
 		'eve_orange'    => array(
-			'label'           => __( 'EVERGREEN orange / 橙 / 黒' ),
+			'label'           => __( 'EVERGREEN 橙系 / 橙 / 黒' ),
 			'color_key'       => '#ef9f2f',
 			'header_bg_color' => '#e77619',
 		),		
-		'eve_ao'         => array(
-			'label'           => __( 'EVERGREEN ao 青 / 黒' ),
+		'eve_blue'         => array(
+			'label'           => __( 'EVERGREEN 青系 / 青 / 黒' ),
 			'color_key'       => '#2084B9',
 			'header_bg_color' => '#165290',
 		),

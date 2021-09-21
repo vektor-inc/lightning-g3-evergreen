@@ -104,7 +104,7 @@ function ltg3ever_add_color_presets( $presets, $theme_slug ) {
 
 	$colors = array(
 		'trans_green' => array(
-			'label'   => __( 'EVERGREEN ヘッダー透過 / 緑 / 緑' ),
+			'label'   => __( 'EVERGREEN ヘッダートップ透過 / 緑 / 緑' ),
 			'options' => array(
 				//キャンペーンテキスト
 				'vk_campaign_text'               => array(

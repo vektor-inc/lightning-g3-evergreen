@@ -8,9 +8,9 @@ $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
 
-$shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 10%);
-$shadow-link: 0 2px 10px 0 rgba(0, 0, 0, 10%);
-$shadow-hover: 0 0 5px 0 rgba(0, 0, 0, 10%);
+$shadow-primary: 0 0 5px 0 rgba(0, 0, 0, 12%);
+$shadow-link: 0 2px 10px 0 rgba(0, 0, 0, 12%);
+$shadow-hover: 0 0 5px 0 rgba(0, 0, 0, 12%);
 $roboto-font-family: "Roboto", sans-serif;
 
 @mixin left-right-center($top: 0){

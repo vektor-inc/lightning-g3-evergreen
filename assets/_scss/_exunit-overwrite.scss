@@ -8,14 +8,18 @@
     border-radius: var(--vk-size-radius-btn-primary);
 }
 
-//挿入アイテムの設定 の 子ページ一覧の表示
+//挿入アイテムの設定 の 子ページ一覧の表示と子ページ一覧ブロック
 .veu_card{
-    border-width: 1px;
-    border-radius: unset;
+    border: unset;
+    @include shadow-link;
     .veu_card_inner{
         padding:2rem;
     }
+    &:hover{
+        @include shadow-hover;
+    }
 }
+
 
 //お問い合わせブロック
 .veu_contact {

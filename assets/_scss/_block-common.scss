@@ -71,15 +71,15 @@
     //次の記事
     .vk_post_imgOuter_singleTermLabel{
         @include btn();
-        top:5px;
-        right: 5px;
-        padding: .3em 1em;
+        top:$vk_post_imgOuter_singleTermLabel-padding;
+        right: $vk_post_imgOuter_singleTermLabel-padding;
+        padding: .1em 1em;
 
     }
     //前の記事
     .next-prev-prev {
         .vk_post_imgOuter_singleTermLabel{
-            left:5px;
+            left:$vk_post_imgOuter_singleTermLabel-padding;
             right: unset;
         }
      }

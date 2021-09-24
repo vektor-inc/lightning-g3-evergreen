@@ -87,6 +87,11 @@
 .entry-meta-data-list dt{
     border-radius: var(--vk-size-radius-btn-primary);
 }
+//コメントの角丸
+ol.comment-list>.comment,
+p.no-comments{
+    border-radius: var(--vk-size-radius);
+}
 
 /* =============================================
 追加用のCSSクラス
@@ -285,8 +290,8 @@ p.vk-label{
         --vk-width-bg-offset:0;
     }
 } 
-//タッチデバイス以下では0（無し）にする
-@media screen and (max-width: $lg-max){
+//タブレット以下では0（無し）にする
+@media screen and (max-width: $md-max){
     [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-tablet {       
         --vk-width-bg-offset:0;
     }

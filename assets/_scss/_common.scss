@@ -264,22 +264,6 @@ p.vk-label{
     }
 }
 
-/* =============================================
-キーカラー用のクラス
-============================================= */
-//vk-blocks側でカラーパレットでキーカラー選択出来るようになったら不要になる
-.vk-color-primary {
-    color:var(--vk-color-primary);
-}
-.vk-color-primary-dark {
-    color:var(--vk-color-primary-dark);
-}
-.vk-color-bg-primary {
-    background-color:var(--vk-color-primary);
-}
-.vk-color-bg-primary-dark {
-    background-color:var(--vk-color-primary-dark);
-}
 
 /* =============================================
 オフセット背景のオフセットを0（無し）

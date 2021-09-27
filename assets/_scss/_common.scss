@@ -73,11 +73,15 @@
         margin-top: 0;
     }
 }
-//モバイルフィックスナビ 高さ
-.mobile-fix-nav .mobile-fix-nav-menu {
-    height: 52px;
-    padding: 7px 0 5px;
+//モバイルフィックスナビ
+.mobile-fix-nav{
+    border-top: 1px solid var(--vk-color-border-hr);
+    .mobile-fix-nav-menu {
+        height: 52px;
+        padding: 7px 0 5px;
+    }
 }
+
 //ページトップ      
 .page_top_btn{
     border-radius: 50%;

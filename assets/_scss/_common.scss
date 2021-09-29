@@ -75,7 +75,7 @@
 }
 //モバイルフィックスナビ
 .mobile-fix-nav{
-    border-top: 1px solid var(--vk-color-border-hr);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 12%);
     .mobile-fix-nav-menu {
         height: 52px;
         padding: 7px 0 5px;

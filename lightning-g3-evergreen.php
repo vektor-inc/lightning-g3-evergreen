@@ -29,6 +29,27 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
 	'lightning-g3-evergreen'
 );
 
+/******************************************
+ * Load Only Lightning Active
+ */
+// 現在のテーマ
+$current_theme = get_template();
+// is_plugin_active を使うための準備
+include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+// テーマが Lightning でなかったらこれ以上何もしない
+if ( 'lightning' !== $current_theme ) {
+	return;
+}
+// 世代が  G3 でなかったらこれ以上何もしない
+if ( 'g3' !== get_option( 'lightning_theme_generation' ) ) {
+	return;
+}
+// Lightning G3 Pro Unit が有効でなかったらこれ以上何もしない
+if ( ! is_plugin_active( 'lightning-g3-pro-unit/lightning-g3-pro-unit.php' ) ) {
+	return;
+}
+
 /**
 * Load Block Patterns
 */
@@ -39,17 +60,6 @@ require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-j
  */
 require dirname( __FILE__ ) . '/presets.php';
 
-
-/******************************************
- * Load Only Lightning Active
- */
-$current_theme = get_template();
-if ( 'lightning' !== $current_theme ) {
-	return;
-}
-if ( 'g3' !== get_option( 'lightning_theme_generation' ) ) {
-	return;
-}
 
 /**
  * Set Lightning Design Skin

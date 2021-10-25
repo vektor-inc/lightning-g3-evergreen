@@ -1,1 +1,20 @@
 @use "vk-bg-offset";
+
+//上にはみ出すブロック
+.vk-block-top-over{
+    &-lg{
+        margin:-14rem auto 0;
+        z-index: 1;
+        position: relative;
+    }
+    &-md{
+        margin:-7rem auto 0;
+        z-index: 1;
+        position: relative;
+    }
+    &-sm{
+        margin:-3.5rem auto 0;
+        z-index: 1;
+        position: relative;
+    }
+}

@@ -267,28 +267,3 @@ p.vk-label{
         font-size: 0.8em;
     }
 }
-
-
-/* =============================================
-オフセット背景のオフセットを0（無し）
-============================================= */
-//モバイルサイズでは0（無し）にする
-@media screen and (max-width: $xs-max){
-    [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-mobile {       
-        --vk-width-bg-offset:0;
-    }
-} 
-//タブレット以下では0（無し）にする
-@media screen and (max-width: $md-max){
-    [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-tablet {       
-        --vk-width-bg-offset:0;
-    }
-}
-
-
-
-
-
-
-
-

@@ -1,3 +1,5 @@
+// グループに対して .vk-bg-offset をつけ、
+// その中に outer を absolute で配置している
 .vk-bg-offset {
     position:relative;
     & > .wp-block-group__inner-container > div{

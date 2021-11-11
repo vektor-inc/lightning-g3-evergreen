@@ -5,97 +5,7 @@
 /* =============================================
 テーマCSS上書き
 ============================================= */
-//キャンペーンテキスト ボタン角丸
-.vk-campaign-text{
-    .vk-campaign-text_btn {
-        border-radius: 100px;
-    }
-}
-//ヘッダー
-.site-header{
-    //ヘッダートップメニュー 余白調整
-    .header-top {
-        nav {
-            top: 9px;
-        }
-        ul>li>a,
-        ul>li>span{
-            padding: 0 0.5rem;
-        }
-    }
-    //ロゴ
-    &-logo img {
-        max-height: 50px;
-        @media (max-width: $md-max){
-            max-height: 35px;
-        }
-    }
 
-}
-//ページヘッダーサブテキスト
-.page-header-subtext {
-    line-height: 1.5;
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
-//フッター フォントサイズ
-.site-footer{
-    @media screen and (min-width: 767px){
-        font-size: calc(var(--vk-size-text)* 0.9) ;
-    }
-}
-//フッターナビ
-.footer-nav {
-    .footer-nav-list{
-            //フッターメニューを中央寄せ
-            @media screen and (min-width: 767px){ 
-            display: flex;    
-            justify-content: center;
-            }
-        li{
-            @media screen and (min-width: 767px){
-            &:first-child{
-                border-left: none;
-            }             
-                border-left:1px solid #ffffff;
-            }
-            a {
-                @media (max-width: 767.98px){
-                    border-bottom: 1px solid var(--vk-color-border-light);
-                }
-            }
-        }
-    }
-}
-//フッターコンテンツ　ソーシャルボタンのマージン
-.site-footer-content{
-    .wp-block-social-links{
-        margin-top: 0;
-    }
-}
-//モバイルフィックスナビ
-.mobile-fix-nav{
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 12%);
-    .mobile-fix-nav-menu {
-        height: 52px;
-        padding: 7px 0 5px;
-    }
-}
-
-//ページトップ      
-.page_top_btn{
-    border-radius: 50%;
-    box-shadow:unset;
-}
-//カテゴリーとタグ
-.entry-meta-data-list dt{
-    border-radius: var(--vk-size-radius-btn-primary);
-}
-//コメントの角丸
-ol.comment-list>.comment,
-p.no-comments{
-    border-radius: var(--vk-size-radius);
-}
 
 /* =============================================
 追加用のCSSクラス
@@ -231,26 +141,6 @@ p.vk-label{
     }
 }
 
-//上にはみ出すブロック
-.vk-block-top-over{
-    &-lg{
-        margin:-14rem auto 0;
-        z-index: 1;
-        position: relative;
-    }
-    &-md{
-        margin:-7rem auto 0;
-        z-index: 1;
-        position: relative;
-    }
-    &-sm{
-        margin:-3.5rem auto 0;
-        z-index: 1;
-        position: relative;
-    }
-}
-
-
 //アイコンブロック 上にはみ出す
 .vk_icon.vk-icon-top-over{
     @include left-right-center( $top:0);  
@@ -267,28 +157,3 @@ p.vk-label{
         font-size: 0.8em;
     }
 }
-
-
-/* =============================================
-オフセット背景のオフセットを0（無し）
-============================================= */
-//モバイルサイズでは0（無し）にする
-@media screen and (max-width: $xs-max){
-    [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-mobile {       
-        --vk-width-bg-offset:0;
-    }
-} 
-//タブレット以下では0（無し）にする
-@media screen and (max-width: $md-max){
-    [class*="vk-bg-offset-bg--"].vk-bg-offset-bg--no-offset-tablet {       
-        --vk-width-bg-offset:0;
-    }
-}
-
-
-
-
-
-
-
-

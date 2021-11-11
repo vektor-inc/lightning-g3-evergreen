@@ -1,3 +1,7 @@
+@use "variables";
+
+// グループに対して .vk-bg-offset をつけ、
+// その中に outer を absolute で配置している
 .vk-bg-offset {
     position:relative;
     & > .wp-block-group__inner-container > div{
@@ -18,6 +22,19 @@
     }
     &.vk-bg-offset-bg--right {
         margin-right:var(--vk-width-bg-offset);
+    }
+    /* =============================================
+    オフセット背景のオフセットを0（無し）
+    ============================================= */
+    &.vk-bg-offset-bg--no-offset-mobile{
+        @media (max-width: variables.$xs-max){
+            --vk-width-bg-offset:0;
+        }
+    }
+    &.vk-bg-offset-bg--no-offset-tablet{
+        @media ( max-width: variables.$md-max){
+            --vk-width-bg-offset:0;
+        }
     }
 }
 .vk-bg-offset-bg--45 {

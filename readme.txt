@@ -4,7 +4,7 @@ Donate link:
 Tags:
 Requires at least: 5.8
 Tested up to: 5.8.0
-Stable tag: 0.0.7
+Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,8 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-= 0.0.0 = 
+0.1.0
+[ その他 ] G3 Pro Unit 0.13.0 のフッターメニュー位置指定機能対応
 
+0.0.0
 First Commit
 
 * Cope with Card Block Image Round

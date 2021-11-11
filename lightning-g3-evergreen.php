@@ -7,7 +7,7 @@
  * Author URI:      https://vektor-inc.co.jp
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
- * Version:         0.0.7
+ * Version:         0.1.0
  *
  * @package         LIGHTNING_G3_EVERGREEN
  */
@@ -35,7 +35,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
 // 現在のテーマ
 $current_theme = get_template();
 // is_plugin_active を使うための準備
-include_once ABSPATH . 'wp-admin/includes/plugin.php';
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 // テーマが Lightning でなかったらこれ以上何もしない
 if ( 'lightning' !== $current_theme ) {

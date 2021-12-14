@@ -58,6 +58,8 @@ jobs:
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
     - name: Run @wordpress/env
-      run: npx wp-env start
+      run:  |
+        npx wp-env destroy
+        npx wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

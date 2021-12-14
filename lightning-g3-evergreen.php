@@ -12,17 +12,14 @@
  * @package         LIGHTNING_G3_EVERGREEN
  */
 
-$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
-define( 'EVERGREEN_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
-define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'EVERGREEN_VERSION', $data['version'] );
+defined( 'ABSPATH' ) || exit;
 
+// Composer のファイルを読み込み ( composer install --no-dev )
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 /**
  * Plugin Updater
  */
-require 'inc/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
 	'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
 	__FILE__,
@@ -49,6 +46,12 @@ if ( 'g3' !== get_option( 'lightning_theme_generation' ) ) {
 if ( ! is_plugin_active( 'lightning-g3-pro-unit/lightning-g3-pro-unit.php' ) ) {
 	return;
 }
+
+$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
+define( 'EVERGREEN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
+define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'EVERGREEN_VERSION', $data['version'] );
 
 /**
 * Load Block Patterns

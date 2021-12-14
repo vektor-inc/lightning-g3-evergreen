@@ -52,6 +52,8 @@ jobs:
         php-version: ${{ matrix.php }}
     - name: install npm scripts
       run: npm install
+    - name: Build
+      run: npm run build
     - name: Run @wordpress/env
       run:  |
         npx wp-env destroy

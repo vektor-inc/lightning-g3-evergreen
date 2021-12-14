@@ -7,23 +7,20 @@
  * Author URI:      https://vektor-inc.co.jp
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.1.1
  *
  * @package         LIGHTNING_G3_EVERGREEN
  */
 
-$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
-define( 'EVERGREEN_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
-define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'EVERGREEN_VERSION', $data['version'] );
+defined( 'ABSPATH' ) || exit;
 
+// Composer のファイルを読み込み ( composer install --no-dev ).
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 /**
  * Plugin Updater
  */
-require 'inc/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.
 	'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
 	__FILE__,
 	'lightning-g3-evergreen'
@@ -32,23 +29,29 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore
 /******************************************
  * Load Only Lightning Active
  */
-// 現在のテーマ
+// 現在のテーマ.
 $current_theme = get_template();
-// is_plugin_active を使うための準備
+// is_plugin_active を使うための準備.
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-// テーマが Lightning でなかったらこれ以上何もしない
+// テーマが Lightning でなかったらこれ以上何もしない.
 if ( 'lightning' !== $current_theme ) {
 	return;
 }
-// 世代が  G3 でなかったらこれ以上何もしない
+// 世代が  G3 でなかったらこれ以上何もしない.
 if ( 'g3' !== get_option( 'lightning_theme_generation' ) ) {
 	return;
 }
-// Lightning G3 Pro Unit が有効でなかったらこれ以上何もしない
+// Lightning G3 Pro Unit が有効でなかったらこれ以上何もしない.
 if ( ! is_plugin_active( 'lightning-g3-pro-unit/lightning-g3-pro-unit.php' ) ) {
 	return;
 }
+
+$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
+define( 'EVERGREEN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
+define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'EVERGREEN_VERSION', $data['version'] );
 
 /**
 * Load Block Patterns

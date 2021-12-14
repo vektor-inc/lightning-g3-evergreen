@@ -7,3 +7,4 @@ Thumbs.db
 *.sql
 *.tar.gz
 *.zip
+vendor/

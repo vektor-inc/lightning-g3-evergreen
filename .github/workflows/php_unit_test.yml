@@ -52,11 +52,6 @@ jobs:
         php-version: ${{ matrix.php }}
     - name: install npm scripts
       run: npm install
-    - name: Install WP-CLI
-      run: |
-        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        chmod +x wp-cli.phar
-        mv wp-cli.phar /usr/local/bin/wp
     - name: Run @wordpress/env
       run:  |
         npx wp-env destroy

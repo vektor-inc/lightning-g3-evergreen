@@ -3,8 +3,8 @@ Contributors:
 Donate link:
 Tags:
 Requires at least: 5.8
-Tested up to: 5.8.0
-Stable tag: 0.1.0
+Tested up to: 5.8.2
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Screenshots ==
 
 == Changelog ==
+
+0.1.1
+[ その他 ] アップデートチェッカーの読み込み方法変更
 
 0.1.0
 [ その他 ] G3 Pro Unit 0.13.0 のフッターメニュー位置指定機能対応

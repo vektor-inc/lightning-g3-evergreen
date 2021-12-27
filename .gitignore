@@ -8,3 +8,4 @@ Thumbs.db
 *.tar.gz
 *.zip
 vendor/
+.wp-env.override.json

@@ -3,8 +3,8 @@ Contributors:
 Donate link:
 Tags:
 Requires at least: 5.8
-Tested up to: 5.8.2
-Stable tag: 0.1.2
+Tested up to: 5.9.0
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Screenshots ==
 
 == Changelog ==
+
+0.1.3
+[ その他 ] パターンリカバリーアップデート
 
 0.1.2
 [ その他 ] パターンアップデート

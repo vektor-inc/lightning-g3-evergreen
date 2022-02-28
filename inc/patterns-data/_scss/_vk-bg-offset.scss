@@ -4,9 +4,13 @@
 // その中に outer を absolute で配置している
 .vk-bg-offset {
     position:relative;
-    & > .wp-block-group__inner-container > div{
-        position: relative;
-        z-index: 1;
+    & > .wp-block-group__inner-container {
+        & > div,
+        & > p,
+        & > figure{//オフセット背景の下に隠れてしまうので追加
+            position: relative;
+            z-index: 1;
+        }
     }
 }
 .vk-bg-offset-bg {

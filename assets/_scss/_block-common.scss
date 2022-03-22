@@ -85,12 +85,14 @@
      }
 
 }
-//カード
+//カードブロック
 .card:not(.card-noborder) {
-    // border-radius: unset;
     position: relative;
     border:unset;
     @include shadow-link;
+    &:hover{
+        @include shadow-hover;
+    }
 }
 
 //VK グリットカラムを角丸に

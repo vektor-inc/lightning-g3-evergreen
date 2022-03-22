@@ -85,12 +85,14 @@
      }
 
 }
-//カード
+//カードブロック
 .card:not(.card-noborder) {
-    // border-radius: unset;
     position: relative;
     border:unset;
     @include shadow-link;
+    &:hover{ //Tree shaking を有効化にすると上記の投稿リストのカードのhoverに書いてある記述が、カードブロックで効かなくなるので追加
+        @include shadow-hover;
+    }
 }
 
 //VK グリットカラムを角丸に

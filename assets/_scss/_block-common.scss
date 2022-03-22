@@ -90,7 +90,7 @@
     position: relative;
     border:unset;
     @include shadow-link;
-    &:hover{
+    &:hover{ //Tree shaking を有効化にすると上記の投稿リストのカードのhoverに書いてある記述が、カードブロックで効かなくなるので追加
         @include shadow-hover;
     }
 }

@@ -71,7 +71,6 @@ require dirname( __FILE__ ) . '/presets.php';
  * @return array $skins : Skin information.
  */
 function ltg3_add_skin_evergreen( $skins ) {
-
 	$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
 
 	$skins['evergreen'] = array(

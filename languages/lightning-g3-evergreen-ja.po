@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Lightning G3 Evergreen\n"
+"POT-Creation-Date: 2022-04-11 09:10+0900\n"
+"PO-Revision-Date: 2022-04-11 09:11+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: lightning-g3-evergreen.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: inc/tgm-plugin-activation/config.php:71
+msgid "Install Required Plugins"
+msgstr "必須プラグインのインストール"
+
+#: inc/tgm-plugin-activation/config.php:72
+msgid "Install Plugins"
+msgstr "プラグインのインストール"
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/config.php:74
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "プラグインのインストール中: %s"
+
+#: inc/tgm-plugin-activation/config.php:75
+msgid "Something went wrong with the plugin API."
+msgstr "プラグイン API で問題が発生しました。"
+
+#: inc/tgm-plugin-activation/config.php:78
+#, php-format
+msgid "This plugin requires the following plugin: %1$s."
+msgid_plural "This plugin requires the following plugins: %1$s."
+msgstr[0] "このプラグインは下記プラグインを必要としています：%1$s。"
+
+#: inc/tgm-plugin-activation/config.php:84
+#, php-format
+msgid ""
+"This plugin recommends the following plugin: %1$s.<br>Many additional "
+"functions are available for free."
+msgid_plural ""
+"This plugin recommends the following plugins: %1$s.<br>Many additional "
+"functions are available for free."
+msgstr[0] ""
+"このプラグインは次のプラグインと一緒に利用するのがオススメです：%1$s。<br>こ"
+"れらのプラグインは無償で利用可能です。"
+
+#: inc/tgm-plugin-activation/config.php:90
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] "%1$s プラグインをインストールするための適切な権限がありません。"
+
+#: inc/tgm-plugin-activation/config.php:96
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this plugin: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this plugin: %1$s."
+msgstr[0] ""
+"このプラグインとの最大の互換性を確保するには、次のプラグインを最新バージョン"
+"に更新する必要があります： %1$s。"
+
+#: inc/tgm-plugin-activation/config.php:102
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
+
+#: inc/tgm-plugin-activation/config.php:108
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] "%1$s プラグインを更新する権限がありません。"
+
+#: inc/tgm-plugin-activation/config.php:114
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "次の必須プラグインは現在、停止中です: %1$s"
+
+#: inc/tgm-plugin-activation/config.php:120
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "次の推奨プラグインは現在、停止中です: %1$s"
+
+#: inc/tgm-plugin-activation/config.php:126
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] "%1$s プラグインを有効化するための適切な権限がありません。"
+
+#: inc/tgm-plugin-activation/config.php:132
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "プラグインのインストールを開始"
+
+#: inc/tgm-plugin-activation/config.php:137
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "プラグインの更新を開始"
+
+#: inc/tgm-plugin-activation/config.php:142
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "プラグインの有効化を開始"
+
+#: inc/tgm-plugin-activation/config.php:146
+msgid "Return to Required Plugins Installer"
+msgstr "必須プラグインのインストール画面に戻る"
+
+#: inc/tgm-plugin-activation/config.php:147
+msgid "Plugin activated successfully."
+msgstr "プラグインを有効化しました。"
+
+#: inc/tgm-plugin-activation/config.php:148
+msgid "The following plugin was activated successfully:"
+msgstr "次のプラグインを有効化しました:"
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/config.php:150
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/config.php:152
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"プラグインを有効化できませんでした。このテーマはプラグイン %s の現在のバー"
+"ジョンをサポートしていません。プラグインを更新してください。"
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/config.php:154
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
+
+#. translators: %s = dashboard link.
+#: inc/tgm-plugin-activation/config.php:156
+msgid "Please contact the administrator of this site for help."
+msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
+
+#: lightning-g3-evergreen.php:87 presets.php:24
+msgid "Evergreen"
+msgstr "緑"
+
+#: presets.php:47
+msgid "EVERGREEN ナビ縦書き"
+msgstr "EVERGREEN ナビ縦書き"
+
+#: presets.php:70
+msgid "EVERGREEN 中央"
+msgstr "EVERGREEN 中央"
+
+#: presets.php:125
+msgid "EVERGREEN ヘッダートップ透過 / 緑 / 緑"
+msgstr "EVERGREEN ヘッダートップ透過 / 緑 / 緑"
+
+#: presets.php:219
+msgid "EVERGREEN 赤系 / 赤 / 黒"
+msgstr "EVERGREEN 赤系 / 赤 / 黒"
+
+#: presets.php:224
+msgid "EVERGREEN 橙系 / 橙 / 黒"
+msgstr "EVERGREEN 橙系 / 橙 / 黒"
+
+#: presets.php:229
+msgid "EVERGREEN 青系 / 青 / 黒"
+msgstr "EVERGREEN 青系 / 青 / 黒"
+
+#. Plugin Name of the plugin/theme
+msgid "Lightning G3 Evergreen"
+msgstr "Lightning G3 Evergreen"
+
+#. Plugin URI of the plugin/theme
+msgid "（プラグインの解説ページのURL）"
+msgstr "（プラグインの解説ページのURL）"
+
+#. Description of the plugin/theme
+msgid ""
+"WordPressテーマ「Lightning」とPro版プラグイン「Lightning G3 Pro Unit」専用の"
+"拡張スキン「Evergreen」を追加するプラグインです。テーマ「Lightning」とPro版プ"
+"ラグイン「Lightning G3 Pro Unit」を有効化した後に、「カスタマイズ > "
+"Lightning デザイン設定 > デザインスキン」のプルダウンで「Evergreen」が選択出"
+"来るようになります。"
+msgstr ""
+"WordPressテーマ「Lightning」とPro版プラグイン「Lightning G3 Pro Unit」専用の"
+"拡張スキン「Evergreen」を追加するプラグインです。テーマ「Lightning」とPro版プ"
+"ラグイン「Lightning G3 Pro Unit」を有効化した後に、「カスタマイズ > "
+"Lightning デザイン設定 > デザインスキン」のプルダウンで「Evergreen」が選択出"
+"来るようになります。"
+
+#. Author of the plugin/theme
+msgid "Vektor,Inc."
+msgstr "Vektor,Inc."
+
+#. Author URI of the plugin/theme
+msgid "https://vektor-inc.co.jp"
+msgstr "https://vektor-inc.co.jp"

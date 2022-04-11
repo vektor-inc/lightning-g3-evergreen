@@ -17,7 +17,6 @@
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 
-add_action( 'tgmpa_register', 'vkb_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -32,7 +31,7 @@ add_action( 'tgmpa_register', 'vkb_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function vkb_register_required_plugins() {
+function ltg3ever_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -43,7 +42,7 @@ function vkb_register_required_plugins() {
 		array(
 			'name'     => 'VK Block Patterns', // The plugin name.
 			'slug'     => 'vk-block-patterns', // The plugin slug (typically the folder name).
-			'required' => false, // If false, the plugin is only 'recommended' instead of required.
+			'required' => true, // If false, the plugin is only 'recommended' instead of required.
 		),
 	);
 
@@ -161,3 +160,4 @@ function vkb_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+add_action( 'tgmpa_register', 'ltg3ever_register_required_plugins' );

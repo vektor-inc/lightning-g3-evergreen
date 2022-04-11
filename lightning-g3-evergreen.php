@@ -18,6 +18,11 @@ defined( 'ABSPATH' ) || exit;
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 /**
+ * TGM
+ */
+require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
+
+/**
  * Plugin Updater
  */
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.

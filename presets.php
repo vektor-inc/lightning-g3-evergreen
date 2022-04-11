@@ -91,7 +91,7 @@ function ltg3_evergreen_add_base_presets( $presets, $theme_slug ) {
 	);
 	return array_merge( $presets, $base_presets );
 }
-add_filter( 'lightning_base_presets', 'ltg3ever_add_base_presets', 10, 2 );
+add_filter( 'lightning_base_presets', 'ltg3_evergreen_add_base_presets', 10, 2 );
 
 /**
  * Evergreen Color Presets
@@ -242,4 +242,4 @@ function ltg3_evergreen_add_color_presets( $presets, $theme_slug ) {
 	}
 	return array_merge( $presets, $colors );
 }
-add_filter( 'lightning_color_presets', 'ltg3ever_add_color_presets', 10, 2 );
+add_filter( 'lightning_color_presets', 'ltg3_evergreen_add_color_presets', 10, 2 );

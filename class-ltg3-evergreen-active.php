@@ -47,7 +47,6 @@ if ( ! class_exists( 'LTG3_EVERGREEN_Active' ) ) {
 		 * @return void
 		 */
 		public function skin_dynamic_css() {
-
 			$options          = get_option( 'lightning_theme_options' );
 			$skin_dynamic_css = '';
 			$skin_dynamic_css = '
@@ -67,6 +66,5 @@ if ( ! class_exists( 'LTG3_EVERGREEN_Active' ) ) {
 
 	}
 
-	$lightning_evergreen = new LTG3_EVERGREEN_Active();
-
+	$ltg3_evergreen = new LTG3_EVERGREEN_Active();
 }

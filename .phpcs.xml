@@ -7,6 +7,7 @@
 	<exclude-pattern>/vendor/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
 	<exclude-pattern>/dist/*</exclude-pattern>
+	<exclude-pattern type="relative">^tests/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/patterns-data/*</exclude-pattern>
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
@@ -55,7 +56,12 @@
 		<!-- 一行コメントの末尾.のチェックを外す -->
 		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
 	</rule>
-
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<!-- Value: replace the function, class, and variable prefixes used. Separate multiple prefixes with a comma. -->
+			<property name="prefixes" type="array" value="ltg3_evergreen"/>
+		</properties>
+	</rule>
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<!-- Value: replace the text domain used. -->

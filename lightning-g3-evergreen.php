@@ -30,12 +30,12 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.
  * Load Only Lightning Active
  */
 // 現在のテーマ.
-$current_theme = get_template();
+$ltg3_evergreen_current_themet = get_template();
 // is_plugin_active を使うための準備.
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 // テーマが Lightning でなかったらこれ以上何もしない.
-if ( 'lightning' !== $current_theme ) {
+if ( 'lightning' !== $ltg3_evergreen_current_themet ) {
 	return;
 }
 // 世代が  G3 でなかったらこれ以上何もしない.
@@ -47,11 +47,10 @@ if ( ! is_plugin_active( 'lightning-g3-pro-unit/lightning-g3-pro-unit.php' ) ) {
 	return;
 }
 
-$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
-define( 'EVERGREEN_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
-define( 'EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'EVERGREEN_VERSION', $data['version'] );
+$ltg3_evergreen_data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
+define( 'LTG3_EVERGREEN_URL', plugin_dir_url( __FILE__ ) );
+define( 'LTG3_EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'LTG3_EVERGREEN_VERSION', $ltg3_evergreen_data['version'] );
 
 /**
 * Load Block Patterns
@@ -70,17 +69,15 @@ require dirname( __FILE__ ) . '/presets.php';
  * @param array $skins : Skin information.
  * @return array $skins : Skin information.
  */
-function ltg3_add_skin_evergreen( $skins ) {
-	$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
-
+function ltg3_evergreen_add_skin( $skins ) {
 	$skins['evergreen'] = array(
 		'label'          => __( 'Evergreen', 'lightning-g3-evergreen' ),
 		'css_url'        => plugin_dir_url( __FILE__ ) . 'assets/css/style.css',
 		'css_path'       => plugin_dir_path( __FILE__ ) . 'assets/css/style.css',
 		'editor_css_url' => plugin_dir_url( __FILE__ ) . 'assets/css/editor.css',
 		'php_path'       => plugin_dir_path( __FILE__ ) . 'class-ltg3-evergreen-active.php',
-		'version'        => $data['version'],
+		'version'        => LTG3_EVERGREEN_VERSION,
 	);
 	return $skins;
 }
-add_filter( 'lightning_g3_skins', 'ltg3_add_skin_evergreen' );
+add_filter( 'lightning_g3_skins', 'ltg3_evergreen_add_skin' );

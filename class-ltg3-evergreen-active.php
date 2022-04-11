@@ -66,5 +66,5 @@ if ( ! class_exists( 'LTG3_EVERGREEN_Active' ) ) {
 
 	}
 
-	$lightning_evergreen = new LTG3_EVERGREEN_Active();
+	$ltg3_evergreen = new LTG3_EVERGREEN_Active();
 }

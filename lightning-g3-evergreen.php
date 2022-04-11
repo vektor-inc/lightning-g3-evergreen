@@ -60,11 +60,6 @@ define( 'LTG3_EVERGREEN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LTG3_EVERGREEN_VERSION', $ltg3_evergreen_data['version'] );
 
 /**
- * TGM
- */
-require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
-
-/**
 * Load Block Patterns
 */
 require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
@@ -73,8 +68,6 @@ require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-j
  * Load Preset Patterns
  */
 require dirname( __FILE__ ) . '/presets.php';
-
-
 
 /**
  * Set Lightning Design Skin

@@ -8,14 +8,14 @@
     "readme": "grunt readme",
     "i18n": "grunt i18n",
     "all": "run-p watch",
-    "dist": "composer install --no-dev && npx gulp dist",
+    "dist": "composer install --no-dev && npx gulp dist && cpmposer install",
     "sass": "sass --watch --style=compressed --no-source-map assets/_scss:assets/css inc/patterns-data/_scss:inc/patterns-data",
     "build": "composer install --no-dev && npm run build:css",
     "build:css": "sass --style=compressed --no-source-map assets/_scss:assets/css inc/patterns-data/_scss:inc/patterns-data",
     "watch:css": "nodemon -e scss --watch assets/_scss -x \"npm run build:css\"",
     "composer:install:win": "wp-env run composer \"composer install\"",
     "composer:install:mac": "wp-env run composer 'composer install'",
-    "phpunit": "composer install && wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/lightning-g3-evergreen/.phpunit.xml --verbose\""
+    "phpunit": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/lightning-g3-evergreen/.phpunit.xml --verbose\""
   },
   "devDependencies": {
     "@wordpress/env": "^4.1.3",

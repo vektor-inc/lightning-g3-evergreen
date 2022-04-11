@@ -31,6 +31,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.
 	'lightning-g3-evergreen'
 );
 
+load_plugin_textdomain( 'lightning-g3-evergreen', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
 /******************************************
  * Load Only Lightning Active
  */
@@ -71,6 +73,7 @@ require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-j
  * Load Preset Patterns
  */
 require dirname( __FILE__ ) . '/presets.php';
+
 
 
 /**

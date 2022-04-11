@@ -11,7 +11,7 @@
  * @param array  $presets    現在のプリセットの配列.
  * @param string $theme_slug テーマのスラッグ.
  */
-function ltg3ever_add_base_presets( $presets, $theme_slug ) {
+function ltg3_evergreen_add_base_presets( $presets, $theme_slug ) {
 	$fonts = array(
 		'hlogo' => 'Noto+Sans+JP:700',
 		'menu'  => 'Noto+Sans+JP:400',
@@ -99,7 +99,7 @@ add_filter( 'lightning_base_presets', 'ltg3ever_add_base_presets', 10, 2 );
  * @param array  $presets    現在のプリセットの配列.
  * @param string $theme_slug テーマのスラッグ.
  */
-function ltg3ever_add_color_presets( $presets, $theme_slug ) {
+function ltg3_evergreen_add_color_presets( $presets, $theme_slug ) {
 	$page_header = array(
 		'common' => array(
 			'text_color'    => '#fff',

@@ -4,7 +4,7 @@ Donate link:
 Tags:
 Requires at least: 5.8
 Tested up to: 5.9.0
-Stable tag: 0.1.5
+Stable tag: 0.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,8 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-
-[ その他 ] VK Block Patterns が仕様上必須だったのでインストールを促すメッセージを追加
+0.1.6
+[ その他 ] VK Block Patterns が仕様上必須なのでインストールを促すメッセージを追加
 
 0.1.5
 [ 不具合修正 ] Tree shakingを有効化しているとき、カードのhover時のcssが効いていないのを修正

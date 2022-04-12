@@ -50,8 +50,10 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-    - name: install npm scripts
+    - name: Install Node Scripts
       run: npm install
+    - name: Install Composer Packages
+      run: composer install
     - name: Build
       run: npm run build
     - name: Run @wordpress/env

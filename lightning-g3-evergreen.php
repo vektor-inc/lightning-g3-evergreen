@@ -7,7 +7,7 @@
  * Author URI:      https://vektor-inc.co.jp
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
- * Version:         0.1.4
+ * Version:         0.1.5
  *
  * @package         LIGHTNING_G3_EVERGREEN
  */
@@ -18,6 +18,11 @@ defined( 'ABSPATH' ) || exit;
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 /**
+ * TGM
+ */
+require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
+
+/**
  * Plugin Updater
  */
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.
@@ -25,6 +30,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.
 	__FILE__,
 	'lightning-g3-evergreen'
 );
+
+load_plugin_textdomain( 'lightning-g3-evergreen', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 /******************************************
  * Load Only Lightning Active
@@ -61,7 +68,6 @@ require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-j
  * Load Preset Patterns
  */
 require dirname( __FILE__ ) . '/presets.php';
-
 
 /**
  * Set Lightning Design Skin

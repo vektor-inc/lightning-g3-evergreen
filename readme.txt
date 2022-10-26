@@ -4,7 +4,7 @@ Donate link:
 Tags:
 Requires at least: 5.8
 Tested up to: 5.9.0
-Stable tag: 0.1.6
+Stable tag: 0.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Changelog ==
 
 [ その他 ] theme.json 対応調整
+
+0.1.7
+[ 6.1対応 ] サブテキストの左右線の装飾の背景色をcurrentColorに変更
 
 0.1.6
 [ その他 ] VK Block Patterns が仕様上必須なのでインストールを促すメッセージを追加

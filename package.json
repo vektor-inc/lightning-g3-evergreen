@@ -8,7 +8,7 @@
     "readme": "grunt readme",
     "i18n": "grunt i18n",
     "all": "run-p watch",
-    "dist": "composer install --no-dev && npx gulp dist && cpmposer install",
+    "dist": "composer install --no-dev && npx gulp dist && composer install",
     "sass": "sass --watch --style=compressed --no-source-map assets/_scss:assets/css inc/patterns-data/_scss:inc/patterns-data",
     "build": "npm run build:css",
     "build:css": "sass --style=compressed --no-source-map assets/_scss:assets/css inc/patterns-data/_scss:inc/patterns-data",

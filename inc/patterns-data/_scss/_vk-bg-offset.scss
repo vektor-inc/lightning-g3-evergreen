@@ -4,7 +4,8 @@
 // その中に outer を absolute で配置している
 .vk-bg-offset {
     position:relative;
-    & > .wp-block-group__inner-container {
+    & > .wp-block-group__inner-container,
+	& { // theme.json が入ると .wp-block-group__inner-container がなくなるため、この行でない場合も追加
         & > div,
         & > p,
         & > figure{//オフセット背景の下に隠れてしまうので追加

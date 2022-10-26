@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ その他 ] theme.json 対応調整
+
 0.1.6
 [ その他 ] VK Block Patterns が仕様上必須なのでインストールを促すメッセージを追加
 

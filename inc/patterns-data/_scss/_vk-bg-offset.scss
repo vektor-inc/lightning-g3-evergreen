@@ -6,7 +6,7 @@
     position:relative;
     & > .wp-block-group__inner-container,
 	& { // theme.json が入ると .wp-block-group__inner-container がなくなるため、この行でない場合も追加
-        & > div,
+        & > div:where(:not(.wp-block-group__inner-container)),
         & > p,
         & > figure{//オフセット背景の下に隠れてしまうので追加
             position: relative;

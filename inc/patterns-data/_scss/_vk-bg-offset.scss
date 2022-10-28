@@ -13,7 +13,8 @@
         }
     }
 }
-.vk-bg-offset-bg {
+// .wp-block-cover. がないとコアの標準の .vk-bg-offset-bg に負けて width が反映しないため追加している。
+.wp-block-cover.vk-bg-offset-bg { 
     position: absolute !important;
     height:100%;
     top: 0;

@@ -15,7 +15,7 @@
     }
 }
 // .wp-block-cover. がないとコアの標準の .vk-bg-offset-bg に負けて width が反映しないため追加している。
-.wp-block-cover.vk-bg-offset-bg {
+:is(.wp-block-cover,.vk_outer).vk-bg-offset-bg {
 	&,
 	.alignfull > &{
 		width: calc( 100vw - var(--vk-width-bg-offset) );

@@ -4,7 +4,7 @@ Donate link:
 Tags:
 Requires at least: 5.8
 Tested up to: 5.9.0
-Stable tag: 0.1.8
+Stable tag: 0.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Screenshots ==
 
 == Changelog ==
+
+0.1.9
+[ 不具合修正 ] 0.1.8 でのオフセット不具合修正
 
 0.1.8
 [ その他 ] theme.json 対応調整

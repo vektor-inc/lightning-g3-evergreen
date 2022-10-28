@@ -14,14 +14,19 @@
         }
     }
 }
-.vk-bg-offset-bg {
+// .wp-block-cover. がないとコアの標準の .vk-bg-offset-bg に負けて width が反映しないため追加している。
+.wp-block-cover.vk-bg-offset-bg {
+	&,
+	.alignfull > &{
+		width: calc( 100vw - var(--vk-width-bg-offset) );
+		max-width: calc( 100vw - var(--vk-width-bg-offset) );
+	} 
     position: absolute !important;
     height:100%;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    width: calc( 100vw - var(--vk-width-bg-offset) );
     &.vk-bg-offset-bg--left {
         margin-left:var(--vk-width-bg-offset);
     }

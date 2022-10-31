@@ -19,6 +19,7 @@
         margin:-14rem auto 0;
         z-index: 1;
         position: relative;
+		.wp-block-group > & ,
 		body .container .is-layout-flow.wp-block-group > & {
 			margin-block-start: -14rem; // theme.json がない場合用補正
 		}

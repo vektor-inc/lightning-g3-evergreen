@@ -19,6 +19,9 @@
         margin:-14rem auto 0;
         z-index: 1;
         position: relative;
+		.wp-block-group[class*=wp-container-] > & {
+			margin-block-start: -15.5rem; // theme.json がない場合用補正
+		}
     }
     &-md{
         margin:-7rem auto 0;

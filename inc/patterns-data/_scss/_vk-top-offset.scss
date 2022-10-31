@@ -19,9 +19,12 @@
         margin:-14rem auto 0;
         z-index: 1;
         position: relative;
-		.wp-block-group > & ,
+		// 6.0 & theme.json あり対策
+		.wp-block-group[class*=wp-container-] > & {
+			margin-block-start: -15.5rem; // 6.0 theme.json がない場合用補正
+		}
 		body .container .is-layout-flow.wp-block-group > & {
-			margin-block-start: -14rem; // theme.json がない場合用補正
+			margin-block-start: -14rem; // 6.1 theme.json がない場合用補正
 		}
     }
     &-md{

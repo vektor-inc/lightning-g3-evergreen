@@ -77,7 +77,7 @@ h6.vk-headding-lp {
     position: relative;
     text-align: center;
     .vk_heading_title{
-        font-size: calc(28px + 4 * (100vw - 576px)/624);          
+        font-size: calc(28px + 4 * (100vw - 576px)/624);
     }
     &.vk-heading-subtext-en .vk_heading_subtext{
         font-family: $roboto-font-family;

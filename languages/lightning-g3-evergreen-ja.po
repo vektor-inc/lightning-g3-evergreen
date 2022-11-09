@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lightning G3 Evergreen\n"
 "POT-Creation-Date: 2022-04-11 09:35+0900\n"
-"PO-Revision-Date: 2022-04-11 09:37+0900\n"
+"PO-Revision-Date: 2022-11-09 18:34+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: lightning-g3-evergreen.php\n"
@@ -178,7 +178,7 @@ msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合
 
 #: lightning-g3-evergreen.php:84 presets.php:24
 msgid "Evergreen"
-msgstr "緑"
+msgstr "Evergreen"
 
 #: presets.php:47
 msgid "EVERGREEN ナビ縦書き"

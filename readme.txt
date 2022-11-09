@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+ラベルが .has-background に負けて無駄に余白がつく不具合を修正
+
 0.1.10
 [ 不具合修正 ] 0.1.9 でのオフセット不具合修正
 

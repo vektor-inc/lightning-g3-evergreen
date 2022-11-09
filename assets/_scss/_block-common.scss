@@ -184,7 +184,10 @@
 //オフセットを使用しているグループブロック全幅時 のインナーコンテナ余白
 .wp-block-group.alignfull.vk-bg-offset > div[class*="__inner-container"],
 .wp-block-group.alignwide.vk-bg-offset > div[class*="__inner-container"] {
-    max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
+	max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
+	@media (min-width: 992px) {
+		max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 2);
+	}
 }
 
 //グループブロックのアラート系のブロック内に配置したVK見出しのアイコン色は、アラートで設定されている色にしたいのでinherit

@@ -19,6 +19,13 @@
         margin:-14rem auto 0;
         z-index: 1;
         position: relative;
+		// 6.0 & theme.json あり対策
+		.wp-block-group[class*=wp-container-] > & {
+			margin-block-start: -15.5rem; // 6.0 theme.json がない場合用補正
+		}
+		body .container .is-layout-flow.wp-block-group > & {
+			margin-block-start: -14rem; // 6.1 theme.json がない場合用補正
+		}
     }
     &-md{
         margin:-7rem auto 0;
@@ -30,4 +37,42 @@
         z-index: 1;
         position: relative;
     }
+}
+
+// 6.1 with theme.json CSS *******************************************/
+
+// Core CSS /////////////////////////////
+// body .is-layout-flow > * + * {
+//     margin-block-start: 24px;
+//     margin-block-end: 0;
+// }
+// Core CSS /////////////////////////////
+// body .is-layout-flow > * {
+//     margin-block-start: 0;
+//     margin-block-end: 0;
+// }
+// 6.0 with theme.json CSS *******************************************/
+
+// Core CSS /////////////////////////////
+// .wp-container-1 > * + * {
+//     margin-block-start: var( --wp--style--block-gap );
+//     margin-block-end: 0;
+// }
+// Core CSS /////////////////////////////
+// .wp-container-1 > * {
+//     margin-block-start: 0;
+//     margin-block-end: 0;
+// }
+
+.vk-block-top-over{
+    &-lg{
+		// 6.0 & theme.json あり対策
+		.wp-block-group[class*=wp-container-] > & {
+			margin-block-start: -14rem; // 6.0 theme.json がない場合用補正
+		}
+		// 6.1 & theme.json あり対策
+		body .container .is-layout-flow.wp-block-group > & {
+			margin-block-start: -14rem; // 6.1 theme.json がない場合用補正
+		}
+	}
 }

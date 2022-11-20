@@ -46,6 +46,15 @@ $vk-headding-lp: calc(28px + 8 * (100vw - 576px)/624);
     &.heading-top-over{
         position: absolute;
         top:-1.75rem;
+		// theme.json がない場合
+		.wp-block-group > .wp-block-group__inner-container > & {
+
+		}
+		// theme.json がある場合対策
+		.wp-block-group > & {
+			height:0;
+			left:calc( ( 100vw - ( var(--vk-width-container) - var(--vk-width-container-padding) * 2 ) ) / 2 );
+		}
     }
     //emタグを利用してタイトルの途中で大きい文字にする
     em{
@@ -53,6 +62,7 @@ $vk-headding-lp: calc(28px + 8 * (100vw - 576px)/624);
         font-style: normal;
     }
 }
+
 h3.vk-headding-lp{
     font-size: calc( $vk-headding-lp - 4px );
 }
@@ -67,7 +77,7 @@ h6.vk-headding-lp {
     position: relative;
     text-align: center;
     .vk_heading_title{
-        font-size: calc(28px + 4 * (100vw - 576px)/624);          
+        font-size: calc(28px + 4 * (100vw - 576px)/624);
     }
     &.vk-heading-subtext-en .vk_heading_subtext{
         font-family: $roboto-font-family;

@@ -3,8 +3,8 @@ Contributors:
 Donate link:
 Tags:
 Requires at least: 5.8
-Tested up to: 5.9.0
-Stable tag: 0.1.10
+Tested up to: 6.1
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+0.2.0
 [ その他 ] WordPress 6.1 及び Lightning 15系から使える theme.json 対応
 [ 不具合修正 ] ブロックリカバリーアップデート
 [ 不具合修正 ] オフセット背景で画面が広い場合にコンテンツ幅が必要以上に狭くなる不具合を修正

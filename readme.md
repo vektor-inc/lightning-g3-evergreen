@@ -7,7 +7,7 @@ $ npm install
 
 sassの監視を開始します。
 ```
-$ npm run watch
+$ npm run watch:css
 ``` 
 
 ### インストール用などに出力

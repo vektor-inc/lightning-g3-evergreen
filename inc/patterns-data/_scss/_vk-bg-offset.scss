@@ -1,7 +1,9 @@
 @use "variables";
 
-// グループに対して .vk-bg-offset をつけ、
-// その中に outer を absolute で配置している
+// 全幅グループに対して .vk-bg-offset をつける。
+// その中に カバーやouter を absolute でずらして配置する。
+// ただし、ただの背景用でその中には何も入れない。
+// あとは他の要素はその下に普通に配置する。
 .vk-bg-offset {
     position:relative;
     & > .wp-block-group__inner-container,

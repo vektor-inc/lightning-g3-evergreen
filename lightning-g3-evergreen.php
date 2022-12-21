@@ -25,11 +25,13 @@ require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
 /**
  * Plugin Updater
  */
-$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( // phpcs:ignore.
-	'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
-	__FILE__,
-	'lightning-g3-evergreen'
-);
+if ( class_exists('YahnisElsts\PluginUpdateChecker\v5\PucFactory') ){
+	$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( // phpcs:ignore.
+		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
+		__FILE__,
+		'lightning-g3-evergreen'
+	);
+}
 
 load_plugin_textdomain( 'lightning-g3-evergreen', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 

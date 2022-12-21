@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ その他 ] プラグインアップデートチェッカーのバージョンアップ
+
 0.2.0
 [ その他 ] WordPress 6.1 及び Lightning 15系から使える theme.json 対応
 [ 不具合修正 ] ブロックリカバリーアップデート

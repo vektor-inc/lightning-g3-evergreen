@@ -25,7 +25,7 @@ require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
 /**
  * Plugin Updater
  */
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker( // phpcs:ignore.
+$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( // phpcs:ignore.
 	'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
 	__FILE__,
 	'lightning-g3-evergreen'

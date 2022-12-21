@@ -45,7 +45,24 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	require dirname( dirname( __FILE__ ) ) . '/lightning-g3-evergreen.php';
+
+	// Lightning 有効化（インストールは wp-env.json で行っている）
+	switch_theme( 'lightning' );
+	// テスト時になぜか g2 モードになるので、g3 に変更
+	update_option( 'lightning_theme_generation', 'g3' );
+
+	// Evergreen 有効化
+	$plugin_file = get_option('active_plugins');
+	$plugin_file[] = 'lightning-g3-evergreen/lightning-g3-evergreen.php';
+	update_option('active_plugins', $plugin_file);
+
+	// Evergreen 有効化 確認
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); 
+	$evergreen = is_plugin_active('lightning-g3-evergreen/lightning-g3-evergreen.php');
+	print '<pre style="text-align:left">';
+	print_r($evergreen);
+	print '</pre>';
+	echo '━━━━━━━━━━━ Evergreen active ━━━━━━━━━━━'."<br>\n";
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 

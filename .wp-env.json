@@ -1,7 +1,11 @@
 {
 	"core": null,
 	"plugins": [
-		"."
+		"../lightning-g3-evergreen",
+		"https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
+	],
+	"themes": [
+		"https://downloads.wordpress.org/theme/lightning.zip"
 	],
 	"config": {
 		"WP_DEBUG": true,

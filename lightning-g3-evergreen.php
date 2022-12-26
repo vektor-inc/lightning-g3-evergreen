@@ -14,13 +14,19 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Composer のファイルを読み込み ( composer install --no-dev ).
-require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
-
 /**
  * TGM
  */
 require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
+
+/**
+ * Composer autoload
+ */
+$autoload_path = plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+// vendor ディレクトリがない状態で誤配信された場合に Fatal Error にならないようにファイルの存在確認.
+if ( file_exists( $autoload_path ) ) {
+	require_once $autoload_path;
+}
 
 /**
  * Plugin Updater

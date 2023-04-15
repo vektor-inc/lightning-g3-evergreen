@@ -3,8 +3,8 @@ Contributors:
 Donate link:
 Tags:
 Requires at least: 5.8
-Tested up to: 6.1
-Stable tag: 0.2.1
+Tested up to: 6.2
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+0.2.2
 [ 不具合修正 ][ オフセット背景パターン ] theme.json の有効・無効時で表示に差がなくなるように余白調整
 
 0.2.1

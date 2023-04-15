@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ 不具合修正 ][ オフセット背景パターン ] theme.json の有効・無効時で表示に差がなくなるように余白調整
+
 0.2.1
 [ その他 ] 自動テスト改善
 [ その他 ] プラグインアップデートチェッカーのバージョンアップ

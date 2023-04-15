@@ -1,5 +1,18 @@
 @use "variables";
 
+// スキンのscssに記載してあったが offset の記述なので 0.2.2 でこちらに移動 & 
+// theme.json があるときに反映されない指定のため調整
+// オフセットを使用しているグループブロック全幅時 のインナーコンテナ余白
+.wp-block-group:is(.alignfull,.alignwide).vk-bg-offset {
+	& > .vk_outer > div > .vk_outer_container, // theme.json あり用
+	& > div[class*="__inner-container"]{ // theme.json なし用
+		max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
+		@media (min-width: 992px) {
+			max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 2);
+		}
+	}
+}
+
 // 全幅グループに対して .vk-bg-offset をつける。
 // その中に カバーやouter を absolute でずらして配置する。
 // ただし、ただの背景用でその中には何も入れない。

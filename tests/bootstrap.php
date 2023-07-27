@@ -60,14 +60,14 @@ function _manually_load_plugin() {
 	if ( admin_url() === 'http://localhost:8889/wp-admin/' ) {
 		// GitHub Actions 上の場合
 		// .gitHub/workflows/php_unit_tsts でインストールした G3 Pro Unit のファイルを読み込む
-		require dirname( __FILE__ ) . '/plugins/lightning-g3-pro-unit/inc/customize/class-preset-manager.php';
+		require dirname( __FILE__ ) . '/plugins/lightning-g3-pro-unit/lightning-g3-pro-unit.php';
 	} else {
 		// Activate Lightning G3 Pro Unit
 		include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 		activate_plugin('lightning-g3-pro-unit/lightning-g3-pro-unit.php');
 		// G3 Pro Unit をテスト上で有効化しても　LTG3_Preset_Manager クラスの読み込みに失敗してテストが通らないため、
 		// クラスファイルを直接読み込んでいる.
-		require dirname( dirname( dirname( __FILE__ ) ) ) . '/lightning-g3-pro-unit/inc/customize/class-preset-manager.php';
+		require dirname( dirname( dirname( __FILE__ ) ) ) . '/lightning-g3-pro-unit/lightning-g3-pro-unit.php';
 	}
 
 	// Evergreen 有効化

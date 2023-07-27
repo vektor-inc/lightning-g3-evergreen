@@ -63,7 +63,7 @@ jobs:
         rm -f theme.zip
     - name: Install Lightning G3 Pro Unit
       run: |
-        curl -s -L '${{ secrets.G3_PRO_UNIT_URL }}' -o plugin.zip
+        curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
         unzip plugin.zip -d tests/plugins
         rm -f plugin.zip
     - name: Run @wordpress/env

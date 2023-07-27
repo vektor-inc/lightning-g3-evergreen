@@ -59,12 +59,12 @@ jobs:
     - name: Install Lightning Theme
       run: |
         curl -s https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
-        unzip theme.zip -d tests/themes
+        unzip theme.zip -d temp/themes
         rm -f theme.zip
     - name: Install Lightning G3 Pro Unit
       run: |
         curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
-        unzip plugin.zip -d tests/plugins
+        unzip plugin.zip -d temp/plugins
         rm -f plugin.zip
     - name: Run @wordpress/env
       run:  |

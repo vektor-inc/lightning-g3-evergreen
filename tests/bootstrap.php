@@ -45,30 +45,15 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	if ( admin_url() === 'http://localhost:8889/wp-admin/' ) {
-		// GitHub Actions 上の場合
-		// .gitHub/workflows/php_unit_tsts でインストールした lightning のディレクトリを登録
-		register_theme_directory( dirname( __FILE__ ) . '/themes' );
-		search_theme_directories();
-	}
+	register_theme_directory(  dirname( dirname( __FILE__ ) ) . '/temp/themes' );
+	search_theme_directories();
 
 	// Lightning 有効化（インストールは wp-env.json で行っている）
 	switch_theme( 'lightning' );
 	// テスト時になぜか g2 モードになるので、g3 に変更
 	update_option( 'lightning_theme_generation', 'g3' );
 
-	if ( admin_url() === 'http://localhost:8889/wp-admin/' ) {
-		// GitHub Actions 上の場合
-		// .gitHub/workflows/php_unit_tsts でインストールした G3 Pro Unit のファイルを読み込む
-		require dirname( __FILE__ ) . '/plugins/lightning-g3-pro-unit/lightning-g3-pro-unit.php';
-	} else {
-		// Activate Lightning G3 Pro Unit
-		include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-		activate_plugin('lightning-g3-pro-unit/lightning-g3-pro-unit.php');
-		// G3 Pro Unit をテスト上で有効化しても　LTG3_Preset_Manager クラスの読み込みに失敗してテストが通らないため、
-		// クラスファイルを直接読み込んでいる.
-		require dirname( dirname( dirname( __FILE__ ) ) ) . '/lightning-g3-pro-unit/lightning-g3-pro-unit.php';
-	}
+	require dirname( dirname( __FILE__ ) ) . '/temp/plugins/lightning-g3-pro-unit/lightning-g3-pro-unit.php';
 
 	// Evergreen 有効化
 	$plugin_file = get_option('active_plugins');

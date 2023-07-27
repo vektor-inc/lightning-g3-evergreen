@@ -65,7 +65,6 @@ jobs:
     - name: Install Lightning G3 Pro Unit
       run: |
         curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
-        mkdir temp
         unzip plugin.zip -d temp/plugins
         rm -f plugin.zip
     - name: Run @wordpress/env

@@ -56,6 +56,16 @@ jobs:
       run: composer install
     - name: Build
       run: npm run build
+    - name: Install Lightning Theme
+      run: |
+        curl -s https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
+        unzip theme.zip -d tests/themes
+        rm -f theme.zip
+    - name: Install Lightning G3 Pro Unit
+      run: |
+        curl -sL ${{ secrets.G3_PRO_UNIT_URL }} -o plugin.zip
+        unzip plugin.zip -d tests/plugins
+        rm -f plugin.zip
     - name: Run @wordpress/env
       run:  |
         npx wp-env destroy

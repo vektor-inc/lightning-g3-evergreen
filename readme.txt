@@ -4,7 +4,7 @@ Donate link:
 Tags:
 Requires at least: 5.8
 Tested up to: 6.2
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Screenshots ==
 
 == Changelog ==
+
+ = 0.2.3 (Lightning 15.10.0)=
+[ 仕様変更 ] ナビゲーションにアンカーリンクを設定した場合、そのページを表示中でもアクティブにならないように変更
 
 0.2.2
 [ 不具合修正 ][ オフセット背景パターン ] theme.json の有効・無効時で表示に差がなくなるように余白調整

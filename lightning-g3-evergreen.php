@@ -7,7 +7,7 @@
  * Author URI:      https://vektor-inc.co.jp
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
- * Version:         0.2.4
+ * Version:         0.0.4
  *
  * @package         LIGHTNING_G3_EVERGREEN
  */
@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * TGM
  */
-require dirname( __FILE__ ) . '/inc/tgm-plugin-activation/config.php';
+require __DIR__ . '/inc/tgm-plugin-activation/config.php';
 
 /**
  * Composer autoload
@@ -31,7 +31,7 @@ if ( file_exists( $autoload_path ) ) {
 /**
  * Plugin Updater
  */
-if ( class_exists('YahnisElsts\PluginUpdateChecker\v5\PucFactory') ){
+if ( class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
 	$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( // phpcs:ignore.
 		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
 		__FILE__,
@@ -70,12 +70,12 @@ define( 'LTG3_EVERGREEN_VERSION', $ltg3_evergreen_data['version'] );
 /**
 * Load Block Patterns
 */
-require dirname( __FILE__ ) . '/inc/patterns-data/class-register-patterns-from-json.php';
+require __DIR__ . '/inc/patterns-data/class-register-patterns-from-json.php';
 
 /**
  * Load Preset Patterns
  */
-require dirname( __FILE__ ) . '/presets.php';
+require __DIR__ . '/presets.php';
 
 /**
  * Set Lightning Design Skin

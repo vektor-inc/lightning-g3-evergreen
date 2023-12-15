@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:     Lightning G3 Evergreen
- * Plugin URI:      
+ * Plugin URI:
  * Description:     WordPressテーマ「Lightning」とPro版プラグイン「Lightning G3 Pro Unit」専用の拡張スキン「Evergreen」を追加するプラグインです。テーマ「Lightning」とPro版プラグイン「Lightning G3 Pro Unit」を有効化した後に、「カスタマイズ > Lightning デザイン設定 > デザインスキン」のプルダウンで「Evergreen」が選択出来るようになります。
  * Author:          Vektor,Inc.
  * Author URI:      https://vektor-inc.co.jp
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
- * Version:         0.2.3
+ * Version:         0.2.4
  *
  * @package         LIGHTNING_G3_EVERGREEN
  */

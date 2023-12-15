@@ -37,7 +37,7 @@ jobs:
 
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
 
@@ -56,6 +56,11 @@ jobs:
       run: composer install
     - name: Build
       run: npm run build
+    - name: Install Lightning G3 Pro Unit
+      run: |
+        curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
+        unzip plugin.zip -d temp/plugins
+        rm -f plugin.zip
     - name: Run @wordpress/env
       run:  |
         npx wp-env destroy

@@ -66,7 +66,7 @@ function _manually_load_plugin() {
 	print '<pre style="text-align:left">';
 	print_r($evergreen);
 	print '</pre>';
-	echo '━━━━━━━━━━━ Evergreen active ━━━━━━━━━━━'."<br>\n";
+	echo '━━━━━━━━━━━ Evergreen active ━━━━━━━━━━━'."<br>" . PHP_EOL;
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 

@@ -4,7 +4,7 @@ Donate link:
 Tags:
 Requires at least: 5.8
 Tested up to: 6.2
-Stable tag: 0.2.3
+Stable tag: 0.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
- = 0.2.3 (Lightning 15.10.0)=
+0.2.4 ( Lightning 15.16.0 )
+[ 不具合修正 ][ オフセット背景パターン ] 6.4.2の環境で編集画面で左寄せになるのを修正
+
+0.2.3 ( Lightning 15.10.0 )
 [ 仕様変更 ] ナビゲーションにアンカーリンクを設定した場合、そのページを表示中でもアクティブにならないように変更
 
 0.2.2

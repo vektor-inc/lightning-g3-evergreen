@@ -26,9 +26,3 @@
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input{
     border-radius:100px;
 }
-
-//wp6.4.2で編集画面でオフセット背景(vk-bg-offset)を使用したパターンの中身の内容が左に寄るので追加
-.vk-bg-offset .wp-block {
-    margin-left: auto;
-    margin-right: auto;
-}

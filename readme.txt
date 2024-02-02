@@ -3,8 +3,8 @@ Contributors:
 Donate link:
 Tags:
 Requires at least: 5.8
-Tested up to: 6.2
-Stable tag: 0.2.4
+Tested up to: 6.4
+Stable tag: 0.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Screenshots ==
 
 == Changelog ==
+
+0.2.5 ( Lightning 15.19.0 )
+[ 仕様変更 ] Contact Form 7 のお問い合わせボタンがホバー時に沈むように調整
 
 0.2.4 ( Lightning 15.16.0 )
 [ 不具合修正 ][ オフセット背景パターン ] 6.4.2の環境で編集画面で左寄せになるのを修正

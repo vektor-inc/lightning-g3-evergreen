@@ -2,31 +2,39 @@
 * ブロック上書きCSS
 */
 
-
-//VK ボタン
-.vk_button{
-    .btn{
+//ContactForm送信ボタン
+input[type=submit]{
+        &.wpcf7-submit{
         @include btn();
         @include shadow-link;
-
-        &:hover{
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        &:not(:disabled):hover{ //ボタンが無効時は動かさない
             @include shadow-hover;
         }
-        &.vk_button_link.btn {
-            padding-top: 0.8rem;
-            padding-bottom: 0.8rem;
-        }
-        &-light{
+    }
+}
+//VK ボタン
+.vk_button .btn{
+    @include btn();
+    @include shadow-link;
+    &:hover{
+        @include shadow-hover;
+    }
+    &.vk_button_link.btn {
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+    &-light{
+        background-color: #ffffff;
+        border-color: #ffffff;
+        &:hover {
             background-color: #ffffff;
             border-color: #ffffff;
-            &:hover {
-                background-color: #ffffff;
-                border-color: #ffffff;
-            }
-            .fas {
-                color: var(--vk-color-primary);
-                }
         }
+        .fas {
+            color: var(--vk-color-primary);
+            }
     }
 
     //ボタンスタイルがテキスト

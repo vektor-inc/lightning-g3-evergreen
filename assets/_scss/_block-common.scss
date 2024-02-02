@@ -9,7 +9,7 @@ input[type=submit]{
         @include shadow-link;
         padding-top: 0.8rem;
         padding-bottom: 0.8rem;
-        &:hover{
+        &:not(:disabled):hover{ //ボタンが無効時は動かさない
             @include shadow-hover;
         }
     }

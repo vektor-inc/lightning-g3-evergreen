@@ -67,5 +67,10 @@ jobs:
         curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
         unzip plugin.zip -d temp/plugins
         rm -f plugin.zip
+    - name: Run @wordpress/env
+      run:  |
+        sudo apt install --upgrade docker-compose
+        npx wp-env destroy
+        npx wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

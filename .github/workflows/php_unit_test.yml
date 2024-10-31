@@ -67,9 +67,9 @@ jobs:
         curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
         unzip plugin.zip -d temp/plugins
         rm -f plugin.zip
-    - name: Run @wordpress/env
+    - name: Run @wordpress/env@
       run:  |
-        npm -g install @wordpress/env
+        npm -g install @wordpress/env@8.8.13
         npm run wp-env start --update
     - name: PHP Unit Test
       run: npm run phpunit

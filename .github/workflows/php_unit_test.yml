@@ -69,9 +69,7 @@ jobs:
         rm -f plugin.zip
     - name: Run @wordpress/env
       run:  |
-        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        chmod +x wp-cli.phar
-        mv wp-cli.phar /usr/local/bin/wp
+        npm -g install @wordpress/env
         npm run wp-env start --update
     - name: PHP Unit Test
       run: npm run phpunit

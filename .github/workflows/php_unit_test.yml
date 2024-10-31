@@ -69,8 +69,6 @@ jobs:
         rm -f plugin.zip
     - name: Run @wordpress/env
       run:  |
-        sudo apt install --upgrade docker-compose
-        sudo apt install --upgrade docker
         npx wp-env destroy
         npx wp-env start
     - name: PHP Unit Test

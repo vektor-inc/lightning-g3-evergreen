@@ -67,7 +67,7 @@ jobs:
         curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
         unzip plugin.zip -d temp/plugins
         rm -f plugin.zip
-    - name: Run @wordpress/env@
+    - name: Run @wordpress/env
       run:  |
         npx wp-env destroy
         npx wp-env start

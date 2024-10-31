@@ -69,7 +69,7 @@ jobs:
         rm -f plugin.zip
     - name: Run @wordpress/env@
       run:  |
-        npm -g install @wordpress/env@4.0.1
+        npm i @wordpress/env@4.0.1
         npm run wp-env start --update
     - name: PHP Unit Test
       run: npm run phpunit

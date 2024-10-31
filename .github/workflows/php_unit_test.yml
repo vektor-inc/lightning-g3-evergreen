@@ -70,6 +70,7 @@ jobs:
     - name: Run @wordpress/env@
       run:  |
         npm i @wordpress/env@9.3.1
-        npm run wp-env start --update
+        wp-env destroy
+        wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

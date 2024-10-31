@@ -69,6 +69,7 @@ jobs:
         rm -f plugin.zip
     - name: Run @wordpress/env@
       run:  |
+        sudo apt install docker-compose
         npm -g i @wordpress/env@9.3.1
         wp-env destroy
         wp-env start

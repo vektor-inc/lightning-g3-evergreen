@@ -37,7 +37,7 @@ jobs:
 
     # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
 

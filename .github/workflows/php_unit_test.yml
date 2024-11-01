@@ -33,7 +33,7 @@ jobs:
     - name: Setup Node.js (.node-version)
       uses: actions/setup-node@v2
       with:
-        node-version: 22.11.0
+        node-version: 22.x
 
     - name: Cache multiple paths
       uses: actions/cache@v2

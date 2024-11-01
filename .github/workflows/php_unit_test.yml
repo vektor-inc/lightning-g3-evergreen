@@ -30,16 +30,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # get the node version from the .node-version file
-    - name: Read .node-version
-      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-      id: nodenv
-
-    # setup node based on the version from the .node-version file, fetched in the previous step
     - name: Setup Node.js (.node-version)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+        node-version: 20.x
 
     - name: Cache multiple paths
       uses: actions/cache@v2
@@ -58,7 +52,7 @@ jobs:
       run: npm run build
     - name: Install Lightning Theme
       run: |
-        curl -s https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
+        curl -sL https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
         mkdir temp
         unzip theme.zip -d temp/themes
         rm -f theme.zip
@@ -67,9 +61,13 @@ jobs:
         curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
         unzip plugin.zip -d temp/plugins
         rm -f plugin.zip
+    - name: Install @wordpress/env
+      run: npm install -g @wordpress/env
     - name: Run @wordpress/env
       run:  |
-        npx wp-env destroy
-        npx wp-env start
+        sudo curl -sL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+        sudo chmod 755 /usr/local/bin/docker-compose
+        wp-env destroy
+        wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

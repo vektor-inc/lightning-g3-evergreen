@@ -64,8 +64,9 @@ jobs:
     - name: Install @wordpress/env
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env
-      run: sudo curl -SL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
-      run: sudo chmod 755 /usr/local/bin/docker-compose
-      run: wp-env start
+      run: |
+        sudo curl -SL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+        sudo chmod 755 /usr/local/bin/docker-compose
+        wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

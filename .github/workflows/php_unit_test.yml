@@ -66,4 +66,4 @@ jobs:
     - name: Run @wordpress/env
       run: wp-env start
     - name: PHP Unit Test
-      run: wp-env run tests-cli phpunit
+      run: wp-env run phpunit

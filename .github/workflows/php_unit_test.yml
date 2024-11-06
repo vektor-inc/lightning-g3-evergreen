@@ -64,9 +64,6 @@ jobs:
     - name: Install @wordpress/env
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env
-      run:  |
-        docker rm --force 5f1c94032c92ce99a164db62c5e74cb7 
-        echo y | wp-env destroy
-        wp-env start
+      run: wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

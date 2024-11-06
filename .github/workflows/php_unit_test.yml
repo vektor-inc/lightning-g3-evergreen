@@ -66,4 +66,4 @@ jobs:
     - name: Run @wordpress/env
       run: wp-env start
     - name: PHP Unit Test
-      run: npm run phpunit
+      run: wp-env run tests-cli --env-cwd=wp-content/path/to/plugin phpunit

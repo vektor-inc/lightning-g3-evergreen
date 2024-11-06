@@ -65,7 +65,7 @@ jobs:
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env
       run:  |
-        wp-env destroy
+        echo y | wp-env destroy
         wp-env start
     - name: PHP Unit Test
       run: npm run phpunit

@@ -65,6 +65,8 @@ jobs:
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env
       run: |
+        sudo curl -sL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+        sudo chmod 755 /usr/local/bin/docker-compose
         echo y | wp-env destroy
         wp-env start
     - name: PHP Unit Test

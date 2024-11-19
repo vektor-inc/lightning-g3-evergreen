@@ -15,10 +15,10 @@
 		"watch:css": "nodemon -e scss --watch assets/_scss -x \"npm run build:css\"",
 		"composer:install:win": "wp-env run composer \"composer install\"",
 		"composer:install:mac": "wp-env run composer 'composer install'",
-		"phpunit": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/lightning-g3-evergreen/.phpunit.xml --verbose\""
+		"phpunit": "wp-env run cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' vendor/bin/phpunit -c .phpunit.xml"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^5.16.0",
+		"@wordpress/env": "^10.11.0",
 		"autoprefixer": "^10.4.4",
 		"cssnano": "^5.1.7",
 		"grunt": "~1.4.1",

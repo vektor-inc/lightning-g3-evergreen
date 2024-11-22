@@ -18,6 +18,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+
+[ その他 ] プラグインアップデートチェッカー を 5.0 から 5.5 にバージョンアップ
+
 0.2.5 ( Lightning 15.19.0 )
 [ 仕様変更 ] Contact Form 7 のお問い合わせボタンがホバー時に沈むように調整
 

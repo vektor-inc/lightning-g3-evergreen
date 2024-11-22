@@ -2,7 +2,7 @@
 Contributors:
 Donate link:
 Tags:
-Requires at least: 5.8
+Requires at least: 6.6
 Tested up to: 6.4
 Stable tag: 0.2.5
 License: GPLv2 or later
@@ -19,6 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Changelog ==
 
 
+[ 仕様変更 ] G3 Pro Unit が有効化されていないと有効化できないように変更
 [ 不具合修正 ] Deprecated 対応（プラグインアップデートチェッカー を 5.0 から 5.5 にバージョンアップ）
 
 0.2.5 ( Lightning 15.19.0 )

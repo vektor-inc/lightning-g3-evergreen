@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ 不具合修正 ] パターン挿入画面がクラッシュする不具合を修正
+
 0.2.6 ( Lightning 15.28.0 )
 [ 不具合修正 ] Deprecated 対応（プラグインアップデートチェッカー を 5.0 から 5.5 にバージョンアップ）
 

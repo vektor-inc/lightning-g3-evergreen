@@ -3,8 +3,8 @@ Contributors:
 Donate link:
 Tags:
 Requires at least: 6.6
-Tested up to: 6.4
-Stable tag: 0.2.5
+Tested up to: 6.8
+Stable tag: 0.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,8 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-
+[ 不具合修正 ] パターン挿入画面がクラッシュする不具合を修正
 [ 仕様変更 ] G3 Pro Unit が有効化されていないと有効化できないように変更
+
+0.2.6 ( Lightning 15.28.0 )
 [ 不具合修正 ] Deprecated 対応（プラグインアップデートチェッカー を 5.0 から 5.5 にバージョンアップ）
 
 0.2.5 ( Lightning 15.19.0 )

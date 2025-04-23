@@ -7,7 +7,7 @@
  * Author URI:      https://vektor-inc.co.jp
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
- * Version:         0.2.6
+ * Version:         0.2.7
  * Requires Plugins: lightning-g3-pro-unit
  *
  * @package         LIGHTNING_G3_EVERGREEN

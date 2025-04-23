@@ -8,6 +8,7 @@
  * Text Domain:     lightning-g3-evergreen
  * Domain Path:     /languages
  * Version:         0.2.6
+ * Requires Plugins: lightning-g3-pro-unit
  *
  * @package         LIGHTNING_G3_EVERGREEN
  */

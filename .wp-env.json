@@ -1,7 +1,7 @@
 {
 	"core": null,
 	"plugins": [
-		"./temp/themes/lightning-g3-pro-unit",
+		"./temp/plugins/lightning-g3-pro-unit",
 		".",
 		"https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
 	],

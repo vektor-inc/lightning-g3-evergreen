@@ -45,15 +45,10 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	register_theme_directory(  dirname( dirname( __FILE__ ) ) . '/temp/themes' );
-	search_theme_directories();
-
 	// Lightning 有効化（インストールは wp-env.json で行っている）
 	switch_theme( 'lightning' );
 	// テスト時になぜか g2 モードになるので、g3 に変更
 	update_option( 'lightning_theme_generation', 'g3' );
-
-	require dirname( dirname( __FILE__ ) ) . '/temp/plugins/lightning-g3-pro-unit/lightning-g3-pro-unit.php';
 
 	// Evergreen 有効化
 	$plugin_file = get_option('active_plugins');

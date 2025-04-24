@@ -1,12 +1,16 @@
 {
 	"core": null,
 	"plugins": [
-		"../lightning-g3-evergreen",
+		"./temp/themes/lightning-g3-pro-unit",
+		".",
 		"https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
 	],
 	"config": {
 		"WP_DEBUG": true,
 		"SCRIPT_DEBUG": true,
 		"FS_METHOD": "direct"
-	}
+	},
+	"themes": [
+		"./temp/theme/lightning"
+	]
 }

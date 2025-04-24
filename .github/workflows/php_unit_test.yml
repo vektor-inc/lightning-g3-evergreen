@@ -50,6 +50,17 @@ jobs:
       run: composer install
     - name: Build
       run: npm run build
+    - name: Install Lightning Theme
+      run: |
+        curl -sL https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
+        mkdir temp
+        unzip theme.zip -d temp/themes
+        rm -f theme.zip
+    - name: Install Lightning G3 Pro Unit
+      run: |
+        curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
+        unzip plugin.zip -d temp/plugins
+        rm -f plugin.zip
     - name: Run @wordpress/env
       run: |
         n=0
@@ -60,9 +71,5 @@ jobs:
             echo "Retrying wp-env start --update ($n)..."
             sleep 15
         done
-    - name: Install & Activate Lightning Theme
-      run:  npm run wp-env run tests-cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' wp theme install lightning --activate
-    - name: Install & Activate Lightning G3 Pro Unit
-      run: npm run wp-env run tests-cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' wp theme install ${{ secrets.G3_PRO_UNIT_URL }} --activate
     - name: PHP Unit Test
       run: npm run phpunit

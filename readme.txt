@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ その他 ] 軽微な修正
+
 0.2.7 ( Lightning 15.29.6 )
 [ 不具合修正 ] パターン挿入画面がクラッシュする不具合を修正
 [ 仕様変更 ] G3 Pro Unit が有効化されていないと有効化できないように変更

@@ -34,7 +34,7 @@ if ( file_exists( $autoload_path ) ) {
  */
 if ( class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
 	$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( // phpcs:ignore.
-		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
+		'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-g3-evergreen',
 		__FILE__,
 		'lightning-g3-evergreen'
 	);

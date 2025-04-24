@@ -56,14 +56,20 @@ jobs:
       run: composer install
     - name: Build
       run: npm run build
-    - name: Install & Activate Lightning Theme
-      run:  npx wp-env run tests-cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' wp theme install lightning --activate
-    - name: Install & Activate Lightning G3 Pro Unit
-      run: npx wp-env run tests-cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' wp theme install ${{ secrets.G3_PRO_UNIT_URL }} --activate
     - name: Run @wordpress/env
-      run:  |
-        npx wp-env destroy
-        npx wp-env start
+      run: |
+        n=0
+        until [ $n -ge 5 ]
+        do
+            npm run wp-env start --update && break
+            n=$[$n+1]
+            echo "Retrying wp-env start --update ($n)..."
+            sleep 15
+        done
+    - name: Install & Activate Lightning Theme
+      run:  npm run wp-env run tests-cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' wp theme install lightning --activate
+    - name: Install & Activate Lightning G3 Pro Unit
+      run:  npm run wp-env run tests-cli --env-cwd='wp-content/plugins/lightning-g3-evergreen' wp theme install ${{ secrets.G3_PRO_UNIT_URL }} --activate
     - name: PHP Unit Test
       run: npm run phpunit
       

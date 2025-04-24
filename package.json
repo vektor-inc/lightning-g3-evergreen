@@ -8,6 +8,7 @@
 		"readme": "grunt readme",
 		"i18n": "grunt i18n",
 		"all": "run-p watch",
+		"wp-env": "wp-env",
 		"dist": "composer install --no-dev && npx gulp dist && composer install",
 		"sass": "sass --watch --style=compressed --no-source-map assets/_scss:assets/css inc/patterns-data/_scss:inc/patterns-data",
 		"build": "npm run build:css",

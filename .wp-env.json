@@ -11,6 +11,6 @@
 		"FS_METHOD": "direct"
 	},
 	"themes": [
-		"./temp/theme/lightning"
+		"./temp/themes/lightning"
 	]
 }

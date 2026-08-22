@@ -18,6 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ 仕様変更 ] レスポンシブの切り替え幅を 576px / 768px / 992px / 1200px に統一し、メディアクエリを range 構文に変更
 [ その他 ] 軽微な修正
 
 0.2.7 ( Lightning 15.29.6 )

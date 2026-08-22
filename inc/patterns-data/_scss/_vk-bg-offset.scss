@@ -7,7 +7,7 @@
 	& > .vk_outer > div > .vk_outer_container, // theme.json あり用
 	& > div[class*="__inner-container"]{ // theme.json なし用
 		max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 4);
-		@media (min-width: 992px) {
+		@media ( variables.$md-max < width ) {
 			max-width: calc(var(--vk-width-container) - var(--vk-width-container-padding) * 2);
 		}
 	}
@@ -52,12 +52,12 @@
     オフセット背景のオフセットを0（無し）
     ============================================= */
     &.vk-bg-offset-bg--no-offset-mobile{
-        @media (max-width: variables.$xs-max){
+        @media ( width <= variables.$xs-max ){
             --vk-width-bg-offset:0;
         }
     }
     &.vk-bg-offset-bg--no-offset-tablet{
-        @media ( max-width: variables.$md-max){
+        @media ( width <= variables.$md-max ){
             --vk-width-bg-offset:0;
         }
     }

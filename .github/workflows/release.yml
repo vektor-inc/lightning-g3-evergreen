@@ -1,0 +1,181 @@
+name: Deploy to VWS
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+env:
+  plugin_name: lightning-g3-evergreen
+
+jobs:
+  smoke_test:
+    name: Smoke Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install WP-CLI
+        run: |
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          sudo mv wp-cli.phar /usr/local/bin/wp
+      - name: Install NPM Scripts
+        run: npm install
+      - name: Create dist
+        run: npm run dist
+      - name: Verify dist package contents
+        run: |
+          for f in ${{ env.plugin_name }}.php readme.txt; do
+            if [ ! -f "dist/${{ env.plugin_name }}/$f" ]; then
+              echo "Missing required file in dist package: $f" >&2
+              exit 1
+            fi
+          done
+      - name: Upload dist zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.plugin_name }}-zip
+          path: dist/${{ env.plugin_name }}.zip
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/${{ env.plugin_name }}/
+      - name: Install Lightning Theme
+        run: |
+          curl -sL https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
+          mkdir -p temp/themes
+          unzip theme.zip -d temp/themes
+          rm -f theme.zip
+      - name: Install Lightning G3 Pro Unit
+        run: |
+          curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
+          mkdir -p temp/plugins
+          unzip plugin.zip -d temp/plugins
+          rm -f plugin.zip
+      - name: Setup wp-env override for dist
+        run: |
+          echo '{"plugins":["./temp/plugins/lightning-g3-pro-unit","./dist/${{ env.plugin_name }}","https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"]}' > .wp-env.override.json
+      - name: Start wp-env
+        run: |
+          for n in 1 2 3; do npx wp-env start --update && break || [ "$n" -lt 3 ] || exit 1; done
+      - name: Smoke test
+        # vektor-inc/wp-actions main as of 2026-03-18
+        uses: vektor-inc/wp-actions/smoke-test@90f5a231bc956543bf235f36be4928d57af2edab
+
+  php_unit:
+    name: PHP Unit Test
+    runs-on: ubuntu-latest
+    needs: [smoke_test]
+    strategy:
+      matrix:
+        php: [7.4, 8.0, 8.1]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Setup PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install WP-CLI
+        run: |
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          sudo mv wp-cli.phar /usr/local/bin/wp
+      - name: Install NPM Scripts
+        run: npm install
+      - name: Install Composer Packages
+        run: composer install
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/${{ env.plugin_name }}/
+      - name: Copy test dependencies into dist for phpunit
+        run: |
+          cp -r vendor dist/${{ env.plugin_name }}/vendor
+          for f in .phpunit.xml phpunit.xml phpunit.xml.dist; do
+            [ -f "$f" ] && cp "$f" "dist/${{ env.plugin_name }}/$f" || true
+          done
+          [ -d tests ] && cp -r tests "dist/${{ env.plugin_name }}/tests" || true
+      - name: Install Lightning Theme
+        run: |
+          curl -sL https://downloads.wordpress.org/theme/lightning.zip -o theme.zip
+          mkdir -p temp/themes
+          unzip theme.zip -d temp/themes
+          rm -f theme.zip
+      - name: Install Lightning G3 Pro Unit
+        run: |
+          curl -sL "${{ secrets.G3_PRO_UNIT_URL }}" -o plugin.zip
+          mkdir -p temp/plugins
+          unzip plugin.zip -d temp/plugins
+          rm -f plugin.zip
+      - name: Setup wp-env override for dist
+        run: |
+          echo '{"plugins":["./temp/plugins/lightning-g3-pro-unit","./dist/${{ env.plugin_name }}","https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"]}' > .wp-env.override.json
+      - name: Start wp-env
+        run: |
+          for n in 1 2 3; do npx wp-env start --update && break || [ "$n" -lt 3 ] || exit 1; done
+      - name: Run PHP Unit Test
+        run: npm run phpunit
+
+  deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    needs: [smoke_test, php_unit]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.plugin_name }}-zip
+          path: dist/
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: dist/${{ env.plugin_name }}.zip
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.2.1
+        with:
+          switches: -avzr
+          path: dist/${{ env.plugin_name }}.zip
+          remote_path: ${{ secrets.DEPLOY_PATH_VWS }}
+          remote_host: ${{ secrets.DEPLOY_HOST_VWS }}
+          remote_port: ${{ secrets.DEPLOY_PORT_VWS }}
+          remote_user: ${{ secrets.DEPLOY_USER_VWS }}
+          remote_key: ${{ secrets.DEPLOY_KEY_VWS }}
+          remote_key_pass: ${{ secrets.DEPLOY_KEYPASS_VWS }}

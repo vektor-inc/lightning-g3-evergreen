@@ -42,7 +42,7 @@
     }
 }
 .veu_contact-layout-horizontal{
-    @media (min-width: $xl-min){
+    @media ( $lg-max < width ){
     .contact_frame{
             display: flex;
             justify-content: space-between;
@@ -52,7 +52,7 @@
         .veu_contact .contact_bt{
         min-width: 500px;
         }
-    }//min-width: $xl-min
+    }// $lg-max < width
 
 }
 

@@ -31,7 +31,7 @@
     //ロゴ
     &-logo img {
         max-height: 50px;
-        @media (max-width: $md-max){
+        @media ( width <= $md-max ){
             max-height: 35px;
         }
     }
@@ -45,7 +45,7 @@
 }
 //フッター フォントサイズ
 .site-footer{
-    @media screen and (min-width: 767px){
+    @media screen and ( $sm-max < width ){
         font-size: calc(var(--vk-size-text)* 0.9) ;
     }
 }
@@ -53,14 +53,14 @@
 .footer-nav {
     .footer-nav-list{
         li{
-            @media screen and (min-width: 767px){
+            @media screen and ( $sm-max < width ){
 				&:first-child{
 					border-left:1px solid var(--vk-color-border-hr);
-				}             
+				}
                 border-right:1px solid var(--vk-color-border-hr);
             }
             a {
-                @media (max-width: 767.98px){
+                @media ( width <= $sm-max ){
                     border-bottom: 1px solid var(--vk-color-border-hr);
                 }
             }

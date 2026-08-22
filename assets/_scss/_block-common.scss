@@ -164,7 +164,7 @@ input[type=submit]{
 
 //outerブロック 背景固定にするとiphoneで背景画像が拡大される不具合があるのでunset
 .vk_outer-bgPosition-fixed {
-    @media (max-width: $md-max){
+    @media ( width <= $md-max ){
         background-attachment: unset !important;
     }
 }

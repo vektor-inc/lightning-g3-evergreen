@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+[ 開発環境 ] 開発・CI で使う Node.js を 24.22.1 以上にそろえる
+
 0.2.8
 [ 仕様変更 ] レスポンシブの切り替え幅を 576px / 768px / 992px / 1200px に統一し、メディアクエリを range 構文に変更
 [ その他 ] 軽微な修正
